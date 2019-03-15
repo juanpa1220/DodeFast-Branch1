@@ -20,7 +20,6 @@ def condicion1(cond, fromwhere):
         condiciones = cond
     else:
         condiciones = separaCondiciones1([], cond[0])
-        condiciones.append((cond[1], cond[2]))
 
     for i in condiciones:
         if i[0] == 'CUANDO':
@@ -109,8 +108,16 @@ def condicion2to1(result, cond, id):
 
 
 def separaCondiciones1(resultado, condicion):
+    
+    i = 0
+    while(i != len(condicion) ):
+        resultado.append(condicion[i])
+        i = i + 1
     return resultado
+
 ########################################## repita ##########################################
+
+
 def repita(rep):
     print(rep)
     sentencia1 = rep[2]

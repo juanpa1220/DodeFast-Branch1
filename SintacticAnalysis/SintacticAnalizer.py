@@ -13,7 +13,7 @@ def p_Start(p):
     '''
     Start : code
     '''
-    print(p[1])
+
 
 
 def p_Code(p):
@@ -108,10 +108,10 @@ def p_cond1Aux2(p):
 
     '''
     if p[9] != '$':
-        print("la tupla no es igual a $")
+
         p[0] =  ((p[1], p[2], p[3], p[4], p[5], p[7]),) + p[9]
     elif p[9] == '$':
-        print("la tupla es igual a $")
+
         p[0] = ((p[1], p[2], p[3], p[4], p[5], p[7]), ) + ()
 
 

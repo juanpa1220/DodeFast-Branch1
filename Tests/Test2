@@ -17,10 +17,6 @@ EnCaso
 		{
 		    INC(bv,5);
 		}
-	Cuando bv < 10 EnTons
-		{
-		    INC(bv,5);
-		}
 	SiNo
 	{
         INC(bv, 4);
@@ -29,7 +25,3 @@ Fin-EnCaso;
 
 
 FIN;
-
-
-
-((('DCL', 'bv', 'DEFAULT', 5), ('ENCASO', ((('CUANDO', 'bv', '=', 1, 'ENTONS', ('INC', 'bv', 1)), ('CUANDO', 'bv', '=', 2, 'ENTONS', ('INC', 'bv', 2)), ('CUANDO', 'bv', '<', 10, 'ENTONS', ('INC', 'bv', 5)), ('CUANDO', 'bv', '<', 10, 'ENTONS', ('INC', 'bv', 5))), 'SINO', ('INC', 'bv', 4)), 'FINENCASO')), '$')
