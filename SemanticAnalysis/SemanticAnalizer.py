@@ -15,6 +15,7 @@ def variable2(var, val):
 
 ########################################## condicionales ##########################################
 def condicion1(cond, fromwhere):
+
     if fromwhere == "condicion2":
         condiciones = cond
     else:
@@ -23,70 +24,74 @@ def condicion1(cond, fromwhere):
 
     for i in condiciones:
         if i[0] == 'CUANDO':
-            if verificaVariable(i[1]):  # verifica que el identificador este declarado antes
-                condicion = i[2]
-                identificador = variables[i[1]]
-                sentencia = i[3]
 
-                if isinstance(i[3], int):  # para cuando la sentencia es un NUMERO
-                    if condicion == '=':
-                        if (identificador == sentencia):
-                            ejecuta(i[5])
-                            break
-                    elif condicion == '>':
-                        if (identificador > sentencia):
-                            ejecuta(i[5])
-                            break
-                    elif condicion == '<':
-                        if (identificador < sentencia):
-                            ejecuta(i[5])
-                            break
-                    elif condicion == '>=':
-                        if (identificador >= sentencia):
-                            ejecuta(i[5])
-                            break
-                    elif condicion == '<=':
-                        if (identificador <= sentencia):
-                            ejecuta(i[5])
-                            break
-                    elif condicion == '<>':
-                        if (identificador != sentencia):
-                            ejecuta(i[5])
-                            break
-                elif (verificaVariable(i[3])):  # para cuando la sentencia es un ID
-                    if condicion == '=':
-                        if (identificador == variables[sentencia]):
-                            ejecuta(i[5])
-                            break
-                    elif condicion == '>':
-                        if (identificador > variables[sentencia]):
-                            ejecuta(i[5])
-                            break
-                    elif condicion == '<':
-                        if (identificador < variables[sentencia]):
-                            ejecuta(i[5])
-                            break
-                    elif condicion == '>=':
-                        if (identificador >= variables[sentencia]):
-                            ejecuta(i[5])
-                            break
-                    elif condicion == '<=':
-                        if (identificador <= variables[sentencia]):
-                            ejecuta(i[5])
-                            break
-                    elif condicion == '<>':
-                        if (identificador != variables[sentencia]):
-                            ejecuta(i[5])
-                            break
-                else:
-                    print("error: variable de sentencia no declarada")
-                    break
-            else:
-                print("error: identificador no declarado")
+            if(VerificaCondicionales(i[1],i[2], i[3])) == True:
+
+                ejecuta(i[5])
                 break
-        else:
-            ejecuta(i[1])
 
+            elif (VerificaCondicionales(i[1],i[2], i[3])) == "Error: identificador no declarado":
+                print("Error: variable de sentencia no declarada")
+                break
+            elif (VerificaCondicionales(i[1],i[2], i[3])) == "Error: identificador no declarado":
+                print("Error: identificador no declarado")
+                break
+        elif i[0] == "SINO":
+
+            ejecuta(i[1])
+            break
+
+
+def VerificaCondicionales(ID, condicion,sentencia):
+    if verificaVariable(ID):  # verifica que el identificador este declarado antes
+        identificador = variables[ID]
+
+        if isinstance(sentencia, int):  # para cuando la sentencia es un NUMERO
+            if condicion == '=':
+                if (identificador == sentencia):
+                                      # Si cumple esta condicion se ejecuta el Entons
+                    return True
+            elif condicion == '>':
+                if (identificador > sentencia):
+
+                    return True
+            elif condicion == '<':
+                if (identificador < sentencia):
+                    return True
+            elif condicion == '>=':
+                if (identificador >= sentencia):
+                    return True
+            elif condicion == '<=':
+                if (identificador <= sentencia):
+                    return True
+            elif condicion == '<>':
+                if (identificador != sentencia):
+                    return True
+        elif (verificaVariable(ID)):  # para cuando la sentencia es un ID
+            if condicion == '=':
+                if (identificador == variables[sentencia]):
+                    return True
+            elif condicion == '>':
+                if (identificador > variables[sentencia]):
+                    return True
+            elif condicion == '<':
+                if (identificador < variables[sentencia]):
+                    return True
+            elif condicion == '>=':
+                if (identificador >= variables[sentencia]):
+                    return True
+            elif condicion == '<=':
+                if (identificador <= variables[sentencia]):
+                    return True
+            elif condicion == '<>':
+                if (identificador != variables[sentencia]):
+                    return True
+        else:
+            print("error: variable de sentencia no declarada")
+            return "Error: variable de sentencia no declarada"
+    else:
+
+        return "Error: identificador no declarado"
 
 def condicion2(cond):
     cond1 = condicion2to1([], cond[2][0], cond[1])
@@ -106,6 +111,7 @@ def condicion2to1(result, cond, id):
 def separaCondiciones1(resultado, condicion):
     if len(condicion) == 6:
         resultado.append((condicion[0], condicion[1], condicion[2], condicion[3], condicion[4], condicion[5]))
+
         return resultado
     else:
         resultado.append((condicion[0], condicion[1], condicion[2], condicion[3], condicion[4], condicion[5]))
@@ -115,6 +121,14 @@ def separaCondiciones1(resultado, condicion):
 ########################################## repita ##########################################
 def repita(rep):
     print(rep)
+    sentencia1 = rep[2]
+    Id = rep[4]
+    condicion = rep[5]
+    sentencia = rep[6]
+
+
+
+
 
 
 ########################################## hacer ##########################################
@@ -182,12 +196,14 @@ def verificaVariable(var):
 
 
 def ejecuta(expresion):
+
     if (expresion[0] == 'ENCASO'):
         print('por aqui')
         pass
 
     elif (expresion[0] == 'INC'):
         print("antes")
+
         print(variables[expresion[1]])
 
         if (verificaVariable(expresion[1])):
@@ -222,7 +238,6 @@ def ejecuta(expresion):
 
     elif (expresion[0] == 'INI'):
         print("antes")
-        print(variables[expresion[1]])
 
         if (verificaVariable(expresion[1])):
             if isinstance(expresion[2], int):

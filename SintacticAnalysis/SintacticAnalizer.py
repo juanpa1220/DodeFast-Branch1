@@ -234,7 +234,7 @@ def p_funcion_Alge(p):
 
     p[0] = (p[1], p[3], p[5])
 
-    funcionesOperadoras(p[0])
+
 
 
 def p_procedimiento(p):
@@ -315,7 +315,7 @@ def test():
     # archivo = buscarFichero(directorio)
     # test = directorio + archivo
 
-    fp = codecs.open('/Users/juanpablomartinezbrenes/Desktop/DodeFast-Proyect/Tests/Test4', "r", "utf-8")
+    fp = codecs.open(os.path.dirname(os.getcwd()) + "/Tests/" + "Test2", "r", "utf-8")
     cadena = fp.read()
     fp.close()
 
