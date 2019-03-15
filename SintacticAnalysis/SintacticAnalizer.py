@@ -13,6 +13,7 @@ def p_Start(p):
     '''
     Start : code
     '''
+    print(p[1])
 
 
 def p_Code(p):
@@ -95,18 +96,24 @@ def p_cond1Aux1(p):
 
     condicion1(p[0], "")
 
+def p_cond1Aux2_empty(p):
+    '''
+    cond1Aux2 : empty
+        '''
+    p[0] = p[1]
 
 def p_cond1Aux2(p):
     '''
     cond1Aux2 : CUANDO ID condicion sentencia ENTONS LLAVE_IZQ expresion LLAVE_DER cond1Aux2
-            | empty empty empty empty empty empty empty empty empty
+
     '''
     if p[9] != '$':
-        p[0] = (p[1], p[2], p[3], p[4], p[5], p[7], p[9])
-    elif p[9] == '$' and p[1] != '$':
-        p[0] = (p[1], p[2], p[3], p[4], p[5], p[7])
-    elif p[1] == '$':
-        p[0] = p[1]
+        print("la tupla no es igual a $")
+        p[0] =  ((p[1], p[2], p[3], p[4], p[5], p[7]),) + p[9]
+    elif p[9] == '$':
+        print("la tupla es igual a $")
+        p[0] = ((p[1], p[2], p[3], p[4], p[5], p[7]), ) + ()
+
 
 
 def p_condicion2(p):
@@ -257,7 +264,6 @@ def p_parametro(p):
               | NUMERO COMA parametro
               | NUMERO empty empty
               | empty empty empty
-
     '''
     if p[3] != '$' and p[2] != '$':
         p[0] = (p[1], p[3])

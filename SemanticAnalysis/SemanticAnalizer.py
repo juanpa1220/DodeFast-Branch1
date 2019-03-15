@@ -109,15 +109,7 @@ def condicion2to1(result, cond, id):
 
 
 def separaCondiciones1(resultado, condicion):
-    if len(condicion) == 6:
-        resultado.append((condicion[0], condicion[1], condicion[2], condicion[3], condicion[4], condicion[5]))
-
-        return resultado
-    else:
-        resultado.append((condicion[0], condicion[1], condicion[2], condicion[3], condicion[4], condicion[5]))
-        return separaCondiciones1(resultado, condicion[6])
-
-
+    return resultado
 ########################################## repita ##########################################
 def repita(rep):
     print(rep)

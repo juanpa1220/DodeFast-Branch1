@@ -1,9 +1,8 @@
 INICIO:
 
-DCL xcv;
-DCL vf;
-DCL bv DEFAULT 1;
-DCL mnb DEFAULT 10;
+
+DCL bv DEFAULT 5;
+
 
 EnCaso
 	Cuando bv = 1 EnTons
@@ -14,9 +13,13 @@ EnCaso
 		{
             INC(bv, 2);
 		}
-	Cuando bv < mnb EnTons
+	Cuando bv < 10 EnTons
 		{
-		INC(bv,mnb);
+		    INC(bv,5);
+		}
+	Cuando bv < 10 EnTons
+		{
+		    INC(bv,5);
 		}
 	SiNo
 	{
@@ -27,7 +30,6 @@ Fin-EnCaso;
 
 FIN;
 
-PROC  hola()
-inicio:
 
-fin;
+
+((('DCL', 'bv', 'DEFAULT', 5), ('ENCASO', ((('CUANDO', 'bv', '=', 1, 'ENTONS', ('INC', 'bv', 1)), ('CUANDO', 'bv', '=', 2, 'ENTONS', ('INC', 'bv', 2)), ('CUANDO', 'bv', '<', 10, 'ENTONS', ('INC', 'bv', 5)), ('CUANDO', 'bv', '<', 10, 'ENTONS', ('INC', 'bv', 5))), 'SINO', ('INC', 'bv', 4)), 'FINENCASO')), '$')
