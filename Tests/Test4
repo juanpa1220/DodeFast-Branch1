@@ -1,0 +1,26 @@
+INICIO:
+
+DCL xcv;
+DCL vf;
+DCL bv DEFAULT 6;
+DCL mnb DEFAULT 10;
+
+ALEATORIO();
+ALEATORIO();
+ALEATORIO();
+
+MOVER(A);
+MOVER(IFA);
+MOVER(DAB);
+
+INI(xcv, 1);
+INC(bv, 1);
+DEC(mnb, 7);
+
+
+FIN;
+
+PROC  hola()
+inicio:
+
+fin;

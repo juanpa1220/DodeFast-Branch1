@@ -1,0 +1,38 @@
+INICIO:
+
+DCL xcv;
+DCL vf;
+DCL bv DEFAULT 6;
+DCL mnb DEFAULT 10;
+
+EnCaso bv
+	Cuando = 5 EnTons
+		{
+            INC(bv, 1);
+		}
+	Cuando < 5 EnTons
+		{
+            INC(bv, 2);
+		}
+	Cuando > 5 EnTons
+		{
+            INC(bv, 3);
+            INC(bv, 3);
+		}
+	SiNo
+	{
+        INC(bv, 4);
+	}
+Fin-EnCaso;
+
+
+Desde i = 1 Hasta 5 Haga{
+    INC(vf, i);
+}Fin-Desde;
+
+FIN;
+
+PROC  hola()
+inicio:
+
+fin;
