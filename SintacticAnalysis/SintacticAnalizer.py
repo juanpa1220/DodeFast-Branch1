@@ -61,6 +61,12 @@ def p_Variable2(p):
     #variable2(p[2], p[4])
 
 
+def p_expresion_empty(p):
+    '''
+    expresion : empty
+        '''
+    p[0] = None
+
 def p_expresion(p):
     '''
     expresion : condicion1 expresion
@@ -69,7 +75,7 @@ def p_expresion(p):
             | hacer expresion
             | funcion expresion
             | llamarProc expresion
-            | empty empty
+
     '''
     if (p[2] != None):
         p[0] = (p[1], )+ p[2]
@@ -100,7 +106,7 @@ def p_cond1Aux2_empty(p):
     '''
     cond1Aux2 : empty
         '''
-    p[0] = p[1]
+    p[0] = None
 
 def p_cond1Aux2(p):
     '''
