@@ -41,11 +41,18 @@ EnCaso
 		}
 	SiNo
 	{
-
-
-        INC(bv, 22);
-
+	    EnCaso
+	        Cuando bv < 100 Entons
+	        {
+	            INC(bv, 300);
+	        }
+	        SiNo{
+	            INC(bv,150);
+	        }
+	    Fin-EnCaso;
 	}
+
+
 Fin-EnCaso;
 
 

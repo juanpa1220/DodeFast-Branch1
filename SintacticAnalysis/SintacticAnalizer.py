@@ -103,7 +103,7 @@ def p_cond1Aux1(p):
             | empty empty empty empty empty
     '''
     if (p[5] != None):
-        p[0] = (p[1], p[2], p[4])
+        p[0] = ((p[1], p[2],)) + (p[4],)
     else:
         p[0] = tuple(p[1])
 
@@ -252,7 +252,7 @@ def p_funcion_Alge(p):
              | INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA expresion
     '''
     if p[8] == None:
-        p[0] = ((p[1], p[3], p[5]),)
+        p[0] = (p[1], p[3], p[5])
     elif p[8] != None:
         p[0] = ((p[1], p[3], p[5] ),)+ (p[8])
 

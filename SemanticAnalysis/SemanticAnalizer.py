@@ -49,6 +49,7 @@ def condicion1(cond,sino, fromwhere):
                 print("Error: identificador no declarado")
                 break
         elif i[0] == "SINO":
+
             print("El ejectar del SiNo:")
             print(i)
             ejecutar(i[1])
@@ -227,7 +228,7 @@ def iniciarEjecucion(arbol):
 
 def ejecutar(expresionCompleta):
     print("El 0 de expresion completa es:")
-    print(expresionCompleta[0])
+    print(expresionCompleta)
     if (expresionCompleta[0] in reservadas.values()):
         expresiones = [expresionCompleta]
     else:
@@ -247,7 +248,7 @@ def ejecutar(expresionCompleta):
             print(expresion[1][0])
             print(expresion[1][1])
             print(expresion[1][2])
-            condicion1(expresion[1][0],(expresion[1][1],) + expresion[1][2],"")
+            condicion1(expresion[1][0],(expresion[1][1],) + (expresion[1][2],),"")
         elif expresion[0] ==  "INC" or expresion[0] == "DEC" or expresion[0] == "INI" or expresion[0] == "MOVER":
             ejecuta(expresion)
 
@@ -263,6 +264,7 @@ def ejecuta(expresion):
         print(variables[expresion[1]])
 
         if (verificaVariable(expresion[1])):
+
             if isinstance(expresion[2], int):
                 variables[expresion[1]] += int(expresion[2])
             elif verificaVariable(expresion[2]):
