@@ -25,18 +25,24 @@ def condicion1(cond, fromwhere):
     if fromwhere == "condicion2":
         condiciones = cond
     else:
-        condiciones = separaCondiciones1([], cond[0])
+        condiciones = separaCondiciones1([], cond)
 
         print("LAS CONDICIONES SON: ")
         print(condiciones)
 
 
     for i in condiciones:
+        print("El i[0] =")
+        print(i[0])
         if i[0] == 'CUANDO':
+            print("Verificando condicionales...")
+            print(VerificaCondicionales(i[1], i[2], i[3]))
+
+            print(".....")
 
             if(VerificaCondicionales(i[1],i[2], i[3])) == True:
-
-                ejecutar(i[5], 0)
+                print("LO VA A EJECUTAR")
+                ejecuta(i[5])
                 break
 
             elif (VerificaCondicionales(i[1],i[2], i[3])) == "Error: identificador no declarado":
@@ -53,6 +59,7 @@ def condicion1(cond, fromwhere):
 
 def VerificaCondicionales(ID, condicion,sentencia):
     if verificaVariable(ID):  # verifica que el identificador este declarado antes
+        print("Esta declarado")
         identificador = variables[ID]
 
         if isinstance(sentencia, int):  # para cuando la sentencia es un NUMERO
@@ -120,7 +127,9 @@ def condicion2to1(result, cond, id):
 def separaCondiciones1(resultado, condicion):
     
     i = 0
+    print(len(condicion))
     while(i != len(condicion) ):
+
         resultado.append(condicion[i])
         i = i + 1
     print(resultado)
@@ -243,6 +252,7 @@ def ejecutar(expresion, ind):
 
         ejecutar(expresion, ind + 1)
     elif expresion[ind][0] == "INC":
+        print("HAY UN INC")
         ejecuta(expresion[ind])
 
 
