@@ -16,13 +16,15 @@ EnCaso
 		}
 	Cuando bv < mnb EnTons
 		{
-		INC(bv,4);
-		INC(bv,8);
-		INC(bv,10);
+
+		INC(bv, 4);
 		INC(bv,100);
+		INC(bv,200);
+		DEC(bv,3);
+
+
 
 		}
-
 	SiNo
 	{
         INC(bv, 4);
@@ -37,3 +39,4 @@ PROC  hola()
 inicio:
 
 fin;
+

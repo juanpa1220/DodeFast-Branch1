@@ -33,8 +33,7 @@ def condicion1(cond,sino, fromwhere):
 
 
     for i in condiciones:
-        print("El i[0] =")
-        print(i[0])
+
         if i[0] == 'CUANDO':
             print("Verificando condicionales...")
             print(VerificaCondicionales(i[1], i[2], i[3]))
@@ -45,9 +44,7 @@ def condicion1(cond,sino, fromwhere):
                 print("LO VA A EJECUTAR")
                 print(i[5])
 
-                for j in separaCondiciones1([],i[5]):
-
-                    ejecutar((j,),0)
+                ejecutar(i[5])
                 break
 
             elif (VerificaCondicionales(i[1],i[2], i[3])) == "Error: identificador no declarado":
@@ -59,8 +56,8 @@ def condicion1(cond,sino, fromwhere):
         elif i[0] == "SINO":
             print("El ejectar del SiNO:")
             print(i)
-            for j in separaCondiciones1([],i[1]):
-                ejecutar((j,) + (),0)
+            #for j in separaCondiciones1([],i[1]):
+                #ejecutar(j)
             break
 
 
@@ -132,14 +129,14 @@ def condicion2to1(result, cond, id):
 
 
 def separaCondiciones1(resultado, condicion):
-    
+
     i = 0
-    print(len(condicion))
+
     while(i != len(condicion) ):
 
         resultado.append(condicion[i])
         i = i + 1
-    print(resultado)
+
     return resultado
 
 ########################################## repita ##########################################
@@ -229,36 +226,29 @@ def iniciarEjecucion(arbol):
     print(arbol[1])
     if(arbol[0] == "INICIO"):
 
-        ejecutar(arbol[1], 0)
+        ejecutar(arbol[1])
         print(variables)
 
 
-def ejecutar(expresion, ind):
+def ejecutar(expresionCompleta):
 
-    print("La expresion en la que se encuentra es:")
-    print(expresion[ind][0])
+    expresiones =separaCondiciones1([],expresionCompleta)
 
-    if expresion[ind][0] == None:
-        ejecutar(expresion, ind + 1)
+    for expresion in expresiones:
+        #print("La expresion es:")
+        #print(expresion)
+        if expresion[0] == "DCL":
+            if expresion[2] == "DEFAULT":
+                variable2(expresion[1],expresion[3])
+            else:
+                variable1(expresion[1])
+        elif expresion[0] == "ENCASO":
+            print(expresion[1][0])
+            print(expresion[1][1])
+            condicion1(expresion[1][0],expresion[1][1],"")
+        elif expresion[0] ==  "INC" or expresion[0] == "DEC" or expresion[0] == "INI" or expresion[0] == "MOVER":
+            ejecuta(expresion)
 
-    elif (expresion[ind][0] == "ENCASO"):
-        #print(" HAY UN ENCASO")
-
-
-        condicion1(expresion[ind][1][0],tuple(("SINO",expresion[ind][1][2])), "")
-
-
-    elif (expresion[ind][0] == "DCL"):
-
-        if (expresion[ind][2] == "DEFAULT"):
-            variable2(expresion[ind][1], expresion[ind][3])
-        else:
-            variable1(expresion[ind][1])
-
-        ejecutar(expresion, ind + 1)
-    elif expresion[ind][0] == "INC":
-        print("HAY UN INC")
-        ejecuta(expresion[ind])
 
 
 
