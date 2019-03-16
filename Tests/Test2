@@ -1,6 +1,6 @@
 INICIO:
 
-DCL xcv;
+
 DCL vf;
 DCL bv DEFAULT 10;
 DCL mnb DEFAULT 10;
@@ -26,6 +26,7 @@ EnCaso
 	}
 Fin-EnCaso;
 
+DCL xcv;
 
 FIN;
 
@@ -34,4 +35,6 @@ inicio:
 
 fin;
 
+
+(('DCL', 'vf', ';'), ('DCL', 'bv', 'DEFAULT', 10), ('DCL', 'mnb', 'DEFAULT', 10), ('ENCASO', ((('CUANDO', 'bv', '=', 1, 'ENTONS', ('INC', 'bv', 1)), ('CUANDO', 'bv', '=', 2, 'ENTONS', ('INC', 'bv', 2)), ('CUANDO', 'bv', '<', 'mnb', 'ENTONS', ('INC', 'bv', 4))), 'SINO', ('INC', 'bv', 4)), 'FINENCASO'), ('DCL', 'xcv', ';'))
 

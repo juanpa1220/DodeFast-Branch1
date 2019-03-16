@@ -22,25 +22,32 @@ def p_Code(p):
     '''
     p[0] = ("INICIO",p[3], p[6])
 
+def p_cuerpo_empty(p):
+    '''
+    cuerpo : empty
+    '''
+    p[0] = None
+
 
 def p_cuerpo(p):
     '''
-    cuerpo : variable
-            | expresion
+    cuerpo : variable cuerpo
+            | expresion cuerpo
     '''
-    p[0] = p[1]
+    if p[2] == None:
+        p[0] = (p[1],)
+    else:
+        p[0] = (p[1],) + p[2]
 
 
 def p_Variable(p):
     '''
-    variable : variable1 cuerpo
-            | variable2 cuerpo
-            | empty empty
+    variable : variable1
+            | variable2
+
     '''
-    if (p[2] != None):
-        p[0] = (p[1],)  + p[2]
-    else:
-        p[0] = (p[1],) + ()
+
+    p[0] = (p[1])
 
 
 def p_Variable1(p):
@@ -78,7 +85,7 @@ def p_expresion(p):
 
     '''
     if (p[2] != None):
-        p[0] = (p[1], )+ p[2]
+        p[0] = (p[1], ) + p[2]
     else:
         p[0] = p[1]
 
@@ -87,7 +94,7 @@ def p_condicion1(p):
     '''
     condicion1 : ENCASO cond1Aux1 FINENCASO PUNTOCOMA
     '''
-    p[0] = (p[1], p[2], p[3])
+    p[0] = (p[1],p[2],p[3])
 
 
 def p_cond1Aux1(p):
@@ -98,7 +105,7 @@ def p_cond1Aux1(p):
     if (p[5] != None):
         p[0] = (p[1], p[2], p[4])
     else:
-        p[0] = p[1]
+        p[0] = tuple(p[1])
 
     #condicion1(p[0], "")
 
