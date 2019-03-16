@@ -2,7 +2,7 @@ INICIO:
 
 DCL xcv;
 DCL vf;
-DCL bv DEFAULT 100;
+DCL bv DEFAULT 10;
 DCL mnb DEFAULT 10;
 
 EnCaso
@@ -16,22 +16,7 @@ EnCaso
 		}
 	Cuando bv < mnb EnTons
 		{
-
-
-            EnCaso
-                Cuando bv = mnb EnTons
-                    {
-                        INC(bv, mnb);
-                    }
-                Cuando bv < 20 EnTons
-                    {
-                        INC(bv, 20);
-                    }
-                SiNo
-                {
-                    INC(bv, 4);
-                }
-            Fin-EnCaso;
+		INC(bv,4);
 
 		}
 

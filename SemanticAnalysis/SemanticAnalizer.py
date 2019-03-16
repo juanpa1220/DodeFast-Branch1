@@ -27,6 +27,10 @@ def condicion1(cond, fromwhere):
     else:
         condiciones = separaCondiciones1([], cond[0])
 
+        print("LAS CONDICIONES SON: ")
+        print(condiciones)
+
+
     for i in condiciones:
         if i[0] == 'CUANDO':
 
@@ -210,6 +214,8 @@ def iniciarEjecucion(arbol):
     if(arbol[0] == "INICIO"):
 
         ejecutar(arbol[1], 0)
+        print(variables)
+
 
 def ejecutar(expresion, ind):
 
@@ -221,7 +227,12 @@ def ejecutar(expresion, ind):
 
     elif (expresion[ind][0] == "ENCASO"):
         print(" HAY UN ENCASO")
-        condicion1(expresion[ind][1], "")
+        print("expresion[ind + 2 ][0] =")
+        print(expresion[ind][1][0])
+
+
+        condicion1(expresion[ind][1][0], "")
+
 
     elif (expresion[ind][0] == "DCL"):
 
