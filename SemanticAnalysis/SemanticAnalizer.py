@@ -1,21 +1,18 @@
 from random import choice
-
+from LexicalAnalysis.LexicalAnalizer import reservadas
 variables = {}
 listaMovimientos = []
 
 
 ########################################## variables ##########################################
 def variable1(var):
-    print("Se va a iniciar la variable: ")
-    print(var)
+
 
     variables[var] = 0
 
 
 def variable2(var, val):
-    print("Se va a iniciar la variable: ")
-    print(var)
-    print("CON VALOR = " + str(val))
+
     variables[var] = val
 
 
@@ -34,11 +31,9 @@ def condicion1(cond,sino, fromwhere):
 
     for i in condiciones:
 
-        if i[0] == 'CUANDO':
-            print("Verificando condicionales...")
-            print(VerificaCondicionales(i[1], i[2], i[3]))
+        print(i)
 
-            print(".....")
+        if i[0] == 'CUANDO':
 
             if(VerificaCondicionales(i[1],i[2], i[3])) == True:
                 print("LO VA A EJECUTAR")
@@ -54,16 +49,15 @@ def condicion1(cond,sino, fromwhere):
                 print("Error: identificador no declarado")
                 break
         elif i[0] == "SINO":
-            print("El ejectar del SiNO:")
+            print("El ejectar del SiNo:")
             print(i)
-            #for j in separaCondiciones1([],i[1]):
-                #ejecutar(j)
+            ejecutar(i[1])
             break
 
 
 def VerificaCondicionales(ID, condicion,sentencia):
     if verificaVariable(ID):  # verifica que el identificador este declarado antes
-        print("Esta declarado")
+
         identificador = variables[ID]
 
         if isinstance(sentencia, int):  # para cuando la sentencia es un NUMERO
@@ -230,9 +224,16 @@ def iniciarEjecucion(arbol):
         print(variables)
 
 
-def ejecutar(expresionCompleta):
 
-    expresiones =separaCondiciones1([],expresionCompleta)
+def ejecutar(expresionCompleta):
+    print("El 0 de expresion completa es:")
+    print(expresionCompleta[0])
+    if (expresionCompleta[0] in reservadas.values()):
+        expresiones = [expresionCompleta]
+    else:
+        expresiones = separaCondiciones1([],expresionCompleta)
+
+    print(expresiones)
 
     for expresion in expresiones:
         #print("La expresion es:")
@@ -245,7 +246,8 @@ def ejecutar(expresionCompleta):
         elif expresion[0] == "ENCASO":
             print(expresion[1][0])
             print(expresion[1][1])
-            condicion1(expresion[1][0],expresion[1][1],"")
+            print(expresion[1][2])
+            condicion1(expresion[1][0],(expresion[1][1],) + expresion[1][2],"")
         elif expresion[0] ==  "INC" or expresion[0] == "DEC" or expresion[0] == "INI" or expresion[0] == "MOVER":
             ejecuta(expresion)
 

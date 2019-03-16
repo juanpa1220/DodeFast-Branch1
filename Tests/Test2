@@ -14,20 +14,37 @@ EnCaso
 		{
             DEC(bv, 1);
 		}
-	Cuando bv < mnb EnTons
+	Cuando bv = mnb EnTons
 		{
 
-		INC(bv, 4);
-		INC(bv,100);
-		INC(bv,200);
-		DEC(bv,3);
+		EnCaso
+		    Cuando bv < 1 Entons
+		        {
+		        INC(bv,100);
+		        INC(bv,100);
+		        INC(bv,100);
+		        }
+		    Cuando bv < 5 Entons
+		    {
+		    INC(bv,50);
+		    }
+		    SiNo{
+
+
+		    INC(bv,1);
+
+		    }
+		 Fin-EnCaso;
 
 
 
 		}
 	SiNo
 	{
-        INC(bv, 4);
+
+
+        INC(bv, 22);
+
 	}
 Fin-EnCaso;
 
