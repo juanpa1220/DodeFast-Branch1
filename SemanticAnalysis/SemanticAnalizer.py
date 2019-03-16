@@ -20,12 +20,13 @@ def variable2(var, val):
 
 
 ########################################## condicionales ##########################################
-def condicion1(cond, fromwhere):
+def condicion1(cond,sino, fromwhere):
 
     if fromwhere == "condicion2":
         condiciones = cond
     else:
         condiciones = separaCondiciones1([], cond)
+        condiciones += [sino]
 
         print("LAS CONDICIONES SON: ")
         print(condiciones)
@@ -53,7 +54,7 @@ def condicion1(cond, fromwhere):
                 break
         elif i[0] == "SINO":
 
-            ejecuta(i[1], 0)
+            ejecuta(i[1])
             break
 
 
@@ -228,19 +229,17 @@ def iniciarEjecucion(arbol):
 
 def ejecutar(expresion, ind):
 
-    print("La expresion en la que se encuentra es:")
-    print(expresion[ind][0])
+    #print("La expresion en la que se encuentra es:")
+    #print(expresion[ind][0])
 
     if expresion[ind][0] == None:
         ejecutar(expresion, ind + 1)
 
     elif (expresion[ind][0] == "ENCASO"):
-        print(" HAY UN ENCASO")
-        print("expresion[ind + 2 ][0] =")
-        print(expresion[ind][1][0])
+        #print(" HAY UN ENCASO")
 
 
-        condicion1(expresion[ind][1][0], "")
+        condicion1(expresion[ind][1][0],tuple(("SINO",expresion[ind][1][2])), "")
 
 
     elif (expresion[ind][0] == "DCL"):
@@ -252,18 +251,15 @@ def ejecutar(expresion, ind):
 
         ejecutar(expresion, ind + 1)
     elif expresion[ind][0] == "INC":
-        print("HAY UN INC")
+        #print("HAY UN INC")
         ejecuta(expresion[ind])
 
 
 def ejecuta(expresion):
 
 
-    if (expresion[0] == 'ENCASO'):
-        print('por aqui')
-        pass
 
-    elif (expresion[0] == 'INC'):
+    if (expresion[0] == 'INC'):
         print("antes")
 
         print(variables[expresion[1]])
@@ -282,6 +278,7 @@ def ejecuta(expresion):
         print(variables[expresion[1]])
 
     elif (expresion[0] == 'DEC'):
+        print("lo va a decrementar")
         print("antes")
         print(variables[expresion[1]])
 

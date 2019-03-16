@@ -2,17 +2,17 @@ INICIO:
 
 DCL xcv;
 DCL vf;
-DCL bv DEFAULT 2;
+DCL bv DEFAULT 100;
 DCL mnb DEFAULT 10;
 
 EnCaso
 	Cuando bv = 1 EnTons
 		{
-            INC(bv, 1);
+            DEC(bv, 1);
 		}
 	Cuando bv = 2 EnTons
 		{
-            INC(bv, 2);
+            DEC(bv, 1);
 		}
 	Cuando bv < mnb EnTons
 		{
