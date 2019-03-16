@@ -13,6 +13,7 @@ def p_Start(p):
     '''
     Start : code
     '''
+    #print(p[1])
     iniciarEjecucion(p[1])
 
 
@@ -251,13 +252,18 @@ def p_funcion_Alge(p):
              | DEC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA expresion
              | INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA expresion
     '''
-    if p[8] == None:
-        p[0] = (p[1], p[3], p[5])
-    elif p[8] != None:
-        p[0] = ((p[1], p[3], p[5] ),)+ (p[8])
+
+    p[0] = ((p[1], p[3], p[5] ),)+ (p[8])
 
 
+def p_funcion_Alge2(p):
+    '''
+    funcionAlge : INC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA
+             | DEC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA
+             | INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA
+    '''
 
+    p[0] = ((p[1], p[3], p[5]),)
 
 
 
