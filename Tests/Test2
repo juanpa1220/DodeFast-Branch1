@@ -2,7 +2,7 @@ INICIO:
 
 DCL xcv;
 DCL vf;
-DCL bv DEFAULT 5;
+DCL bv DEFAULT 100;
 DCL mnb DEFAULT 10;
 
 EnCaso
@@ -32,8 +32,6 @@ EnCaso
                     INC(bv, 4);
                 }
             Fin-EnCaso;
-
-
 
 		}
 

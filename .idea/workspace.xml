@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fa822517-5aac-499f-af7a-a2b81c8fa026" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/SemanticAnalysis/SemanticAnalizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/SemanticAnalysis/SemanticAnalizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SintacticAnalysis/SintacticAnalizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/SintacticAnalysis/SintacticAnalizer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests/Test2" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Test2" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,14 +12,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/DodeFast_Branch1$SintacticAnalizer.coverage" NAME="SintacticAnalizer Coverage Results" MODIFIED="1552704736371" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SintacticAnalysis" />
+    <SUITE FILE_PATH="coverage/DodeFast_Branch1$SintacticAnalizer.coverage" NAME="SintacticAnalizer Coverage Results" MODIFIED="1552706081446" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SintacticAnalysis" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SintacticAnalysis/SintacticAnalizer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
+            <state relative-caret-position="-3714">
               <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
@@ -29,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tests/Test2">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+            <state relative-caret-position="105">
+              <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -41,8 +40,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SemanticAnalysis/SemanticAnalizer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+            <state relative-caret-position="396">
+              <caret line="223" column="19" lean-forward="true" selection-start-line="223" selection-start-column="19" selection-end-line="223" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -56,8 +55,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Tests/Test3" />
-        <option value="$PROJECT_DIR$/Tests/Test2" />
         <option value="$PROJECT_DIR$/SintacticAnalysis/SintacticAnalizer.py" />
+        <option value="$PROJECT_DIR$/Tests/Test2" />
         <option value="$PROJECT_DIR$/SemanticAnalysis/SemanticAnalizer.py" />
       </list>
     </option>
@@ -161,12 +160,12 @@
       <option name="presentableId" value="Default" />
       <updated>1552667497455</updated>
       <workItem from="1552667498749" duration="23616000" />
-      <workItem from="1552702298340" duration="2448000" />
+      <workItem from="1552702298340" duration="3936000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26064000" />
+    <option name="totallyTimeSpent" value="27552000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
@@ -236,27 +235,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SintacticAnalysis/SintacticAnalizer.py">
+    <entry file="file://$PROJECT_DIR$/Tests/Test2">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="105">
+          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SemanticAnalysis/SemanticAnalizer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+        <state relative-caret-position="396">
+          <caret line="223" column="19" lean-forward="true" selection-start-line="223" selection-start-column="19" selection-end-line="223" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/Test2">
+    <entry file="file://$PROJECT_DIR$/SintacticAnalysis/SintacticAnalizer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+        <state relative-caret-position="-3714">
+          <caret line="49" column="28" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

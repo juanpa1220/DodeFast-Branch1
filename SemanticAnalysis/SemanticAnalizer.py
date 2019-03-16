@@ -32,7 +32,7 @@ def condicion1(cond, fromwhere):
 
             if(VerificaCondicionales(i[1],i[2], i[3])) == True:
 
-                ejecuta(i[5])
+                ejecutar(i[5], 0)
                 break
 
             elif (VerificaCondicionales(i[1],i[2], i[3])) == "Error: identificador no declarado":
@@ -43,7 +43,7 @@ def condicion1(cond, fromwhere):
                 break
         elif i[0] == "SINO":
 
-            ejecuta(i[1])
+            ejecuta(i[1], 0)
             break
 
 
@@ -119,6 +119,7 @@ def separaCondiciones1(resultado, condicion):
     while(i != len(condicion) ):
         resultado.append(condicion[i])
         i = i + 1
+    print(resultado)
     return resultado
 
 ########################################## repita ##########################################
@@ -208,24 +209,36 @@ def iniciarEjecucion(arbol):
     print(arbol[1])
     if(arbol[0] == "INICIO"):
 
-        ejecuta(arbol[1], 0)
+        ejecutar(arbol[1], 0)
 
+def ejecutar(expresion, ind):
 
-def ejecuta(expresion, ind):
+    print("La expresion en la que se encuentra es:")
+    print(expresion[ind][0])
 
+    if expresion[ind][0] == None:
+        ejecutar(expresion, ind + 1)
 
+    elif (expresion[ind][0] == "ENCASO"):
+        print(" HAY UN ENCASO")
+        condicion1(expresion[ind][1], "")
 
-    if(expresion[ind][0] == "DCL"):
+    elif (expresion[ind][0] == "DCL"):
 
-        if(expresion[ind][2] == "DEFAULT" ):
-            variable2(expresion[ind][1],expresion[ind][3])
+        if (expresion[ind][2] == "DEFAULT"):
+            variable2(expresion[ind][1], expresion[ind][3])
         else:
             variable1(expresion[ind][1])
 
-        ejecuta(expresion,ind + 1)
+        ejecutar(expresion, ind + 1)
+    elif expresion[ind][0] == "INC":
+        ejecuta(expresion[ind])
 
 
-    elif (expresion[0] == 'ENCASO'):
+def ejecuta(expresion):
+
+
+    if (expresion[0] == 'ENCASO'):
         print('por aqui')
         pass
 
