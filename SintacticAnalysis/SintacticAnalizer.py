@@ -80,7 +80,7 @@ def p_expresion(p):
     if (p[2] != None):
         p[0] = (p[1], )+ p[2]
     else:
-        p[0] = (p[1],) + ()
+        p[0] = p[1]
 
 
 def p_condicion1(p):
