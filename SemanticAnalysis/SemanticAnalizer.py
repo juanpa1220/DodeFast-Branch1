@@ -43,7 +43,11 @@ def condicion1(cond,sino, fromwhere):
 
             if(VerificaCondicionales(i[1],i[2], i[3])) == True:
                 print("LO VA A EJECUTAR")
-                ejecuta(i[5])
+                print(i[5])
+
+                for j in separaCondiciones1([],i[5]):
+
+                    ejecutar((j,),0)
                 break
 
             elif (VerificaCondicionales(i[1],i[2], i[3])) == "Error: identificador no declarado":
@@ -53,8 +57,10 @@ def condicion1(cond,sino, fromwhere):
                 print("Error: identificador no declarado")
                 break
         elif i[0] == "SINO":
-
-            ejecuta(i[1])
+            print("El ejectar del SiNO:")
+            print(i)
+            for j in separaCondiciones1([],i[1]):
+                ejecutar((j,) + (),0)
             break
 
 
@@ -229,8 +235,8 @@ def iniciarEjecucion(arbol):
 
 def ejecutar(expresion, ind):
 
-    #print("La expresion en la que se encuentra es:")
-    #print(expresion[ind][0])
+    print("La expresion en la que se encuentra es:")
+    print(expresion[ind][0])
 
     if expresion[ind][0] == None:
         ejecutar(expresion, ind + 1)
@@ -251,12 +257,12 @@ def ejecutar(expresion, ind):
 
         ejecutar(expresion, ind + 1)
     elif expresion[ind][0] == "INC":
-        #print("HAY UN INC")
+        print("HAY UN INC")
         ejecuta(expresion[ind])
 
 
-def ejecuta(expresion):
 
+def ejecuta(expresion):
 
 
     if (expresion[0] == 'INC'):

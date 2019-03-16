@@ -2,7 +2,7 @@ INICIO:
 
 DCL xcv;
 DCL vf;
-DCL bv DEFAULT 100;
+DCL bv DEFAULT 5;
 DCL mnb DEFAULT 10;
 
 EnCaso
@@ -17,6 +17,9 @@ EnCaso
 	Cuando bv < mnb EnTons
 		{
 		INC(bv,4);
+		INC(bv,8);
+		INC(bv,10);
+		INC(bv,100);
 
 		}
 
@@ -34,4 +37,3 @@ PROC  hola()
 inicio:
 
 fin;
-
