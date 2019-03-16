@@ -6,10 +6,16 @@ listaMovimientos = []
 
 ########################################## variables ##########################################
 def variable1(var):
+    print("Se va a iniciar la variable: ")
+    print(var)
+
     variables[var] = 0
 
 
 def variable2(var, val):
+    print("Se va a iniciar la variable: ")
+    print(var)
+    print("CON VALOR = " + str(val))
     variables[var] = val
 
 
@@ -187,6 +193,8 @@ def funcionesOperadoras(funcion):
 
 
 ########################################## ejecutables ##########################################
+
+
 def verificaVariable(var):
     for i in variables.keys():
         if i == var:
@@ -194,9 +202,30 @@ def verificaVariable(var):
     return False
 
 
-def ejecuta(expresion):
 
-    if (expresion[0] == 'ENCASO'):
+def iniciarEjecucion(arbol):
+    print("El arbol es:")
+    print(arbol[1])
+    if(arbol[0] == "INICIO"):
+
+        ejecuta(arbol[1], 0)
+
+
+def ejecuta(expresion, ind):
+
+
+
+    if(expresion[ind][0] == "DCL"):
+
+        if(expresion[ind][2] == "DEFAULT" ):
+            variable2(expresion[ind][1],expresion[ind][3])
+        else:
+            variable1(expresion[ind][1])
+
+        ejecuta(expresion,ind + 1)
+
+
+    elif (expresion[0] == 'ENCASO'):
         print('por aqui')
         pass
 
