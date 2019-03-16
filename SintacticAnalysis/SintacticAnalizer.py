@@ -135,6 +135,7 @@ def p_condicion2(p):
     condicion2 : ENCASO ID cond2Aux1 FINENCASO PUNTOCOMA
     '''
     p[0] = (p[1], p[2], p[3], p[4])
+
     #condicion2(p[0])
 
 
@@ -144,22 +145,28 @@ def p_cond2Aux1(p):
                 | empty empty empty empty empty
     '''
     if (p[5] != None):
-        p[0] = (p[1], p[2], p[4])
+        p[0] = ((p[1], p[2],))+ (p[4])
     else:
         p[0] = p[1]
+
+def p_cond2Aux2_empty(p):
+    '''
+    cond2Aux2 : empty
+        '''
+    p[0] = None
 
 
 def p_cond2Aux2(p):
     '''
         cond2Aux2 : CUANDO  condicion sentencia ENTONS LLAVE_IZQ expresion LLAVE_DER cond2Aux2
-                | empty empty empty empty empty empty empty empty
+
         '''
     if p[8] != None:
-        p[0] = (p[1], p[2], p[3], p[4], p[6], p[8])
-    elif p[8] == None and p[1] != None:
-        p[0] = (p[1], p[2], p[3], p[4], p[6])
-    elif p[1] == None:
-        p[0] = p[1]
+        p[0] = ((p[1], p[2], p[3], p[4], p[6]),) +  (p[8])
+
+    elif p[8] == None:
+
+        p[0] = ((p[1], p[2], p[3], p[4], p[6]),) + ()
 
 
 def p_condicion(p):
@@ -344,7 +351,7 @@ def test():
     # archivo = buscarFichero(directorio)
     # test = directorio + archivo
 
-    fp = codecs.open(os.path.dirname(os.getcwd()) + "/Tests/" + "Test2", "r", "utf-8")
+    fp = codecs.open(os.path.dirname(os.getcwd()) + "/Tests/" + "Test3", "r", "utf-8")
     cadena = fp.read()
     fp.close()
 

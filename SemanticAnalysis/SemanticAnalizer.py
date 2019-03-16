@@ -109,18 +109,28 @@ def VerificaCondicionales(ID, condicion,sentencia):
         return "Error: identificador no declarado"
 
 def condicion2(cond):
+    print("CONDICION 2:")
+    print(cond[2][0])  # Cuandos
+    print(cond[1]) # ID
+    print(cond[2][1]) # SINO
+    print(cond[2][2]) # EXPRESION DEL SINO
+
     cond1 = condicion2to1([], cond[2][0], cond[1])
+
     cond1.append((cond[2][1], cond[2][2]))
-    condicion1(cond1, "condicion2")
+
+    print(cond1)
+    condicion1(cond1,"sino", "condicion2")
 
 
 def condicion2to1(result, cond, id):
-    if len(cond) == 5:
-        result.append((cond[0], id, cond[1], cond[2], cond[3], cond[4]))
-        return result
-    else:
-        result.append((cond[0], id, cond[1], cond[2], cond[3], cond[4]))
-        return condicion2to1(result, cond[5], id)
+
+    for i in cond:
+
+        result.append((i[0], id, i[1], i[2], i[3], i[4]))
+
+
+    return result
 
 
 def separaCondiciones1(resultado, condicion):
@@ -130,6 +140,7 @@ def separaCondiciones1(resultado, condicion):
     while(i != len(condicion) ):
 
         resultado.append(condicion[i])
+
         i = i + 1
 
     return resultado
@@ -244,11 +255,19 @@ def ejecutar(expresionCompleta):
                 variable2(expresion[1],expresion[3])
             else:
                 variable1(expresion[1])
-        elif expresion[0] == "ENCASO":
+        elif expresion[0] == "ENCASO" and isinstance(expresion[1],tuple):
             print(expresion[1][0])
             print(expresion[1][1])
             print(expresion[1][2])
             condicion1(expresion[1][0],(expresion[1][1],) + (expresion[1][2],),"")
+        elif expresion[0] == "ENCASO":
+            print("ENCASO 2 -------------------------------------------------------------------------------")
+            #print(expresion[1]) # esto contiene la variable
+            #print(expresion[2]) #esto contiene los cuando
+
+            condicion2(expresion)
+
+
         elif expresion[0] ==  "INC" or expresion[0] == "DEC" or expresion[0] == "INI" or expresion[0] == "MOVER":
             ejecuta(expresion)
 
