@@ -2,33 +2,15 @@ INICIO:
 
 DCL xcv;
 
-DCL bv DEFAULT 6;
+DCL bv DEFAULT 5;
 DCL mnb DEFAULT 10;
 
-EnCaso bv
-	Cuando = 5 EnTons
-		{
-            INC(bv, 1);
-        }
-	SiNo
-	{
-        INC(bv, 4);
-	}
-Fin-EnCaso;
+Desde bv = 5 Hasta 100 Haga{
+INC (bv,10);
 
+}
+Fin-Desde;
 
-
-EnCaso bv
-	Cuando = 10 EnTons
-		{
-            INC(bv, 1);
-		}
-
-	SiNo
-	{
-        INC(bv, 4);
-	}
-Fin-EnCaso;
 
 
 FIN;

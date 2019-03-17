@@ -163,8 +163,12 @@ def repita(rep):
 ########################################## hacer ##########################################
 def hacer(hacer):
     print(hacer)
+
     sentencia1 = hacer[3]
     sentencia2 = hacer[5]
+
+    print(sentencia1)
+    print(sentencia2)
     if (isinstance(sentencia1, int) or verificaVariable(sentencia1)) and (
             isinstance(sentencia2, int) or verificaVariable(sentencia2)):
         if isinstance(sentencia1, int):
@@ -178,11 +182,9 @@ def hacer(hacer):
 
         if sentencia1 < sentencia2:
 
-            for i in range(sentencia1, sentencia2 + 1):
-                expresion = hacer[7]
-                cont = hacer[1]
-                expresion = sustituye(expresion, cont, i)
-                ejecuta(expresion)
+            for i in range(sentencia1, sentencia2):
+
+                ejecutar(hacer[7])
 
         else:
             print("error: la sentencia 1 debe ser menor a la sentencia 2")
@@ -238,6 +240,7 @@ def iniciarEjecucion(arbol):
 
 
 def ejecutar(expresionCompleta):
+
     if(len(expresionCompleta) ==1 and  len(expresionCompleta[0]) == 1) :
         ejecutar(expresionCompleta[0])
         return
@@ -273,7 +276,8 @@ def ejecutar(expresionCompleta):
 
         elif expresion[0] ==  "INC" or expresion[0] == "DEC" or expresion[0] == "INI" or expresion[0] == "MOVER":
             ejecuta(expresion)
-
+        elif expresion[0] == "DESDE":
+            hacer(expresion)
 
 
 

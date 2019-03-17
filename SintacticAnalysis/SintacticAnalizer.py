@@ -119,6 +119,14 @@ def p_expresion_condicion2(p):
 
     p[0] = (p[1],)
 
+def p_expresion_hacer(p):
+    '''
+        expresion : hacer
+
+        '''
+
+    p[0] = (p[1],)
+
 def p_condicion1(p):
     '''
     condicion1 : ENCASO cond1Aux1 FINENCASO PUNTOCOMA
@@ -221,7 +229,7 @@ def p_repita(p):
     '''
     p[0] = (p[1], p[3], p[5], p[6], p[7], p[8])
 
-    repita(p[0])
+    #repita(p[0])
 
 
 def p_hacer(p):
@@ -230,7 +238,7 @@ def p_hacer(p):
     '''
     p[0] = (p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[9])
 
-    hacer(p[0])
+    #hacer(p[0])
 
 
 def p_funcion(p):
@@ -353,6 +361,7 @@ def sintacticAnalizer(cadena):
 #################################### tester ############################################
 
 def buscarFichero(directorio):
+
     ficheros = []
     numArchivo = ''
     respuesta = False
@@ -376,7 +385,7 @@ def test():
     # archivo = buscarFichero(directorio)
     # test = directorio + archivo
 
-    fp = codecs.open(os.path.dirname(os.getcwd()) + "/Tests/" + "Test2", "r", "utf-8")
+    fp = codecs.open(os.path.dirname(os.getcwd()) + "/Tests/" + "Test3", "r", "utf-8")
     cadena = fp.read()
     fp.close()
 
