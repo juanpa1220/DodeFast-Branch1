@@ -36,7 +36,9 @@ def p_cuerpo_expresion(p):
     cuerpo : expresion cuerpo
     '''
     if p[2] == None:
+
         p[0] = p[1]
+
     else:
         p[0] = p[1] + p[2]
 
@@ -96,7 +98,7 @@ def p_expresion(p):
             | llamarProc expresion
     '''
     if (p[2] != None):
-        p[0] = (p[1],) + (p[2],)
+        p[0] = (p[1],) + p[2]
     else:
         p[0] = p[1]
 
@@ -105,6 +107,7 @@ def p_expresion_condicion1(p):
         expresion : condicion1
 
         '''
+
 
     p[0] = (p[1],)
 

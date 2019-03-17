@@ -238,6 +238,9 @@ def iniciarEjecucion(arbol):
 
 
 def ejecutar(expresionCompleta):
+    if(len(expresionCompleta) ==1 and  len(expresionCompleta[0]) == 1) :
+        ejecutar(expresionCompleta[0])
+        return
     print("El 0 de expresion completa es:")
     print(expresionCompleta)
     if (expresionCompleta[0] in reservadas.values()):
@@ -275,6 +278,7 @@ def ejecutar(expresionCompleta):
 
 
 def ejecuta(expresion):
+
 
 
     if (expresion[0] == 'INC'):
