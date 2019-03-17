@@ -1,4 +1,3 @@
-
 import ply.yacc as yacc
 import os
 import codecs
@@ -42,7 +41,6 @@ def p_procedimientos(p):
 def p_procedimiento(p):
     '''
     procedimiento : PROC ID PARENTESIS_IZQ parametro PARENTESIS_DER INICIOPROC DOSPUNTOS expresion FINPROC PUNTOCOMA
-
     '''
 
     p[0] = (p[1],p[2]) +(("PARAMETROS", p[4],"INICIOPROC", p[8],"FINPROC"),)
@@ -70,7 +68,6 @@ def p_cuerpo_expresion(p):
 def p_cuerpo_variable(p):
     '''
         cuerpo : variable cuerpo
-
         '''
     if p[2] == None:
         p[0] = (p[1],)
@@ -128,7 +125,6 @@ def p_expresion(p):
 def p_expresion_llamarProc(p):
     '''
         expresion : llamarProc
-
         '''
 
 
@@ -137,7 +133,6 @@ def p_expresion_llamarProc(p):
 def p_expresion_condicion1(p):
     '''
         expresion : condicion1
-
         '''
 
 
@@ -146,7 +141,6 @@ def p_expresion_condicion1(p):
 def p_expresion_condicion2(p):
     '''
         expresion : condicion2
-
         '''
 
     p[0] = (p[1],)
@@ -155,7 +149,6 @@ def p_expresion_condicion2(p):
 def p_expresion_repita(p):
     '''
         expresion : repita
-
         '''
 
     p[0] = (p[1],)
@@ -164,7 +157,6 @@ def p_expresion_repita(p):
 def p_expresion_hacer(p):
     '''
         expresion : hacer
-
         '''
 
     p[0] = (p[1],)
@@ -286,12 +278,38 @@ def p_hacer(p):
 
 def p_funcion(p):
     '''
-    funcion : Aleatorio
-            | Mover
-            | funcionAlge
+    funcion : Aleatorio expresion
+            | Mover expresion
+            | funcionAlge expresion
     '''
-    p[0] = p[1]
+    if(p[2] == None):
+        p[0] = p[1]
+    else:
+        p[0] = (p[1],) + p[2]
 
+def p_funcion_aleatorio(p):
+    '''
+    funcion : Aleatorio
+
+    '''
+
+    p[0] = (p[1],)
+
+def p_funcion_Mover(p):
+    '''
+    funcion : Mover
+
+    '''
+
+    p[0] = (p[1],)
+
+def p_funcion_funcionAlge(p):
+    '''
+    funcion : funcionAlge
+
+    '''
+
+    p[0] = (p[1],)
 
 def p_aleatorio(p):
     '''
@@ -308,7 +326,9 @@ def p_mover(p):
     '''
     p[0] = (p[1], p[3])
 
+
     # funcionMover(p[0])
+
 
 
 def p_ParamMover(p):
@@ -329,32 +349,23 @@ def p_ParamMover(p):
     p[0] = p[1]
 
 
+
+
+
 def p_funcion_Alge(p):
-    '''
-    funcionAlge : INC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA expresion
-             | DEC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA expresion
-             | INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA expresion
-    '''
-
-    p[0] = ((p[1], p[3], p[5] ), )+ (p[8])
-
-
-def p_funcion_Alge2(p):
     '''
     funcionAlge : INC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA
              | DEC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA
              | INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA
     '''
 
-    p[0] = ((p[1], p[3], p[5]),)
+    p[0] = (p[1], p[3], p[5])
 
 
 def p_parametro(p):
     '''
     parametro : ID COMA parametro
               | NUMERO COMA parametro
-
-
     '''
     if p[3] != None and p[2] != None:
         p[0] = (p[1],) + (p[3])
@@ -363,7 +374,6 @@ def p_parametro_only(p):
     '''
         parametro : ID
                   | NUMERO
-
         '''
 
     p[0] = (p[1],)
@@ -419,7 +429,7 @@ def test():
     # archivo = buscarFichero(directorio)
     # test = directorio + archivo
 
-    fp = codecs.open(os.path.dirname(os.getcwd()) + "/Tests/" + "Test3", "r", "utf-8")
+    fp = codecs.open(os.path.dirname(os.getcwd()) + "/Tests/" + "Test2", "r", "utf-8")
     cadena = fp.read()
     fp.close()
 

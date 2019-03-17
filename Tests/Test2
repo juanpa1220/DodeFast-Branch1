@@ -2,7 +2,7 @@ INICIO:
 
 DCL xcv;
 DCL vf;
-DCL bv DEFAULT 10;
+DCL bv DEFAULT 2;
 DCL mnb DEFAULT 10;
 
 EnCaso
@@ -10,6 +10,7 @@ EnCaso
 		{
             INC(bv, 1);
             INC(bv,10);
+            Mover(A);
 		}
 	Cuando bv = 2 EnTons
 		{
@@ -61,8 +62,13 @@ Fin-EnCaso;
 
 FIN;
 
-PROC  hola()
+Proc procedimiento2 (cc, bb)
 inicio:
+
+Mover(A);
+INC(bv,10);
+
+INC(bv,20);
 
 fin;
 
