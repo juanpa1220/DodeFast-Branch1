@@ -66,3 +66,4 @@ inicio:
 
 fin;
 
+(('DCL', 'xcv', ';'), ('DCL', 'vf', ';'), ('DCL', 'bv', 'DEFAULT', 6), ('DCL', 'mnb', 'DEFAULT', 10), ('ENCASO', ((('CUANDO', 'bv', '=', 6, 'ENTONS', ((('INC', 'bv', 1),),)),), 'SINO', ((('INC', 'bv', 300),),)), 'FINENCASO'), ('ENCASO', ((('CUANDO', 'bv', '=', 2, 'ENTONS', ((('INC', 'bv', 1),),)),), 'SINO', ((('INC', 'bv', 300),),)), 'FINENCASO'))

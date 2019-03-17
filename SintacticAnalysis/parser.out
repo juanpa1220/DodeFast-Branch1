@@ -10,8 +10,8 @@ Rule 0     S' -> Start
 Rule 1     Start -> code
 Rule 2     code -> INICIO DOSPUNTOS cuerpo FIN PUNTOCOMA procedimiento
 Rule 3     cuerpo -> empty
-Rule 4     cuerpo -> variable cuerpo
-Rule 5     cuerpo -> expresion cuerpo
+Rule 4     cuerpo -> expresion cuerpo
+Rule 5     cuerpo -> variable cuerpo
 Rule 6     variable -> variable1
 Rule 7     variable -> variable2
 Rule 8     variable1 -> DCL ID PUNTOCOMA
@@ -147,7 +147,7 @@ condicion1           : 11
 condicion2           : 12
 cuerpo               : 2 4 5
 empty                : 3 10 19 19 19 19 19 20 24 24 24 24 24 25 61 61 61 61 61 61 61 61 61 61 61 63 63 65 65 66 66 66
-expresion            : 5 11 12 13 14 15 16 18 21 23 26 35 36 54 55 56 60
+expresion            : 4 11 12 13 14 15 16 18 21 23 26 35 36 54 55 56 60
 funcion              : 15
 funcionAlge          : 39
 hacer                : 14
@@ -157,7 +157,7 @@ parametro            : 60 62 64 67
 procedimiento        : 2 60
 repita               : 13
 sentencia            : 21 26 35 36 36 54 55 56 57 58 59
-variable             : 4
+variable             : 5
 variable1            : 6
 variable2            : 7
 
@@ -198,11 +198,9 @@ state 4
 
     (2) code -> INICIO DOSPUNTOS . cuerpo FIN PUNTOCOMA procedimiento
     (3) cuerpo -> . empty
-    (4) cuerpo -> . variable cuerpo
-    (5) cuerpo -> . expresion cuerpo
+    (4) cuerpo -> . expresion cuerpo
+    (5) cuerpo -> . variable cuerpo
     (68) empty -> .
-    (6) variable -> . variable1
-    (7) variable -> . variable2
     (10) expresion -> . empty
     (11) expresion -> . condicion1 expresion
     (12) expresion -> . condicion2 expresion
@@ -210,8 +208,8 @@ state 4
     (14) expresion -> . hacer expresion
     (15) expresion -> . funcion expresion
     (16) expresion -> . llamarProc expresion
-    (8) variable1 -> . DCL ID PUNTOCOMA
-    (9) variable2 -> . DCL ID DEFAULT NUMERO PUNTOCOMA
+    (6) variable -> . variable1
+    (7) variable -> . variable2
     (17) condicion1 -> . ENCASO cond1Aux1 FINENCASO PUNTOCOMA
     (22) condicion2 -> . ENCASO ID cond2Aux1 FINENCASO PUNTOCOMA
     (35) repita -> . REPITA LLAVE_IZQ expresion LLAVE_DER HASTAENCONTRAR ID condicion sentencia PUNTOCOMA
@@ -220,6 +218,8 @@ state 4
     (38) funcion -> . Mover
     (39) funcion -> . funcionAlge
     (67) llamarProc -> . LLAMAR ID PARENTESIS_IZQ parametro PARENTESIS_DER PUNTOCOMA
+    (8) variable1 -> . DCL ID PUNTOCOMA
+    (9) variable2 -> . DCL ID DEFAULT NUMERO PUNTOCOMA
     (40) Aleatorio -> . ALEATORIO PARENTESIS_IZQ PARENTESIS_DER PUNTOCOMA
     (41) Mover -> . MOVER PARENTESIS_IZQ paramMover PARENTESIS_DER PUNTOCOMA
     (54) funcionAlge -> . INC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA expresion
@@ -229,33 +229,33 @@ state 4
     (58) funcionAlge -> . DEC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA
     (59) funcionAlge -> . INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA
 
-  ! shift/reduce conflict for DCL resolved as shift
   ! shift/reduce conflict for ENCASO resolved as shift
   ! shift/reduce conflict for REPITA resolved as shift
   ! shift/reduce conflict for DESDE resolved as shift
   ! shift/reduce conflict for LLAMAR resolved as shift
+  ! shift/reduce conflict for DCL resolved as shift
   ! shift/reduce conflict for ALEATORIO resolved as shift
   ! shift/reduce conflict for MOVER resolved as shift
   ! shift/reduce conflict for INC resolved as shift
   ! shift/reduce conflict for DEC resolved as shift
   ! shift/reduce conflict for INI resolved as shift
     FIN             reduce using rule 68 (empty -> .)
-    DCL             shift and go to state 17
-    ENCASO          shift and go to state 18
-    REPITA          shift and go to state 19
-    DESDE           shift and go to state 20
-    LLAMAR          shift and go to state 24
+    ENCASO          shift and go to state 17
+    REPITA          shift and go to state 18
+    DESDE           shift and go to state 19
+    LLAMAR          shift and go to state 23
+    DCL             shift and go to state 24
     ALEATORIO       shift and go to state 25
     MOVER           shift and go to state 26
     INC             shift and go to state 27
     DEC             shift and go to state 28
     INI             shift and go to state 29
 
-  ! DCL             [ reduce using rule 68 (empty -> .) ]
   ! ENCASO          [ reduce using rule 68 (empty -> .) ]
   ! REPITA          [ reduce using rule 68 (empty -> .) ]
   ! DESDE           [ reduce using rule 68 (empty -> .) ]
   ! LLAMAR          [ reduce using rule 68 (empty -> .) ]
+  ! DCL             [ reduce using rule 68 (empty -> .) ]
   ! ALEATORIO       [ reduce using rule 68 (empty -> .) ]
   ! MOVER           [ reduce using rule 68 (empty -> .) ]
   ! INC             [ reduce using rule 68 (empty -> .) ]
@@ -264,19 +264,19 @@ state 4
 
     cuerpo                         shift and go to state 5
     empty                          shift and go to state 6
-    variable                       shift and go to state 7
-    expresion                      shift and go to state 8
-    variable1                      shift and go to state 9
-    variable2                      shift and go to state 10
-    condicion1                     shift and go to state 11
-    condicion2                     shift and go to state 12
-    repita                         shift and go to state 13
-    hacer                          shift and go to state 14
-    funcion                        shift and go to state 15
-    llamarProc                     shift and go to state 16
-    Aleatorio                      shift and go to state 21
-    Mover                          shift and go to state 22
-    funcionAlge                    shift and go to state 23
+    expresion                      shift and go to state 7
+    variable                       shift and go to state 8
+    condicion1                     shift and go to state 9
+    condicion2                     shift and go to state 10
+    repita                         shift and go to state 11
+    hacer                          shift and go to state 12
+    funcion                        shift and go to state 13
+    llamarProc                     shift and go to state 14
+    variable1                      shift and go to state 15
+    variable2                      shift and go to state 16
+    Aleatorio                      shift and go to state 20
+    Mover                          shift and go to state 21
+    funcionAlge                    shift and go to state 22
 
 state 5
 
@@ -292,11 +292,11 @@ state 6
 
   ! reduce/reduce conflict for FIN resolved using rule 3 (cuerpo -> empty .)
     FIN             reduce using rule 3 (cuerpo -> empty .)
-    DCL             reduce using rule 10 (expresion -> empty .)
     ENCASO          reduce using rule 10 (expresion -> empty .)
     REPITA          reduce using rule 10 (expresion -> empty .)
     DESDE           reduce using rule 10 (expresion -> empty .)
     LLAMAR          reduce using rule 10 (expresion -> empty .)
+    DCL             reduce using rule 10 (expresion -> empty .)
     ALEATORIO       reduce using rule 10 (expresion -> empty .)
     MOVER           reduce using rule 10 (expresion -> empty .)
     INC             reduce using rule 10 (expresion -> empty .)
@@ -308,13 +308,11 @@ state 6
 
 state 7
 
-    (4) cuerpo -> variable . cuerpo
+    (4) cuerpo -> expresion . cuerpo
     (3) cuerpo -> . empty
-    (4) cuerpo -> . variable cuerpo
-    (5) cuerpo -> . expresion cuerpo
+    (4) cuerpo -> . expresion cuerpo
+    (5) cuerpo -> . variable cuerpo
     (68) empty -> .
-    (6) variable -> . variable1
-    (7) variable -> . variable2
     (10) expresion -> . empty
     (11) expresion -> . condicion1 expresion
     (12) expresion -> . condicion2 expresion
@@ -322,8 +320,8 @@ state 7
     (14) expresion -> . hacer expresion
     (15) expresion -> . funcion expresion
     (16) expresion -> . llamarProc expresion
-    (8) variable1 -> . DCL ID PUNTOCOMA
-    (9) variable2 -> . DCL ID DEFAULT NUMERO PUNTOCOMA
+    (6) variable -> . variable1
+    (7) variable -> . variable2
     (17) condicion1 -> . ENCASO cond1Aux1 FINENCASO PUNTOCOMA
     (22) condicion2 -> . ENCASO ID cond2Aux1 FINENCASO PUNTOCOMA
     (35) repita -> . REPITA LLAVE_IZQ expresion LLAVE_DER HASTAENCONTRAR ID condicion sentencia PUNTOCOMA
@@ -332,6 +330,8 @@ state 7
     (38) funcion -> . Mover
     (39) funcion -> . funcionAlge
     (67) llamarProc -> . LLAMAR ID PARENTESIS_IZQ parametro PARENTESIS_DER PUNTOCOMA
+    (8) variable1 -> . DCL ID PUNTOCOMA
+    (9) variable2 -> . DCL ID DEFAULT NUMERO PUNTOCOMA
     (40) Aleatorio -> . ALEATORIO PARENTESIS_IZQ PARENTESIS_DER PUNTOCOMA
     (41) Mover -> . MOVER PARENTESIS_IZQ paramMover PARENTESIS_DER PUNTOCOMA
     (54) funcionAlge -> . INC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA expresion
@@ -341,64 +341,62 @@ state 7
     (58) funcionAlge -> . DEC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA
     (59) funcionAlge -> . INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA
 
-  ! shift/reduce conflict for DCL resolved as shift
   ! shift/reduce conflict for ENCASO resolved as shift
   ! shift/reduce conflict for REPITA resolved as shift
   ! shift/reduce conflict for DESDE resolved as shift
   ! shift/reduce conflict for LLAMAR resolved as shift
+  ! shift/reduce conflict for DCL resolved as shift
   ! shift/reduce conflict for ALEATORIO resolved as shift
   ! shift/reduce conflict for MOVER resolved as shift
   ! shift/reduce conflict for INC resolved as shift
   ! shift/reduce conflict for DEC resolved as shift
   ! shift/reduce conflict for INI resolved as shift
     FIN             reduce using rule 68 (empty -> .)
-    DCL             shift and go to state 17
-    ENCASO          shift and go to state 18
-    REPITA          shift and go to state 19
-    DESDE           shift and go to state 20
-    LLAMAR          shift and go to state 24
+    ENCASO          shift and go to state 17
+    REPITA          shift and go to state 18
+    DESDE           shift and go to state 19
+    LLAMAR          shift and go to state 23
+    DCL             shift and go to state 24
     ALEATORIO       shift and go to state 25
     MOVER           shift and go to state 26
     INC             shift and go to state 27
     DEC             shift and go to state 28
     INI             shift and go to state 29
 
-  ! DCL             [ reduce using rule 68 (empty -> .) ]
   ! ENCASO          [ reduce using rule 68 (empty -> .) ]
   ! REPITA          [ reduce using rule 68 (empty -> .) ]
   ! DESDE           [ reduce using rule 68 (empty -> .) ]
   ! LLAMAR          [ reduce using rule 68 (empty -> .) ]
+  ! DCL             [ reduce using rule 68 (empty -> .) ]
   ! ALEATORIO       [ reduce using rule 68 (empty -> .) ]
   ! MOVER           [ reduce using rule 68 (empty -> .) ]
   ! INC             [ reduce using rule 68 (empty -> .) ]
   ! DEC             [ reduce using rule 68 (empty -> .) ]
   ! INI             [ reduce using rule 68 (empty -> .) ]
 
-    variable                       shift and go to state 7
+    expresion                      shift and go to state 7
     cuerpo                         shift and go to state 31
     empty                          shift and go to state 6
-    expresion                      shift and go to state 8
-    variable1                      shift and go to state 9
-    variable2                      shift and go to state 10
-    condicion1                     shift and go to state 11
-    condicion2                     shift and go to state 12
-    repita                         shift and go to state 13
-    hacer                          shift and go to state 14
-    funcion                        shift and go to state 15
-    llamarProc                     shift and go to state 16
-    Aleatorio                      shift and go to state 21
-    Mover                          shift and go to state 22
-    funcionAlge                    shift and go to state 23
+    variable                       shift and go to state 8
+    condicion1                     shift and go to state 9
+    condicion2                     shift and go to state 10
+    repita                         shift and go to state 11
+    hacer                          shift and go to state 12
+    funcion                        shift and go to state 13
+    llamarProc                     shift and go to state 14
+    variable1                      shift and go to state 15
+    variable2                      shift and go to state 16
+    Aleatorio                      shift and go to state 20
+    Mover                          shift and go to state 21
+    funcionAlge                    shift and go to state 22
 
 state 8
 
-    (5) cuerpo -> expresion . cuerpo
+    (5) cuerpo -> variable . cuerpo
     (3) cuerpo -> . empty
-    (4) cuerpo -> . variable cuerpo
-    (5) cuerpo -> . expresion cuerpo
+    (4) cuerpo -> . expresion cuerpo
+    (5) cuerpo -> . variable cuerpo
     (68) empty -> .
-    (6) variable -> . variable1
-    (7) variable -> . variable2
     (10) expresion -> . empty
     (11) expresion -> . condicion1 expresion
     (12) expresion -> . condicion2 expresion
@@ -406,8 +404,8 @@ state 8
     (14) expresion -> . hacer expresion
     (15) expresion -> . funcion expresion
     (16) expresion -> . llamarProc expresion
-    (8) variable1 -> . DCL ID PUNTOCOMA
-    (9) variable2 -> . DCL ID DEFAULT NUMERO PUNTOCOMA
+    (6) variable -> . variable1
+    (7) variable -> . variable2
     (17) condicion1 -> . ENCASO cond1Aux1 FINENCASO PUNTOCOMA
     (22) condicion2 -> . ENCASO ID cond2Aux1 FINENCASO PUNTOCOMA
     (35) repita -> . REPITA LLAVE_IZQ expresion LLAVE_DER HASTAENCONTRAR ID condicion sentencia PUNTOCOMA
@@ -416,6 +414,8 @@ state 8
     (38) funcion -> . Mover
     (39) funcion -> . funcionAlge
     (67) llamarProc -> . LLAMAR ID PARENTESIS_IZQ parametro PARENTESIS_DER PUNTOCOMA
+    (8) variable1 -> . DCL ID PUNTOCOMA
+    (9) variable2 -> . DCL ID DEFAULT NUMERO PUNTOCOMA
     (40) Aleatorio -> . ALEATORIO PARENTESIS_IZQ PARENTESIS_DER PUNTOCOMA
     (41) Mover -> . MOVER PARENTESIS_IZQ paramMover PARENTESIS_DER PUNTOCOMA
     (54) funcionAlge -> . INC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA expresion
@@ -425,90 +425,56 @@ state 8
     (58) funcionAlge -> . DEC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA
     (59) funcionAlge -> . INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA
 
-  ! shift/reduce conflict for DCL resolved as shift
   ! shift/reduce conflict for ENCASO resolved as shift
   ! shift/reduce conflict for REPITA resolved as shift
   ! shift/reduce conflict for DESDE resolved as shift
   ! shift/reduce conflict for LLAMAR resolved as shift
+  ! shift/reduce conflict for DCL resolved as shift
   ! shift/reduce conflict for ALEATORIO resolved as shift
   ! shift/reduce conflict for MOVER resolved as shift
   ! shift/reduce conflict for INC resolved as shift
   ! shift/reduce conflict for DEC resolved as shift
   ! shift/reduce conflict for INI resolved as shift
     FIN             reduce using rule 68 (empty -> .)
-    DCL             shift and go to state 17
-    ENCASO          shift and go to state 18
-    REPITA          shift and go to state 19
-    DESDE           shift and go to state 20
-    LLAMAR          shift and go to state 24
+    ENCASO          shift and go to state 17
+    REPITA          shift and go to state 18
+    DESDE           shift and go to state 19
+    LLAMAR          shift and go to state 23
+    DCL             shift and go to state 24
     ALEATORIO       shift and go to state 25
     MOVER           shift and go to state 26
     INC             shift and go to state 27
     DEC             shift and go to state 28
     INI             shift and go to state 29
 
-  ! DCL             [ reduce using rule 68 (empty -> .) ]
   ! ENCASO          [ reduce using rule 68 (empty -> .) ]
   ! REPITA          [ reduce using rule 68 (empty -> .) ]
   ! DESDE           [ reduce using rule 68 (empty -> .) ]
   ! LLAMAR          [ reduce using rule 68 (empty -> .) ]
+  ! DCL             [ reduce using rule 68 (empty -> .) ]
   ! ALEATORIO       [ reduce using rule 68 (empty -> .) ]
   ! MOVER           [ reduce using rule 68 (empty -> .) ]
   ! INC             [ reduce using rule 68 (empty -> .) ]
   ! DEC             [ reduce using rule 68 (empty -> .) ]
   ! INI             [ reduce using rule 68 (empty -> .) ]
 
-    expresion                      shift and go to state 8
+    variable                       shift and go to state 8
     cuerpo                         shift and go to state 32
     empty                          shift and go to state 6
-    variable                       shift and go to state 7
-    variable1                      shift and go to state 9
-    variable2                      shift and go to state 10
-    condicion1                     shift and go to state 11
-    condicion2                     shift and go to state 12
-    repita                         shift and go to state 13
-    hacer                          shift and go to state 14
-    funcion                        shift and go to state 15
-    llamarProc                     shift and go to state 16
-    Aleatorio                      shift and go to state 21
-    Mover                          shift and go to state 22
-    funcionAlge                    shift and go to state 23
+    expresion                      shift and go to state 7
+    condicion1                     shift and go to state 9
+    condicion2                     shift and go to state 10
+    repita                         shift and go to state 11
+    hacer                          shift and go to state 12
+    funcion                        shift and go to state 13
+    llamarProc                     shift and go to state 14
+    variable1                      shift and go to state 15
+    variable2                      shift and go to state 16
+    Aleatorio                      shift and go to state 20
+    Mover                          shift and go to state 21
+    funcionAlge                    shift and go to state 22
 
 state 9
-
-    (6) variable -> variable1 .
-
-    DCL             reduce using rule 6 (variable -> variable1 .)
-    ENCASO          reduce using rule 6 (variable -> variable1 .)
-    REPITA          reduce using rule 6 (variable -> variable1 .)
-    DESDE           reduce using rule 6 (variable -> variable1 .)
-    LLAMAR          reduce using rule 6 (variable -> variable1 .)
-    ALEATORIO       reduce using rule 6 (variable -> variable1 .)
-    MOVER           reduce using rule 6 (variable -> variable1 .)
-    INC             reduce using rule 6 (variable -> variable1 .)
-    DEC             reduce using rule 6 (variable -> variable1 .)
-    INI             reduce using rule 6 (variable -> variable1 .)
-    FIN             reduce using rule 6 (variable -> variable1 .)
-
-
-state 10
-
-    (7) variable -> variable2 .
-
-    DCL             reduce using rule 7 (variable -> variable2 .)
-    ENCASO          reduce using rule 7 (variable -> variable2 .)
-    REPITA          reduce using rule 7 (variable -> variable2 .)
-    DESDE           reduce using rule 7 (variable -> variable2 .)
-    LLAMAR          reduce using rule 7 (variable -> variable2 .)
-    ALEATORIO       reduce using rule 7 (variable -> variable2 .)
-    MOVER           reduce using rule 7 (variable -> variable2 .)
-    INC             reduce using rule 7 (variable -> variable2 .)
-    DEC             reduce using rule 7 (variable -> variable2 .)
-    INI             reduce using rule 7 (variable -> variable2 .)
-    FIN             reduce using rule 7 (variable -> variable2 .)
-
-
-state 11
 
     (11) expresion -> condicion1 . expresion
     (10) expresion -> . empty
@@ -549,10 +515,10 @@ state 11
     FIN             reduce using rule 68 (empty -> .)
     LLAVE_DER       reduce using rule 68 (empty -> .)
     FINPROC         reduce using rule 68 (empty -> .)
-    ENCASO          shift and go to state 18
-    REPITA          shift and go to state 19
-    DESDE           shift and go to state 20
-    LLAMAR          shift and go to state 24
+    ENCASO          shift and go to state 17
+    REPITA          shift and go to state 18
+    DESDE           shift and go to state 19
+    LLAMAR          shift and go to state 23
     ALEATORIO       shift and go to state 25
     MOVER           shift and go to state 26
     INC             shift and go to state 27
@@ -569,19 +535,19 @@ state 11
   ! DEC             [ reduce using rule 68 (empty -> .) ]
   ! INI             [ reduce using rule 68 (empty -> .) ]
 
-    condicion1                     shift and go to state 11
+    condicion1                     shift and go to state 9
     expresion                      shift and go to state 33
     empty                          shift and go to state 34
-    condicion2                     shift and go to state 12
-    repita                         shift and go to state 13
-    hacer                          shift and go to state 14
-    funcion                        shift and go to state 15
-    llamarProc                     shift and go to state 16
-    Aleatorio                      shift and go to state 21
-    Mover                          shift and go to state 22
-    funcionAlge                    shift and go to state 23
+    condicion2                     shift and go to state 10
+    repita                         shift and go to state 11
+    hacer                          shift and go to state 12
+    funcion                        shift and go to state 13
+    llamarProc                     shift and go to state 14
+    Aleatorio                      shift and go to state 20
+    Mover                          shift and go to state 21
+    funcionAlge                    shift and go to state 22
 
-state 12
+state 10
 
     (12) expresion -> condicion2 . expresion
     (10) expresion -> . empty
@@ -622,10 +588,10 @@ state 12
     FIN             reduce using rule 68 (empty -> .)
     LLAVE_DER       reduce using rule 68 (empty -> .)
     FINPROC         reduce using rule 68 (empty -> .)
-    ENCASO          shift and go to state 18
-    REPITA          shift and go to state 19
-    DESDE           shift and go to state 20
-    LLAMAR          shift and go to state 24
+    ENCASO          shift and go to state 17
+    REPITA          shift and go to state 18
+    DESDE           shift and go to state 19
+    LLAMAR          shift and go to state 23
     ALEATORIO       shift and go to state 25
     MOVER           shift and go to state 26
     INC             shift and go to state 27
@@ -642,19 +608,19 @@ state 12
   ! DEC             [ reduce using rule 68 (empty -> .) ]
   ! INI             [ reduce using rule 68 (empty -> .) ]
 
-    condicion2                     shift and go to state 12
+    condicion2                     shift and go to state 10
     expresion                      shift and go to state 35
     empty                          shift and go to state 34
-    condicion1                     shift and go to state 11
-    repita                         shift and go to state 13
-    hacer                          shift and go to state 14
-    funcion                        shift and go to state 15
-    llamarProc                     shift and go to state 16
-    Aleatorio                      shift and go to state 21
-    Mover                          shift and go to state 22
-    funcionAlge                    shift and go to state 23
+    condicion1                     shift and go to state 9
+    repita                         shift and go to state 11
+    hacer                          shift and go to state 12
+    funcion                        shift and go to state 13
+    llamarProc                     shift and go to state 14
+    Aleatorio                      shift and go to state 20
+    Mover                          shift and go to state 21
+    funcionAlge                    shift and go to state 22
 
-state 13
+state 11
 
     (13) expresion -> repita . expresion
     (10) expresion -> . empty
@@ -695,10 +661,10 @@ state 13
     FIN             reduce using rule 68 (empty -> .)
     LLAVE_DER       reduce using rule 68 (empty -> .)
     FINPROC         reduce using rule 68 (empty -> .)
-    ENCASO          shift and go to state 18
-    REPITA          shift and go to state 19
-    DESDE           shift and go to state 20
-    LLAMAR          shift and go to state 24
+    ENCASO          shift and go to state 17
+    REPITA          shift and go to state 18
+    DESDE           shift and go to state 19
+    LLAMAR          shift and go to state 23
     ALEATORIO       shift and go to state 25
     MOVER           shift and go to state 26
     INC             shift and go to state 27
@@ -715,19 +681,19 @@ state 13
   ! DEC             [ reduce using rule 68 (empty -> .) ]
   ! INI             [ reduce using rule 68 (empty -> .) ]
 
-    repita                         shift and go to state 13
+    repita                         shift and go to state 11
     expresion                      shift and go to state 36
     empty                          shift and go to state 34
-    condicion1                     shift and go to state 11
-    condicion2                     shift and go to state 12
-    hacer                          shift and go to state 14
-    funcion                        shift and go to state 15
-    llamarProc                     shift and go to state 16
-    Aleatorio                      shift and go to state 21
-    Mover                          shift and go to state 22
-    funcionAlge                    shift and go to state 23
+    condicion1                     shift and go to state 9
+    condicion2                     shift and go to state 10
+    hacer                          shift and go to state 12
+    funcion                        shift and go to state 13
+    llamarProc                     shift and go to state 14
+    Aleatorio                      shift and go to state 20
+    Mover                          shift and go to state 21
+    funcionAlge                    shift and go to state 22
 
-state 14
+state 12
 
     (14) expresion -> hacer . expresion
     (10) expresion -> . empty
@@ -768,10 +734,10 @@ state 14
     FIN             reduce using rule 68 (empty -> .)
     LLAVE_DER       reduce using rule 68 (empty -> .)
     FINPROC         reduce using rule 68 (empty -> .)
-    ENCASO          shift and go to state 18
-    REPITA          shift and go to state 19
-    DESDE           shift and go to state 20
-    LLAMAR          shift and go to state 24
+    ENCASO          shift and go to state 17
+    REPITA          shift and go to state 18
+    DESDE           shift and go to state 19
+    LLAMAR          shift and go to state 23
     ALEATORIO       shift and go to state 25
     MOVER           shift and go to state 26
     INC             shift and go to state 27
@@ -788,19 +754,19 @@ state 14
   ! DEC             [ reduce using rule 68 (empty -> .) ]
   ! INI             [ reduce using rule 68 (empty -> .) ]
 
-    hacer                          shift and go to state 14
+    hacer                          shift and go to state 12
     expresion                      shift and go to state 37
     empty                          shift and go to state 34
-    condicion1                     shift and go to state 11
-    condicion2                     shift and go to state 12
-    repita                         shift and go to state 13
-    funcion                        shift and go to state 15
-    llamarProc                     shift and go to state 16
-    Aleatorio                      shift and go to state 21
-    Mover                          shift and go to state 22
-    funcionAlge                    shift and go to state 23
+    condicion1                     shift and go to state 9
+    condicion2                     shift and go to state 10
+    repita                         shift and go to state 11
+    funcion                        shift and go to state 13
+    llamarProc                     shift and go to state 14
+    Aleatorio                      shift and go to state 20
+    Mover                          shift and go to state 21
+    funcionAlge                    shift and go to state 22
 
-state 15
+state 13
 
     (15) expresion -> funcion . expresion
     (10) expresion -> . empty
@@ -841,10 +807,10 @@ state 15
     FIN             reduce using rule 68 (empty -> .)
     LLAVE_DER       reduce using rule 68 (empty -> .)
     FINPROC         reduce using rule 68 (empty -> .)
-    ENCASO          shift and go to state 18
-    REPITA          shift and go to state 19
-    DESDE           shift and go to state 20
-    LLAMAR          shift and go to state 24
+    ENCASO          shift and go to state 17
+    REPITA          shift and go to state 18
+    DESDE           shift and go to state 19
+    LLAMAR          shift and go to state 23
     ALEATORIO       shift and go to state 25
     MOVER           shift and go to state 26
     INC             shift and go to state 27
@@ -861,19 +827,19 @@ state 15
   ! DEC             [ reduce using rule 68 (empty -> .) ]
   ! INI             [ reduce using rule 68 (empty -> .) ]
 
-    funcion                        shift and go to state 15
+    funcion                        shift and go to state 13
     expresion                      shift and go to state 38
     empty                          shift and go to state 34
-    condicion1                     shift and go to state 11
-    condicion2                     shift and go to state 12
-    repita                         shift and go to state 13
-    hacer                          shift and go to state 14
-    llamarProc                     shift and go to state 16
-    Aleatorio                      shift and go to state 21
-    Mover                          shift and go to state 22
-    funcionAlge                    shift and go to state 23
+    condicion1                     shift and go to state 9
+    condicion2                     shift and go to state 10
+    repita                         shift and go to state 11
+    hacer                          shift and go to state 12
+    llamarProc                     shift and go to state 14
+    Aleatorio                      shift and go to state 20
+    Mover                          shift and go to state 21
+    funcionAlge                    shift and go to state 22
 
-state 16
+state 14
 
     (16) expresion -> llamarProc . expresion
     (10) expresion -> . empty
@@ -914,10 +880,10 @@ state 16
     FIN             reduce using rule 68 (empty -> .)
     LLAVE_DER       reduce using rule 68 (empty -> .)
     FINPROC         reduce using rule 68 (empty -> .)
-    ENCASO          shift and go to state 18
-    REPITA          shift and go to state 19
-    DESDE           shift and go to state 20
-    LLAMAR          shift and go to state 24
+    ENCASO          shift and go to state 17
+    REPITA          shift and go to state 18
+    DESDE           shift and go to state 19
+    LLAMAR          shift and go to state 23
     ALEATORIO       shift and go to state 25
     MOVER           shift and go to state 26
     INC             shift and go to state 27
@@ -934,27 +900,53 @@ state 16
   ! DEC             [ reduce using rule 68 (empty -> .) ]
   ! INI             [ reduce using rule 68 (empty -> .) ]
 
-    llamarProc                     shift and go to state 16
+    llamarProc                     shift and go to state 14
     expresion                      shift and go to state 39
     empty                          shift and go to state 34
-    condicion1                     shift and go to state 11
-    condicion2                     shift and go to state 12
-    repita                         shift and go to state 13
-    hacer                          shift and go to state 14
-    funcion                        shift and go to state 15
-    Aleatorio                      shift and go to state 21
-    Mover                          shift and go to state 22
-    funcionAlge                    shift and go to state 23
+    condicion1                     shift and go to state 9
+    condicion2                     shift and go to state 10
+    repita                         shift and go to state 11
+    hacer                          shift and go to state 12
+    funcion                        shift and go to state 13
+    Aleatorio                      shift and go to state 20
+    Mover                          shift and go to state 21
+    funcionAlge                    shift and go to state 22
+
+state 15
+
+    (6) variable -> variable1 .
+
+    ENCASO          reduce using rule 6 (variable -> variable1 .)
+    REPITA          reduce using rule 6 (variable -> variable1 .)
+    DESDE           reduce using rule 6 (variable -> variable1 .)
+    LLAMAR          reduce using rule 6 (variable -> variable1 .)
+    DCL             reduce using rule 6 (variable -> variable1 .)
+    ALEATORIO       reduce using rule 6 (variable -> variable1 .)
+    MOVER           reduce using rule 6 (variable -> variable1 .)
+    INC             reduce using rule 6 (variable -> variable1 .)
+    DEC             reduce using rule 6 (variable -> variable1 .)
+    INI             reduce using rule 6 (variable -> variable1 .)
+    FIN             reduce using rule 6 (variable -> variable1 .)
+
+
+state 16
+
+    (7) variable -> variable2 .
+
+    ENCASO          reduce using rule 7 (variable -> variable2 .)
+    REPITA          reduce using rule 7 (variable -> variable2 .)
+    DESDE           reduce using rule 7 (variable -> variable2 .)
+    LLAMAR          reduce using rule 7 (variable -> variable2 .)
+    DCL             reduce using rule 7 (variable -> variable2 .)
+    ALEATORIO       reduce using rule 7 (variable -> variable2 .)
+    MOVER           reduce using rule 7 (variable -> variable2 .)
+    INC             reduce using rule 7 (variable -> variable2 .)
+    DEC             reduce using rule 7 (variable -> variable2 .)
+    INI             reduce using rule 7 (variable -> variable2 .)
+    FIN             reduce using rule 7 (variable -> variable2 .)
+
 
 state 17
-
-    (8) variable1 -> DCL . ID PUNTOCOMA
-    (9) variable2 -> DCL . ID DEFAULT NUMERO PUNTOCOMA
-
-    ID              shift and go to state 40
-
-
-state 18
 
     (17) condicion1 -> ENCASO . cond1Aux1 FINENCASO PUNTOCOMA
     (22) condicion2 -> ENCASO . ID cond2Aux1 FINENCASO PUNTOCOMA
@@ -964,30 +956,30 @@ state 18
     (21) cond1Aux2 -> . CUANDO ID condicion sentencia ENTONS LLAVE_IZQ expresion LLAVE_DER cond1Aux2
     (68) empty -> .
 
-    ID              shift and go to state 42
-    CUANDO          shift and go to state 45
+    ID              shift and go to state 41
+    CUANDO          shift and go to state 44
     FINENCASO       reduce using rule 68 (empty -> .)
     SINO            reduce using rule 68 (empty -> .)
 
-    cond1Aux1                      shift and go to state 41
-    cond1Aux2                      shift and go to state 43
-    empty                          shift and go to state 44
+    cond1Aux1                      shift and go to state 40
+    cond1Aux2                      shift and go to state 42
+    empty                          shift and go to state 43
 
-state 19
+state 18
 
     (35) repita -> REPITA . LLAVE_IZQ expresion LLAVE_DER HASTAENCONTRAR ID condicion sentencia PUNTOCOMA
 
-    LLAVE_IZQ       shift and go to state 46
+    LLAVE_IZQ       shift and go to state 45
 
 
-state 20
+state 19
 
     (36) hacer -> DESDE . ID IGUAL sentencia HASTA sentencia HAGA LLAVE_IZQ expresion LLAVE_DER FINDESDE PUNTOCOMA
 
-    ID              shift and go to state 47
+    ID              shift and go to state 46
 
 
-state 21
+state 20
 
     (37) funcion -> Aleatorio .
 
@@ -1006,7 +998,7 @@ state 21
     FINPROC         reduce using rule 37 (funcion -> Aleatorio .)
 
 
-state 22
+state 21
 
     (38) funcion -> Mover .
 
@@ -1025,7 +1017,7 @@ state 22
     FINPROC         reduce using rule 38 (funcion -> Mover .)
 
 
-state 23
+state 22
 
     (39) funcion -> funcionAlge .
 
@@ -1044,9 +1036,17 @@ state 23
     FINPROC         reduce using rule 39 (funcion -> funcionAlge .)
 
 
-state 24
+state 23
 
     (67) llamarProc -> LLAMAR . ID PARENTESIS_IZQ parametro PARENTESIS_DER PUNTOCOMA
+
+    ID              shift and go to state 47
+
+
+state 24
+
+    (8) variable1 -> DCL . ID PUNTOCOMA
+    (9) variable2 -> DCL . ID DEFAULT NUMERO PUNTOCOMA
 
     ID              shift and go to state 48
 
@@ -1098,27 +1098,27 @@ state 30
 
 state 31
 
-    (4) cuerpo -> variable cuerpo .
+    (4) cuerpo -> expresion cuerpo .
 
-    FIN             reduce using rule 4 (cuerpo -> variable cuerpo .)
+    FIN             reduce using rule 4 (cuerpo -> expresion cuerpo .)
 
 
 state 32
 
-    (5) cuerpo -> expresion cuerpo .
+    (5) cuerpo -> variable cuerpo .
 
-    FIN             reduce using rule 5 (cuerpo -> expresion cuerpo .)
+    FIN             reduce using rule 5 (cuerpo -> variable cuerpo .)
 
 
 state 33
 
     (11) expresion -> condicion1 expresion .
 
-    DCL             reduce using rule 11 (expresion -> condicion1 expresion .)
     ENCASO          reduce using rule 11 (expresion -> condicion1 expresion .)
     REPITA          reduce using rule 11 (expresion -> condicion1 expresion .)
     DESDE           reduce using rule 11 (expresion -> condicion1 expresion .)
     LLAMAR          reduce using rule 11 (expresion -> condicion1 expresion .)
+    DCL             reduce using rule 11 (expresion -> condicion1 expresion .)
     ALEATORIO       reduce using rule 11 (expresion -> condicion1 expresion .)
     MOVER           reduce using rule 11 (expresion -> condicion1 expresion .)
     INC             reduce using rule 11 (expresion -> condicion1 expresion .)
@@ -1133,11 +1133,11 @@ state 34
 
     (10) expresion -> empty .
 
-    DCL             reduce using rule 10 (expresion -> empty .)
     ENCASO          reduce using rule 10 (expresion -> empty .)
     REPITA          reduce using rule 10 (expresion -> empty .)
     DESDE           reduce using rule 10 (expresion -> empty .)
     LLAMAR          reduce using rule 10 (expresion -> empty .)
+    DCL             reduce using rule 10 (expresion -> empty .)
     ALEATORIO       reduce using rule 10 (expresion -> empty .)
     MOVER           reduce using rule 10 (expresion -> empty .)
     INC             reduce using rule 10 (expresion -> empty .)
@@ -1152,11 +1152,11 @@ state 35
 
     (12) expresion -> condicion2 expresion .
 
-    DCL             reduce using rule 12 (expresion -> condicion2 expresion .)
     ENCASO          reduce using rule 12 (expresion -> condicion2 expresion .)
     REPITA          reduce using rule 12 (expresion -> condicion2 expresion .)
     DESDE           reduce using rule 12 (expresion -> condicion2 expresion .)
     LLAMAR          reduce using rule 12 (expresion -> condicion2 expresion .)
+    DCL             reduce using rule 12 (expresion -> condicion2 expresion .)
     ALEATORIO       reduce using rule 12 (expresion -> condicion2 expresion .)
     MOVER           reduce using rule 12 (expresion -> condicion2 expresion .)
     INC             reduce using rule 12 (expresion -> condicion2 expresion .)
@@ -1171,11 +1171,11 @@ state 36
 
     (13) expresion -> repita expresion .
 
-    DCL             reduce using rule 13 (expresion -> repita expresion .)
     ENCASO          reduce using rule 13 (expresion -> repita expresion .)
     REPITA          reduce using rule 13 (expresion -> repita expresion .)
     DESDE           reduce using rule 13 (expresion -> repita expresion .)
     LLAMAR          reduce using rule 13 (expresion -> repita expresion .)
+    DCL             reduce using rule 13 (expresion -> repita expresion .)
     ALEATORIO       reduce using rule 13 (expresion -> repita expresion .)
     MOVER           reduce using rule 13 (expresion -> repita expresion .)
     INC             reduce using rule 13 (expresion -> repita expresion .)
@@ -1190,11 +1190,11 @@ state 37
 
     (14) expresion -> hacer expresion .
 
-    DCL             reduce using rule 14 (expresion -> hacer expresion .)
     ENCASO          reduce using rule 14 (expresion -> hacer expresion .)
     REPITA          reduce using rule 14 (expresion -> hacer expresion .)
     DESDE           reduce using rule 14 (expresion -> hacer expresion .)
     LLAMAR          reduce using rule 14 (expresion -> hacer expresion .)
+    DCL             reduce using rule 14 (expresion -> hacer expresion .)
     ALEATORIO       reduce using rule 14 (expresion -> hacer expresion .)
     MOVER           reduce using rule 14 (expresion -> hacer expresion .)
     INC             reduce using rule 14 (expresion -> hacer expresion .)
@@ -1209,11 +1209,11 @@ state 38
 
     (15) expresion -> funcion expresion .
 
-    DCL             reduce using rule 15 (expresion -> funcion expresion .)
     ENCASO          reduce using rule 15 (expresion -> funcion expresion .)
     REPITA          reduce using rule 15 (expresion -> funcion expresion .)
     DESDE           reduce using rule 15 (expresion -> funcion expresion .)
     LLAMAR          reduce using rule 15 (expresion -> funcion expresion .)
+    DCL             reduce using rule 15 (expresion -> funcion expresion .)
     ALEATORIO       reduce using rule 15 (expresion -> funcion expresion .)
     MOVER           reduce using rule 15 (expresion -> funcion expresion .)
     INC             reduce using rule 15 (expresion -> funcion expresion .)
@@ -1228,11 +1228,11 @@ state 39
 
     (16) expresion -> llamarProc expresion .
 
-    DCL             reduce using rule 16 (expresion -> llamarProc expresion .)
     ENCASO          reduce using rule 16 (expresion -> llamarProc expresion .)
     REPITA          reduce using rule 16 (expresion -> llamarProc expresion .)
     DESDE           reduce using rule 16 (expresion -> llamarProc expresion .)
     LLAMAR          reduce using rule 16 (expresion -> llamarProc expresion .)
+    DCL             reduce using rule 16 (expresion -> llamarProc expresion .)
     ALEATORIO       reduce using rule 16 (expresion -> llamarProc expresion .)
     MOVER           reduce using rule 16 (expresion -> llamarProc expresion .)
     INC             reduce using rule 16 (expresion -> llamarProc expresion .)
@@ -1245,21 +1245,12 @@ state 39
 
 state 40
 
-    (8) variable1 -> DCL ID . PUNTOCOMA
-    (9) variable2 -> DCL ID . DEFAULT NUMERO PUNTOCOMA
+    (17) condicion1 -> ENCASO cond1Aux1 . FINENCASO PUNTOCOMA
 
-    PUNTOCOMA       shift and go to state 55
-    DEFAULT         shift and go to state 56
+    FINENCASO       shift and go to state 55
 
 
 state 41
-
-    (17) condicion1 -> ENCASO cond1Aux1 . FINENCASO PUNTOCOMA
-
-    FINENCASO       shift and go to state 57
-
-
-state 42
 
     (22) condicion2 -> ENCASO ID . cond2Aux1 FINENCASO PUNTOCOMA
     (23) cond2Aux1 -> . cond2Aux2 SINO LLAVE_IZQ expresion LLAVE_DER
@@ -1268,22 +1259,22 @@ state 42
     (26) cond2Aux2 -> . CUANDO condicion sentencia ENTONS LLAVE_IZQ expresion LLAVE_DER cond2Aux2
     (68) empty -> .
 
-    CUANDO          shift and go to state 61
+    CUANDO          shift and go to state 59
     FINENCASO       reduce using rule 68 (empty -> .)
     SINO            reduce using rule 68 (empty -> .)
 
-    cond2Aux1                      shift and go to state 58
-    cond2Aux2                      shift and go to state 59
-    empty                          shift and go to state 60
+    cond2Aux1                      shift and go to state 56
+    cond2Aux2                      shift and go to state 57
+    empty                          shift and go to state 58
 
-state 43
+state 42
 
     (18) cond1Aux1 -> cond1Aux2 . SINO LLAVE_IZQ expresion LLAVE_DER
 
-    SINO            shift and go to state 62
+    SINO            shift and go to state 60
 
 
-state 44
+state 43
 
     (19) cond1Aux1 -> empty . empty empty empty empty
     (20) cond1Aux2 -> empty .
@@ -1292,16 +1283,16 @@ state 44
     SINO            reduce using rule 20 (cond1Aux2 -> empty .)
     FINENCASO       reduce using rule 68 (empty -> .)
 
-    empty                          shift and go to state 63
+    empty                          shift and go to state 61
 
-state 45
+state 44
 
     (21) cond1Aux2 -> CUANDO . ID condicion sentencia ENTONS LLAVE_IZQ expresion LLAVE_DER cond1Aux2
 
-    ID              shift and go to state 64
+    ID              shift and go to state 62
 
 
-state 46
+state 45
 
     (35) repita -> REPITA LLAVE_IZQ . expresion LLAVE_DER HASTAENCONTRAR ID condicion sentencia PUNTOCOMA
     (10) expresion -> . empty
@@ -1330,40 +1321,49 @@ state 46
     (59) funcionAlge -> . INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA
 
     LLAVE_DER       reduce using rule 68 (empty -> .)
-    ENCASO          shift and go to state 18
-    REPITA          shift and go to state 19
-    DESDE           shift and go to state 20
-    LLAMAR          shift and go to state 24
+    ENCASO          shift and go to state 17
+    REPITA          shift and go to state 18
+    DESDE           shift and go to state 19
+    LLAMAR          shift and go to state 23
     ALEATORIO       shift and go to state 25
     MOVER           shift and go to state 26
     INC             shift and go to state 27
     DEC             shift and go to state 28
     INI             shift and go to state 29
 
-    expresion                      shift and go to state 65
+    expresion                      shift and go to state 63
     empty                          shift and go to state 34
-    condicion1                     shift and go to state 11
-    condicion2                     shift and go to state 12
-    repita                         shift and go to state 13
-    hacer                          shift and go to state 14
-    funcion                        shift and go to state 15
-    llamarProc                     shift and go to state 16
-    Aleatorio                      shift and go to state 21
-    Mover                          shift and go to state 22
-    funcionAlge                    shift and go to state 23
+    condicion1                     shift and go to state 9
+    condicion2                     shift and go to state 10
+    repita                         shift and go to state 11
+    hacer                          shift and go to state 12
+    funcion                        shift and go to state 13
+    llamarProc                     shift and go to state 14
+    Aleatorio                      shift and go to state 20
+    Mover                          shift and go to state 21
+    funcionAlge                    shift and go to state 22
 
-state 47
+state 46
 
     (36) hacer -> DESDE ID . IGUAL sentencia HASTA sentencia HAGA LLAVE_IZQ expresion LLAVE_DER FINDESDE PUNTOCOMA
 
-    IGUAL           shift and go to state 66
+    IGUAL           shift and go to state 64
+
+
+state 47
+
+    (67) llamarProc -> LLAMAR ID . PARENTESIS_IZQ parametro PARENTESIS_DER PUNTOCOMA
+
+    PARENTESIS_IZQ  shift and go to state 65
 
 
 state 48
 
-    (67) llamarProc -> LLAMAR ID . PARENTESIS_IZQ parametro PARENTESIS_DER PUNTOCOMA
+    (8) variable1 -> DCL ID . PUNTOCOMA
+    (9) variable2 -> DCL ID . DEFAULT NUMERO PUNTOCOMA
 
-    PARENTESIS_IZQ  shift and go to state 67
+    PUNTOCOMA       shift and go to state 66
+    DEFAULT         shift and go to state 67
 
 
 state 49
@@ -1443,50 +1443,26 @@ state 54
 
 state 55
 
-    (8) variable1 -> DCL ID PUNTOCOMA .
+    (17) condicion1 -> ENCASO cond1Aux1 FINENCASO . PUNTOCOMA
 
-    DCL             reduce using rule 8 (variable1 -> DCL ID PUNTOCOMA .)
-    ENCASO          reduce using rule 8 (variable1 -> DCL ID PUNTOCOMA .)
-    REPITA          reduce using rule 8 (variable1 -> DCL ID PUNTOCOMA .)
-    DESDE           reduce using rule 8 (variable1 -> DCL ID PUNTOCOMA .)
-    LLAMAR          reduce using rule 8 (variable1 -> DCL ID PUNTOCOMA .)
-    ALEATORIO       reduce using rule 8 (variable1 -> DCL ID PUNTOCOMA .)
-    MOVER           reduce using rule 8 (variable1 -> DCL ID PUNTOCOMA .)
-    INC             reduce using rule 8 (variable1 -> DCL ID PUNTOCOMA .)
-    DEC             reduce using rule 8 (variable1 -> DCL ID PUNTOCOMA .)
-    INI             reduce using rule 8 (variable1 -> DCL ID PUNTOCOMA .)
-    FIN             reduce using rule 8 (variable1 -> DCL ID PUNTOCOMA .)
+    PUNTOCOMA       shift and go to state 88
 
 
 state 56
 
-    (9) variable2 -> DCL ID DEFAULT . NUMERO PUNTOCOMA
+    (22) condicion2 -> ENCASO ID cond2Aux1 . FINENCASO PUNTOCOMA
 
-    NUMERO          shift and go to state 88
+    FINENCASO       shift and go to state 89
 
 
 state 57
 
-    (17) condicion1 -> ENCASO cond1Aux1 FINENCASO . PUNTOCOMA
+    (23) cond2Aux1 -> cond2Aux2 . SINO LLAVE_IZQ expresion LLAVE_DER
 
-    PUNTOCOMA       shift and go to state 89
+    SINO            shift and go to state 90
 
 
 state 58
-
-    (22) condicion2 -> ENCASO ID cond2Aux1 . FINENCASO PUNTOCOMA
-
-    FINENCASO       shift and go to state 90
-
-
-state 59
-
-    (23) cond2Aux1 -> cond2Aux2 . SINO LLAVE_IZQ expresion LLAVE_DER
-
-    SINO            shift and go to state 91
-
-
-state 60
 
     (24) cond2Aux1 -> empty . empty empty empty empty
     (25) cond2Aux2 -> empty .
@@ -1495,9 +1471,9 @@ state 60
     SINO            reduce using rule 25 (cond2Aux2 -> empty .)
     FINENCASO       reduce using rule 68 (empty -> .)
 
-    empty                          shift and go to state 92
+    empty                          shift and go to state 91
 
-state 61
+state 59
 
     (26) cond2Aux2 -> CUANDO . condicion sentencia ENTONS LLAVE_IZQ expresion LLAVE_DER cond2Aux2
     (27) condicion -> . IGUAL
@@ -1507,32 +1483,32 @@ state 61
     (31) condicion -> . MAYORIGUAL
     (32) condicion -> . MENORIGUAL
 
-    IGUAL           shift and go to state 94
-    MAYOR           shift and go to state 95
-    MENOR           shift and go to state 96
-    DIFERENTE       shift and go to state 97
-    MAYORIGUAL      shift and go to state 98
-    MENORIGUAL      shift and go to state 99
+    IGUAL           shift and go to state 93
+    MAYOR           shift and go to state 94
+    MENOR           shift and go to state 95
+    DIFERENTE       shift and go to state 96
+    MAYORIGUAL      shift and go to state 97
+    MENORIGUAL      shift and go to state 98
 
-    condicion                      shift and go to state 93
+    condicion                      shift and go to state 92
 
-state 62
+state 60
 
     (18) cond1Aux1 -> cond1Aux2 SINO . LLAVE_IZQ expresion LLAVE_DER
 
-    LLAVE_IZQ       shift and go to state 100
+    LLAVE_IZQ       shift and go to state 99
 
 
-state 63
+state 61
 
     (19) cond1Aux1 -> empty empty . empty empty empty
     (68) empty -> .
 
     FINENCASO       reduce using rule 68 (empty -> .)
 
-    empty                          shift and go to state 101
+    empty                          shift and go to state 100
 
-state 64
+state 62
 
     (21) cond1Aux2 -> CUANDO ID . condicion sentencia ENTONS LLAVE_IZQ expresion LLAVE_DER cond1Aux2
     (27) condicion -> . IGUAL
@@ -1542,34 +1518,34 @@ state 64
     (31) condicion -> . MAYORIGUAL
     (32) condicion -> . MENORIGUAL
 
-    IGUAL           shift and go to state 94
-    MAYOR           shift and go to state 95
-    MENOR           shift and go to state 96
-    DIFERENTE       shift and go to state 97
-    MAYORIGUAL      shift and go to state 98
-    MENORIGUAL      shift and go to state 99
+    IGUAL           shift and go to state 93
+    MAYOR           shift and go to state 94
+    MENOR           shift and go to state 95
+    DIFERENTE       shift and go to state 96
+    MAYORIGUAL      shift and go to state 97
+    MENORIGUAL      shift and go to state 98
 
-    condicion                      shift and go to state 102
+    condicion                      shift and go to state 101
 
-state 65
+state 63
 
     (35) repita -> REPITA LLAVE_IZQ expresion . LLAVE_DER HASTAENCONTRAR ID condicion sentencia PUNTOCOMA
 
-    LLAVE_DER       shift and go to state 103
+    LLAVE_DER       shift and go to state 102
 
 
-state 66
+state 64
 
     (36) hacer -> DESDE ID IGUAL . sentencia HASTA sentencia HAGA LLAVE_IZQ expresion LLAVE_DER FINDESDE PUNTOCOMA
     (33) sentencia -> . ID
     (34) sentencia -> . NUMERO
 
-    ID              shift and go to state 104
-    NUMERO          shift and go to state 106
+    ID              shift and go to state 103
+    NUMERO          shift and go to state 105
 
-    sentencia                      shift and go to state 105
+    sentencia                      shift and go to state 104
 
-state 67
+state 65
 
     (67) llamarProc -> LLAMAR ID PARENTESIS_IZQ . parametro PARENTESIS_DER PUNTOCOMA
     (62) parametro -> . ID COMA parametro
@@ -1579,12 +1555,36 @@ state 67
     (66) parametro -> . empty empty empty
     (68) empty -> .
 
-    ID              shift and go to state 107
-    NUMERO          shift and go to state 110
+    ID              shift and go to state 106
+    NUMERO          shift and go to state 109
     PARENTESIS_DER  reduce using rule 68 (empty -> .)
 
-    parametro                      shift and go to state 108
-    empty                          shift and go to state 109
+    parametro                      shift and go to state 107
+    empty                          shift and go to state 108
+
+state 66
+
+    (8) variable1 -> DCL ID PUNTOCOMA .
+
+    ENCASO          reduce using rule 8 (variable1 -> DCL ID PUNTOCOMA .)
+    REPITA          reduce using rule 8 (variable1 -> DCL ID PUNTOCOMA .)
+    DESDE           reduce using rule 8 (variable1 -> DCL ID PUNTOCOMA .)
+    LLAMAR          reduce using rule 8 (variable1 -> DCL ID PUNTOCOMA .)
+    DCL             reduce using rule 8 (variable1 -> DCL ID PUNTOCOMA .)
+    ALEATORIO       reduce using rule 8 (variable1 -> DCL ID PUNTOCOMA .)
+    MOVER           reduce using rule 8 (variable1 -> DCL ID PUNTOCOMA .)
+    INC             reduce using rule 8 (variable1 -> DCL ID PUNTOCOMA .)
+    DEC             reduce using rule 8 (variable1 -> DCL ID PUNTOCOMA .)
+    INI             reduce using rule 8 (variable1 -> DCL ID PUNTOCOMA .)
+    FIN             reduce using rule 8 (variable1 -> DCL ID PUNTOCOMA .)
+
+
+state 67
+
+    (9) variable2 -> DCL ID DEFAULT . NUMERO PUNTOCOMA
+
+    NUMERO          shift and go to state 110
+
 
 state 68
 
@@ -1733,13 +1733,6 @@ state 87
 
 state 88
 
-    (9) variable2 -> DCL ID DEFAULT NUMERO . PUNTOCOMA
-
-    PUNTOCOMA       shift and go to state 118
-
-
-state 89
-
     (17) condicion1 -> ENCASO cond1Aux1 FINENCASO PUNTOCOMA .
 
     ENCASO          reduce using rule 17 (condicion1 -> ENCASO cond1Aux1 FINENCASO PUNTOCOMA .)
@@ -1757,41 +1750,41 @@ state 89
     FINPROC         reduce using rule 17 (condicion1 -> ENCASO cond1Aux1 FINENCASO PUNTOCOMA .)
 
 
-state 90
+state 89
 
     (22) condicion2 -> ENCASO ID cond2Aux1 FINENCASO . PUNTOCOMA
 
-    PUNTOCOMA       shift and go to state 119
+    PUNTOCOMA       shift and go to state 118
 
 
-state 91
+state 90
 
     (23) cond2Aux1 -> cond2Aux2 SINO . LLAVE_IZQ expresion LLAVE_DER
 
-    LLAVE_IZQ       shift and go to state 120
+    LLAVE_IZQ       shift and go to state 119
 
 
-state 92
+state 91
 
     (24) cond2Aux1 -> empty empty . empty empty empty
     (68) empty -> .
 
     FINENCASO       reduce using rule 68 (empty -> .)
 
-    empty                          shift and go to state 121
+    empty                          shift and go to state 120
 
-state 93
+state 92
 
     (26) cond2Aux2 -> CUANDO condicion . sentencia ENTONS LLAVE_IZQ expresion LLAVE_DER cond2Aux2
     (33) sentencia -> . ID
     (34) sentencia -> . NUMERO
 
-    ID              shift and go to state 104
-    NUMERO          shift and go to state 106
+    ID              shift and go to state 103
+    NUMERO          shift and go to state 105
 
-    sentencia                      shift and go to state 122
+    sentencia                      shift and go to state 121
 
-state 94
+state 93
 
     (27) condicion -> IGUAL .
 
@@ -1799,7 +1792,7 @@ state 94
     NUMERO          reduce using rule 27 (condicion -> IGUAL .)
 
 
-state 95
+state 94
 
     (28) condicion -> MAYOR .
 
@@ -1807,7 +1800,7 @@ state 95
     NUMERO          reduce using rule 28 (condicion -> MAYOR .)
 
 
-state 96
+state 95
 
     (29) condicion -> MENOR .
 
@@ -1815,7 +1808,7 @@ state 96
     NUMERO          reduce using rule 29 (condicion -> MENOR .)
 
 
-state 97
+state 96
 
     (30) condicion -> DIFERENTE .
 
@@ -1823,7 +1816,7 @@ state 97
     NUMERO          reduce using rule 30 (condicion -> DIFERENTE .)
 
 
-state 98
+state 97
 
     (31) condicion -> MAYORIGUAL .
 
@@ -1831,7 +1824,7 @@ state 98
     NUMERO          reduce using rule 31 (condicion -> MAYORIGUAL .)
 
 
-state 99
+state 98
 
     (32) condicion -> MENORIGUAL .
 
@@ -1839,7 +1832,7 @@ state 99
     NUMERO          reduce using rule 32 (condicion -> MENORIGUAL .)
 
 
-state 100
+state 99
 
     (18) cond1Aux1 -> cond1Aux2 SINO LLAVE_IZQ . expresion LLAVE_DER
     (10) expresion -> . empty
@@ -1868,56 +1861,56 @@ state 100
     (59) funcionAlge -> . INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA
 
     LLAVE_DER       reduce using rule 68 (empty -> .)
-    ENCASO          shift and go to state 18
-    REPITA          shift and go to state 19
-    DESDE           shift and go to state 20
-    LLAMAR          shift and go to state 24
+    ENCASO          shift and go to state 17
+    REPITA          shift and go to state 18
+    DESDE           shift and go to state 19
+    LLAMAR          shift and go to state 23
     ALEATORIO       shift and go to state 25
     MOVER           shift and go to state 26
     INC             shift and go to state 27
     DEC             shift and go to state 28
     INI             shift and go to state 29
 
-    expresion                      shift and go to state 123
+    expresion                      shift and go to state 122
     empty                          shift and go to state 34
-    condicion1                     shift and go to state 11
-    condicion2                     shift and go to state 12
-    repita                         shift and go to state 13
-    hacer                          shift and go to state 14
-    funcion                        shift and go to state 15
-    llamarProc                     shift and go to state 16
-    Aleatorio                      shift and go to state 21
-    Mover                          shift and go to state 22
-    funcionAlge                    shift and go to state 23
+    condicion1                     shift and go to state 9
+    condicion2                     shift and go to state 10
+    repita                         shift and go to state 11
+    hacer                          shift and go to state 12
+    funcion                        shift and go to state 13
+    llamarProc                     shift and go to state 14
+    Aleatorio                      shift and go to state 20
+    Mover                          shift and go to state 21
+    funcionAlge                    shift and go to state 22
 
-state 101
+state 100
 
     (19) cond1Aux1 -> empty empty empty . empty empty
     (68) empty -> .
 
     FINENCASO       reduce using rule 68 (empty -> .)
 
-    empty                          shift and go to state 124
+    empty                          shift and go to state 123
 
-state 102
+state 101
 
     (21) cond1Aux2 -> CUANDO ID condicion . sentencia ENTONS LLAVE_IZQ expresion LLAVE_DER cond1Aux2
     (33) sentencia -> . ID
     (34) sentencia -> . NUMERO
 
-    ID              shift and go to state 104
-    NUMERO          shift and go to state 106
+    ID              shift and go to state 103
+    NUMERO          shift and go to state 105
 
-    sentencia                      shift and go to state 125
+    sentencia                      shift and go to state 124
 
-state 103
+state 102
 
     (35) repita -> REPITA LLAVE_IZQ expresion LLAVE_DER . HASTAENCONTRAR ID condicion sentencia PUNTOCOMA
 
-    HASTAENCONTRAR  shift and go to state 126
+    HASTAENCONTRAR  shift and go to state 125
 
 
-state 104
+state 103
 
     (33) sentencia -> ID .
 
@@ -1928,14 +1921,14 @@ state 104
     PUNTOCOMA       reduce using rule 33 (sentencia -> ID .)
 
 
-state 105
+state 104
 
     (36) hacer -> DESDE ID IGUAL sentencia . HASTA sentencia HAGA LLAVE_IZQ expresion LLAVE_DER FINDESDE PUNTOCOMA
 
-    HASTA           shift and go to state 127
+    HASTA           shift and go to state 126
 
 
-state 106
+state 105
 
     (34) sentencia -> NUMERO .
 
@@ -1946,43 +1939,50 @@ state 106
     PUNTOCOMA       reduce using rule 34 (sentencia -> NUMERO .)
 
 
-state 107
+state 106
 
     (62) parametro -> ID . COMA parametro
     (63) parametro -> ID . empty empty
     (68) empty -> .
 
-    COMA            shift and go to state 128
+    COMA            shift and go to state 127
     PARENTESIS_DER  reduce using rule 68 (empty -> .)
 
-    empty                          shift and go to state 129
+    empty                          shift and go to state 128
 
-state 108
+state 107
 
     (67) llamarProc -> LLAMAR ID PARENTESIS_IZQ parametro . PARENTESIS_DER PUNTOCOMA
 
-    PARENTESIS_DER  shift and go to state 130
+    PARENTESIS_DER  shift and go to state 129
 
 
-state 109
+state 108
 
     (66) parametro -> empty . empty empty
     (68) empty -> .
 
     PARENTESIS_DER  reduce using rule 68 (empty -> .)
 
-    empty                          shift and go to state 131
+    empty                          shift and go to state 130
 
-state 110
+state 109
 
     (64) parametro -> NUMERO . COMA parametro
     (65) parametro -> NUMERO . empty empty
     (68) empty -> .
 
-    COMA            shift and go to state 132
+    COMA            shift and go to state 131
     PARENTESIS_DER  reduce using rule 68 (empty -> .)
 
-    empty                          shift and go to state 133
+    empty                          shift and go to state 132
+
+state 110
+
+    (9) variable2 -> DCL ID DEFAULT NUMERO . PUNTOCOMA
+
+    PUNTOCOMA       shift and go to state 133
+
 
 state 111
 
@@ -2017,8 +2017,8 @@ state 113
     (33) sentencia -> . ID
     (34) sentencia -> . NUMERO
 
-    ID              shift and go to state 104
-    NUMERO          shift and go to state 106
+    ID              shift and go to state 103
+    NUMERO          shift and go to state 105
 
     sentencia                      shift and go to state 135
 
@@ -2029,8 +2029,8 @@ state 114
     (33) sentencia -> . ID
     (34) sentencia -> . NUMERO
 
-    ID              shift and go to state 104
-    NUMERO          shift and go to state 106
+    ID              shift and go to state 103
+    NUMERO          shift and go to state 105
 
     sentencia                      shift and go to state 136
 
@@ -2041,8 +2041,8 @@ state 115
     (33) sentencia -> . ID
     (34) sentencia -> . NUMERO
 
-    ID              shift and go to state 104
-    NUMERO          shift and go to state 106
+    ID              shift and go to state 103
+    NUMERO          shift and go to state 105
 
     sentencia                      shift and go to state 137
 
@@ -2064,23 +2064,6 @@ state 117
 
 state 118
 
-    (9) variable2 -> DCL ID DEFAULT NUMERO PUNTOCOMA .
-
-    DCL             reduce using rule 9 (variable2 -> DCL ID DEFAULT NUMERO PUNTOCOMA .)
-    ENCASO          reduce using rule 9 (variable2 -> DCL ID DEFAULT NUMERO PUNTOCOMA .)
-    REPITA          reduce using rule 9 (variable2 -> DCL ID DEFAULT NUMERO PUNTOCOMA .)
-    DESDE           reduce using rule 9 (variable2 -> DCL ID DEFAULT NUMERO PUNTOCOMA .)
-    LLAMAR          reduce using rule 9 (variable2 -> DCL ID DEFAULT NUMERO PUNTOCOMA .)
-    ALEATORIO       reduce using rule 9 (variable2 -> DCL ID DEFAULT NUMERO PUNTOCOMA .)
-    MOVER           reduce using rule 9 (variable2 -> DCL ID DEFAULT NUMERO PUNTOCOMA .)
-    INC             reduce using rule 9 (variable2 -> DCL ID DEFAULT NUMERO PUNTOCOMA .)
-    DEC             reduce using rule 9 (variable2 -> DCL ID DEFAULT NUMERO PUNTOCOMA .)
-    INI             reduce using rule 9 (variable2 -> DCL ID DEFAULT NUMERO PUNTOCOMA .)
-    FIN             reduce using rule 9 (variable2 -> DCL ID DEFAULT NUMERO PUNTOCOMA .)
-
-
-state 119
-
     (22) condicion2 -> ENCASO ID cond2Aux1 FINENCASO PUNTOCOMA .
 
     ENCASO          reduce using rule 22 (condicion2 -> ENCASO ID cond2Aux1 FINENCASO PUNTOCOMA .)
@@ -2098,7 +2081,7 @@ state 119
     FINPROC         reduce using rule 22 (condicion2 -> ENCASO ID cond2Aux1 FINENCASO PUNTOCOMA .)
 
 
-state 120
+state 119
 
     (23) cond2Aux1 -> cond2Aux2 SINO LLAVE_IZQ . expresion LLAVE_DER
     (10) expresion -> . empty
@@ -2127,10 +2110,10 @@ state 120
     (59) funcionAlge -> . INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA
 
     LLAVE_DER       reduce using rule 68 (empty -> .)
-    ENCASO          shift and go to state 18
-    REPITA          shift and go to state 19
-    DESDE           shift and go to state 20
-    LLAMAR          shift and go to state 24
+    ENCASO          shift and go to state 17
+    REPITA          shift and go to state 18
+    DESDE           shift and go to state 19
+    LLAMAR          shift and go to state 23
     ALEATORIO       shift and go to state 25
     MOVER           shift and go to state 26
     INC             shift and go to state 27
@@ -2139,17 +2122,17 @@ state 120
 
     expresion                      shift and go to state 140
     empty                          shift and go to state 34
-    condicion1                     shift and go to state 11
-    condicion2                     shift and go to state 12
-    repita                         shift and go to state 13
-    hacer                          shift and go to state 14
-    funcion                        shift and go to state 15
-    llamarProc                     shift and go to state 16
-    Aleatorio                      shift and go to state 21
-    Mover                          shift and go to state 22
-    funcionAlge                    shift and go to state 23
+    condicion1                     shift and go to state 9
+    condicion2                     shift and go to state 10
+    repita                         shift and go to state 11
+    hacer                          shift and go to state 12
+    funcion                        shift and go to state 13
+    llamarProc                     shift and go to state 14
+    Aleatorio                      shift and go to state 20
+    Mover                          shift and go to state 21
+    funcionAlge                    shift and go to state 22
 
-state 121
+state 120
 
     (24) cond2Aux1 -> empty empty empty . empty empty
     (68) empty -> .
@@ -2158,21 +2141,21 @@ state 121
 
     empty                          shift and go to state 141
 
-state 122
+state 121
 
     (26) cond2Aux2 -> CUANDO condicion sentencia . ENTONS LLAVE_IZQ expresion LLAVE_DER cond2Aux2
 
     ENTONS          shift and go to state 142
 
 
-state 123
+state 122
 
     (18) cond1Aux1 -> cond1Aux2 SINO LLAVE_IZQ expresion . LLAVE_DER
 
     LLAVE_DER       shift and go to state 143
 
 
-state 124
+state 123
 
     (19) cond1Aux1 -> empty empty empty empty . empty
     (68) empty -> .
@@ -2181,32 +2164,32 @@ state 124
 
     empty                          shift and go to state 144
 
-state 125
+state 124
 
     (21) cond1Aux2 -> CUANDO ID condicion sentencia . ENTONS LLAVE_IZQ expresion LLAVE_DER cond1Aux2
 
     ENTONS          shift and go to state 145
 
 
-state 126
+state 125
 
     (35) repita -> REPITA LLAVE_IZQ expresion LLAVE_DER HASTAENCONTRAR . ID condicion sentencia PUNTOCOMA
 
     ID              shift and go to state 146
 
 
-state 127
+state 126
 
     (36) hacer -> DESDE ID IGUAL sentencia HASTA . sentencia HAGA LLAVE_IZQ expresion LLAVE_DER FINDESDE PUNTOCOMA
     (33) sentencia -> . ID
     (34) sentencia -> . NUMERO
 
-    ID              shift and go to state 104
-    NUMERO          shift and go to state 106
+    ID              shift and go to state 103
+    NUMERO          shift and go to state 105
 
     sentencia                      shift and go to state 147
 
-state 128
+state 127
 
     (62) parametro -> ID COMA . parametro
     (62) parametro -> . ID COMA parametro
@@ -2216,14 +2199,14 @@ state 128
     (66) parametro -> . empty empty empty
     (68) empty -> .
 
-    ID              shift and go to state 107
-    NUMERO          shift and go to state 110
+    ID              shift and go to state 106
+    NUMERO          shift and go to state 109
     PARENTESIS_DER  reduce using rule 68 (empty -> .)
 
     parametro                      shift and go to state 148
-    empty                          shift and go to state 109
+    empty                          shift and go to state 108
 
-state 129
+state 128
 
     (63) parametro -> ID empty . empty
     (68) empty -> .
@@ -2232,14 +2215,14 @@ state 129
 
     empty                          shift and go to state 149
 
-state 130
+state 129
 
     (67) llamarProc -> LLAMAR ID PARENTESIS_IZQ parametro PARENTESIS_DER . PUNTOCOMA
 
     PUNTOCOMA       shift and go to state 150
 
 
-state 131
+state 130
 
     (66) parametro -> empty empty . empty
     (68) empty -> .
@@ -2248,7 +2231,7 @@ state 131
 
     empty                          shift and go to state 151
 
-state 132
+state 131
 
     (64) parametro -> NUMERO COMA . parametro
     (62) parametro -> . ID COMA parametro
@@ -2258,14 +2241,14 @@ state 132
     (66) parametro -> . empty empty empty
     (68) empty -> .
 
-    ID              shift and go to state 107
-    NUMERO          shift and go to state 110
+    ID              shift and go to state 106
+    NUMERO          shift and go to state 109
     PARENTESIS_DER  reduce using rule 68 (empty -> .)
 
     parametro                      shift and go to state 152
-    empty                          shift and go to state 109
+    empty                          shift and go to state 108
 
-state 133
+state 132
 
     (65) parametro -> NUMERO empty . empty
     (68) empty -> .
@@ -2273,6 +2256,23 @@ state 133
     PARENTESIS_DER  reduce using rule 68 (empty -> .)
 
     empty                          shift and go to state 153
+
+state 133
+
+    (9) variable2 -> DCL ID DEFAULT NUMERO PUNTOCOMA .
+
+    ENCASO          reduce using rule 9 (variable2 -> DCL ID DEFAULT NUMERO PUNTOCOMA .)
+    REPITA          reduce using rule 9 (variable2 -> DCL ID DEFAULT NUMERO PUNTOCOMA .)
+    DESDE           reduce using rule 9 (variable2 -> DCL ID DEFAULT NUMERO PUNTOCOMA .)
+    LLAMAR          reduce using rule 9 (variable2 -> DCL ID DEFAULT NUMERO PUNTOCOMA .)
+    DCL             reduce using rule 9 (variable2 -> DCL ID DEFAULT NUMERO PUNTOCOMA .)
+    ALEATORIO       reduce using rule 9 (variable2 -> DCL ID DEFAULT NUMERO PUNTOCOMA .)
+    MOVER           reduce using rule 9 (variable2 -> DCL ID DEFAULT NUMERO PUNTOCOMA .)
+    INC             reduce using rule 9 (variable2 -> DCL ID DEFAULT NUMERO PUNTOCOMA .)
+    DEC             reduce using rule 9 (variable2 -> DCL ID DEFAULT NUMERO PUNTOCOMA .)
+    INI             reduce using rule 9 (variable2 -> DCL ID DEFAULT NUMERO PUNTOCOMA .)
+    FIN             reduce using rule 9 (variable2 -> DCL ID DEFAULT NUMERO PUNTOCOMA .)
+
 
 state 134
 
@@ -2327,12 +2327,12 @@ state 138
     (66) parametro -> . empty empty empty
     (68) empty -> .
 
-    ID              shift and go to state 107
-    NUMERO          shift and go to state 110
+    ID              shift and go to state 106
+    NUMERO          shift and go to state 109
     PARENTESIS_DER  reduce using rule 68 (empty -> .)
 
     parametro                      shift and go to state 157
-    empty                          shift and go to state 109
+    empty                          shift and go to state 108
 
 state 139
 
@@ -2397,12 +2397,12 @@ state 146
     (31) condicion -> . MAYORIGUAL
     (32) condicion -> . MENORIGUAL
 
-    IGUAL           shift and go to state 94
-    MAYOR           shift and go to state 95
-    MENOR           shift and go to state 96
-    DIFERENTE       shift and go to state 97
-    MAYORIGUAL      shift and go to state 98
-    MENORIGUAL      shift and go to state 99
+    IGUAL           shift and go to state 93
+    MAYOR           shift and go to state 94
+    MENOR           shift and go to state 95
+    DIFERENTE       shift and go to state 96
+    MAYORIGUAL      shift and go to state 97
+    MENORIGUAL      shift and go to state 98
 
     condicion                      shift and go to state 163
 
@@ -2550,10 +2550,10 @@ state 161
     (59) funcionAlge -> . INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA
 
     LLAVE_DER       reduce using rule 68 (empty -> .)
-    ENCASO          shift and go to state 18
-    REPITA          shift and go to state 19
-    DESDE           shift and go to state 20
-    LLAMAR          shift and go to state 24
+    ENCASO          shift and go to state 17
+    REPITA          shift and go to state 18
+    DESDE           shift and go to state 19
+    LLAMAR          shift and go to state 23
     ALEATORIO       shift and go to state 25
     MOVER           shift and go to state 26
     INC             shift and go to state 27
@@ -2562,15 +2562,15 @@ state 161
 
     expresion                      shift and go to state 170
     empty                          shift and go to state 34
-    condicion1                     shift and go to state 11
-    condicion2                     shift and go to state 12
-    repita                         shift and go to state 13
-    hacer                          shift and go to state 14
-    funcion                        shift and go to state 15
-    llamarProc                     shift and go to state 16
-    Aleatorio                      shift and go to state 21
-    Mover                          shift and go to state 22
-    funcionAlge                    shift and go to state 23
+    condicion1                     shift and go to state 9
+    condicion2                     shift and go to state 10
+    repita                         shift and go to state 11
+    hacer                          shift and go to state 12
+    funcion                        shift and go to state 13
+    llamarProc                     shift and go to state 14
+    Aleatorio                      shift and go to state 20
+    Mover                          shift and go to state 21
+    funcionAlge                    shift and go to state 22
 
 state 162
 
@@ -2601,10 +2601,10 @@ state 162
     (59) funcionAlge -> . INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA
 
     LLAVE_DER       reduce using rule 68 (empty -> .)
-    ENCASO          shift and go to state 18
-    REPITA          shift and go to state 19
-    DESDE           shift and go to state 20
-    LLAMAR          shift and go to state 24
+    ENCASO          shift and go to state 17
+    REPITA          shift and go to state 18
+    DESDE           shift and go to state 19
+    LLAMAR          shift and go to state 23
     ALEATORIO       shift and go to state 25
     MOVER           shift and go to state 26
     INC             shift and go to state 27
@@ -2613,15 +2613,15 @@ state 162
 
     expresion                      shift and go to state 171
     empty                          shift and go to state 34
-    condicion1                     shift and go to state 11
-    condicion2                     shift and go to state 12
-    repita                         shift and go to state 13
-    hacer                          shift and go to state 14
-    funcion                        shift and go to state 15
-    llamarProc                     shift and go to state 16
-    Aleatorio                      shift and go to state 21
-    Mover                          shift and go to state 22
-    funcionAlge                    shift and go to state 23
+    condicion1                     shift and go to state 9
+    condicion2                     shift and go to state 10
+    repita                         shift and go to state 11
+    hacer                          shift and go to state 12
+    funcion                        shift and go to state 13
+    llamarProc                     shift and go to state 14
+    Aleatorio                      shift and go to state 20
+    Mover                          shift and go to state 21
+    funcionAlge                    shift and go to state 22
 
 state 163
 
@@ -2629,8 +2629,8 @@ state 163
     (33) sentencia -> . ID
     (34) sentencia -> . NUMERO
 
-    ID              shift and go to state 104
-    NUMERO          shift and go to state 106
+    ID              shift and go to state 103
+    NUMERO          shift and go to state 105
 
     sentencia                      shift and go to state 172
 
@@ -2670,11 +2670,11 @@ state 165
     (58) funcionAlge -> . DEC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA
     (59) funcionAlge -> . INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA
 
-  ! reduce/reduce conflict for DCL resolved using rule 57 (funcionAlge -> INC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
   ! reduce/reduce conflict for ENCASO resolved using rule 57 (funcionAlge -> INC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
   ! reduce/reduce conflict for REPITA resolved using rule 57 (funcionAlge -> INC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
   ! reduce/reduce conflict for DESDE resolved using rule 57 (funcionAlge -> INC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
   ! reduce/reduce conflict for LLAMAR resolved using rule 57 (funcionAlge -> INC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
+  ! reduce/reduce conflict for DCL resolved using rule 57 (funcionAlge -> INC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
   ! reduce/reduce conflict for ALEATORIO resolved using rule 57 (funcionAlge -> INC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
   ! reduce/reduce conflict for MOVER resolved using rule 57 (funcionAlge -> INC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
   ! reduce/reduce conflict for INC resolved using rule 57 (funcionAlge -> INC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
@@ -2696,10 +2696,10 @@ state 165
     FIN             reduce using rule 57 (funcionAlge -> INC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
     LLAVE_DER       reduce using rule 57 (funcionAlge -> INC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
     FINPROC         reduce using rule 57 (funcionAlge -> INC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
-    ENCASO          shift and go to state 18
-    REPITA          shift and go to state 19
-    DESDE           shift and go to state 20
-    LLAMAR          shift and go to state 24
+    ENCASO          shift and go to state 17
+    REPITA          shift and go to state 18
+    DESDE           shift and go to state 19
+    LLAMAR          shift and go to state 23
     ALEATORIO       shift and go to state 25
     MOVER           shift and go to state 26
     INC             shift and go to state 27
@@ -2715,11 +2715,11 @@ state 165
   ! INC             [ reduce using rule 57 (funcionAlge -> INC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .) ]
   ! DEC             [ reduce using rule 57 (funcionAlge -> INC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .) ]
   ! INI             [ reduce using rule 57 (funcionAlge -> INC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .) ]
-  ! DCL             [ reduce using rule 68 (empty -> .) ]
   ! ENCASO          [ reduce using rule 68 (empty -> .) ]
   ! REPITA          [ reduce using rule 68 (empty -> .) ]
   ! DESDE           [ reduce using rule 68 (empty -> .) ]
   ! LLAMAR          [ reduce using rule 68 (empty -> .) ]
+  ! DCL             [ reduce using rule 68 (empty -> .) ]
   ! ALEATORIO       [ reduce using rule 68 (empty -> .) ]
   ! MOVER           [ reduce using rule 68 (empty -> .) ]
   ! INC             [ reduce using rule 68 (empty -> .) ]
@@ -2731,15 +2731,15 @@ state 165
 
     expresion                      shift and go to state 174
     empty                          shift and go to state 34
-    condicion1                     shift and go to state 11
-    condicion2                     shift and go to state 12
-    repita                         shift and go to state 13
-    hacer                          shift and go to state 14
-    funcion                        shift and go to state 15
-    llamarProc                     shift and go to state 16
-    Aleatorio                      shift and go to state 21
-    Mover                          shift and go to state 22
-    funcionAlge                    shift and go to state 23
+    condicion1                     shift and go to state 9
+    condicion2                     shift and go to state 10
+    repita                         shift and go to state 11
+    hacer                          shift and go to state 12
+    funcion                        shift and go to state 13
+    llamarProc                     shift and go to state 14
+    Aleatorio                      shift and go to state 20
+    Mover                          shift and go to state 21
+    funcionAlge                    shift and go to state 22
 
 state 166
 
@@ -2770,11 +2770,11 @@ state 166
     (58) funcionAlge -> . DEC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA
     (59) funcionAlge -> . INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA
 
-  ! reduce/reduce conflict for DCL resolved using rule 58 (funcionAlge -> DEC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
   ! reduce/reduce conflict for ENCASO resolved using rule 58 (funcionAlge -> DEC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
   ! reduce/reduce conflict for REPITA resolved using rule 58 (funcionAlge -> DEC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
   ! reduce/reduce conflict for DESDE resolved using rule 58 (funcionAlge -> DEC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
   ! reduce/reduce conflict for LLAMAR resolved using rule 58 (funcionAlge -> DEC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
+  ! reduce/reduce conflict for DCL resolved using rule 58 (funcionAlge -> DEC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
   ! reduce/reduce conflict for ALEATORIO resolved using rule 58 (funcionAlge -> DEC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
   ! reduce/reduce conflict for MOVER resolved using rule 58 (funcionAlge -> DEC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
   ! reduce/reduce conflict for INC resolved using rule 58 (funcionAlge -> DEC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
@@ -2796,10 +2796,10 @@ state 166
     FIN             reduce using rule 58 (funcionAlge -> DEC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
     LLAVE_DER       reduce using rule 58 (funcionAlge -> DEC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
     FINPROC         reduce using rule 58 (funcionAlge -> DEC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
-    ENCASO          shift and go to state 18
-    REPITA          shift and go to state 19
-    DESDE           shift and go to state 20
-    LLAMAR          shift and go to state 24
+    ENCASO          shift and go to state 17
+    REPITA          shift and go to state 18
+    DESDE           shift and go to state 19
+    LLAMAR          shift and go to state 23
     ALEATORIO       shift and go to state 25
     MOVER           shift and go to state 26
     INC             shift and go to state 27
@@ -2815,11 +2815,11 @@ state 166
   ! INC             [ reduce using rule 58 (funcionAlge -> DEC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .) ]
   ! DEC             [ reduce using rule 58 (funcionAlge -> DEC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .) ]
   ! INI             [ reduce using rule 58 (funcionAlge -> DEC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .) ]
-  ! DCL             [ reduce using rule 68 (empty -> .) ]
   ! ENCASO          [ reduce using rule 68 (empty -> .) ]
   ! REPITA          [ reduce using rule 68 (empty -> .) ]
   ! DESDE           [ reduce using rule 68 (empty -> .) ]
   ! LLAMAR          [ reduce using rule 68 (empty -> .) ]
+  ! DCL             [ reduce using rule 68 (empty -> .) ]
   ! ALEATORIO       [ reduce using rule 68 (empty -> .) ]
   ! MOVER           [ reduce using rule 68 (empty -> .) ]
   ! INC             [ reduce using rule 68 (empty -> .) ]
@@ -2831,15 +2831,15 @@ state 166
 
     expresion                      shift and go to state 175
     empty                          shift and go to state 34
-    condicion1                     shift and go to state 11
-    condicion2                     shift and go to state 12
-    repita                         shift and go to state 13
-    hacer                          shift and go to state 14
-    funcion                        shift and go to state 15
-    llamarProc                     shift and go to state 16
-    Aleatorio                      shift and go to state 21
-    Mover                          shift and go to state 22
-    funcionAlge                    shift and go to state 23
+    condicion1                     shift and go to state 9
+    condicion2                     shift and go to state 10
+    repita                         shift and go to state 11
+    hacer                          shift and go to state 12
+    funcion                        shift and go to state 13
+    llamarProc                     shift and go to state 14
+    Aleatorio                      shift and go to state 20
+    Mover                          shift and go to state 21
+    funcionAlge                    shift and go to state 22
 
 state 167
 
@@ -2870,11 +2870,11 @@ state 167
     (58) funcionAlge -> . DEC PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA
     (59) funcionAlge -> . INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA
 
-  ! reduce/reduce conflict for DCL resolved using rule 59 (funcionAlge -> INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
   ! reduce/reduce conflict for ENCASO resolved using rule 59 (funcionAlge -> INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
   ! reduce/reduce conflict for REPITA resolved using rule 59 (funcionAlge -> INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
   ! reduce/reduce conflict for DESDE resolved using rule 59 (funcionAlge -> INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
   ! reduce/reduce conflict for LLAMAR resolved using rule 59 (funcionAlge -> INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
+  ! reduce/reduce conflict for DCL resolved using rule 59 (funcionAlge -> INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
   ! reduce/reduce conflict for ALEATORIO resolved using rule 59 (funcionAlge -> INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
   ! reduce/reduce conflict for MOVER resolved using rule 59 (funcionAlge -> INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
   ! reduce/reduce conflict for INC resolved using rule 59 (funcionAlge -> INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
@@ -2896,10 +2896,10 @@ state 167
     FIN             reduce using rule 59 (funcionAlge -> INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
     LLAVE_DER       reduce using rule 59 (funcionAlge -> INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
     FINPROC         reduce using rule 59 (funcionAlge -> INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .)
-    ENCASO          shift and go to state 18
-    REPITA          shift and go to state 19
-    DESDE           shift and go to state 20
-    LLAMAR          shift and go to state 24
+    ENCASO          shift and go to state 17
+    REPITA          shift and go to state 18
+    DESDE           shift and go to state 19
+    LLAMAR          shift and go to state 23
     ALEATORIO       shift and go to state 25
     MOVER           shift and go to state 26
     INC             shift and go to state 27
@@ -2915,11 +2915,11 @@ state 167
   ! INC             [ reduce using rule 59 (funcionAlge -> INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .) ]
   ! DEC             [ reduce using rule 59 (funcionAlge -> INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .) ]
   ! INI             [ reduce using rule 59 (funcionAlge -> INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA .) ]
-  ! DCL             [ reduce using rule 68 (empty -> .) ]
   ! ENCASO          [ reduce using rule 68 (empty -> .) ]
   ! REPITA          [ reduce using rule 68 (empty -> .) ]
   ! DESDE           [ reduce using rule 68 (empty -> .) ]
   ! LLAMAR          [ reduce using rule 68 (empty -> .) ]
+  ! DCL             [ reduce using rule 68 (empty -> .) ]
   ! ALEATORIO       [ reduce using rule 68 (empty -> .) ]
   ! MOVER           [ reduce using rule 68 (empty -> .) ]
   ! INC             [ reduce using rule 68 (empty -> .) ]
@@ -2931,15 +2931,15 @@ state 167
 
     expresion                      shift and go to state 176
     empty                          shift and go to state 34
-    condicion1                     shift and go to state 11
-    condicion2                     shift and go to state 12
-    repita                         shift and go to state 13
-    hacer                          shift and go to state 14
-    funcion                        shift and go to state 15
-    llamarProc                     shift and go to state 16
-    Aleatorio                      shift and go to state 21
-    Mover                          shift and go to state 22
-    funcionAlge                    shift and go to state 23
+    condicion1                     shift and go to state 9
+    condicion2                     shift and go to state 10
+    repita                         shift and go to state 11
+    hacer                          shift and go to state 12
+    funcion                        shift and go to state 13
+    llamarProc                     shift and go to state 14
+    Aleatorio                      shift and go to state 20
+    Mover                          shift and go to state 21
+    funcionAlge                    shift and go to state 22
 
 state 168
 
@@ -3007,10 +3007,10 @@ state 173
     (59) funcionAlge -> . INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA
 
     LLAVE_DER       reduce using rule 68 (empty -> .)
-    ENCASO          shift and go to state 18
-    REPITA          shift and go to state 19
-    DESDE           shift and go to state 20
-    LLAMAR          shift and go to state 24
+    ENCASO          shift and go to state 17
+    REPITA          shift and go to state 18
+    DESDE           shift and go to state 19
+    LLAMAR          shift and go to state 23
     ALEATORIO       shift and go to state 25
     MOVER           shift and go to state 26
     INC             shift and go to state 27
@@ -3019,15 +3019,15 @@ state 173
 
     expresion                      shift and go to state 182
     empty                          shift and go to state 34
-    condicion1                     shift and go to state 11
-    condicion2                     shift and go to state 12
-    repita                         shift and go to state 13
-    hacer                          shift and go to state 14
-    funcion                        shift and go to state 15
-    llamarProc                     shift and go to state 16
-    Aleatorio                      shift and go to state 21
-    Mover                          shift and go to state 22
-    funcionAlge                    shift and go to state 23
+    condicion1                     shift and go to state 9
+    condicion2                     shift and go to state 10
+    repita                         shift and go to state 11
+    hacer                          shift and go to state 12
+    funcion                        shift and go to state 13
+    llamarProc                     shift and go to state 14
+    Aleatorio                      shift and go to state 20
+    Mover                          shift and go to state 21
+    funcionAlge                    shift and go to state 22
 
 state 174
 
@@ -3109,7 +3109,7 @@ state 179
     (26) cond2Aux2 -> . CUANDO condicion sentencia ENTONS LLAVE_IZQ expresion LLAVE_DER cond2Aux2
     (68) empty -> .
 
-    CUANDO          shift and go to state 61
+    CUANDO          shift and go to state 59
     SINO            reduce using rule 68 (empty -> .)
 
     cond2Aux2                      shift and go to state 185
@@ -3122,7 +3122,7 @@ state 180
     (21) cond1Aux2 -> . CUANDO ID condicion sentencia ENTONS LLAVE_IZQ expresion LLAVE_DER cond1Aux2
     (68) empty -> .
 
-    CUANDO          shift and go to state 45
+    CUANDO          shift and go to state 44
     SINO            reduce using rule 68 (empty -> .)
 
     cond1Aux2                      shift and go to state 187
@@ -3183,10 +3183,10 @@ state 183
     (59) funcionAlge -> . INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA
 
     FINPROC         reduce using rule 68 (empty -> .)
-    ENCASO          shift and go to state 18
-    REPITA          shift and go to state 19
-    DESDE           shift and go to state 20
-    LLAMAR          shift and go to state 24
+    ENCASO          shift and go to state 17
+    REPITA          shift and go to state 18
+    DESDE           shift and go to state 19
+    LLAMAR          shift and go to state 23
     ALEATORIO       shift and go to state 25
     MOVER           shift and go to state 26
     INC             shift and go to state 27
@@ -3195,15 +3195,15 @@ state 183
 
     expresion                      shift and go to state 190
     empty                          shift and go to state 34
-    condicion1                     shift and go to state 11
-    condicion2                     shift and go to state 12
-    repita                         shift and go to state 13
-    hacer                          shift and go to state 14
-    funcion                        shift and go to state 15
-    llamarProc                     shift and go to state 16
-    Aleatorio                      shift and go to state 21
-    Mover                          shift and go to state 22
-    funcionAlge                    shift and go to state 23
+    condicion1                     shift and go to state 9
+    condicion2                     shift and go to state 10
+    repita                         shift and go to state 11
+    hacer                          shift and go to state 12
+    funcion                        shift and go to state 13
+    llamarProc                     shift and go to state 14
+    Aleatorio                      shift and go to state 20
+    Mover                          shift and go to state 21
+    funcionAlge                    shift and go to state 22
 
 state 184
 
@@ -3345,36 +3345,54 @@ state 199
 WARNING: 
 WARNING: Conflicts:
 WARNING: 
-WARNING: shift/reduce conflict for DCL in state 4 resolved as shift
 WARNING: shift/reduce conflict for ENCASO in state 4 resolved as shift
 WARNING: shift/reduce conflict for REPITA in state 4 resolved as shift
 WARNING: shift/reduce conflict for DESDE in state 4 resolved as shift
 WARNING: shift/reduce conflict for LLAMAR in state 4 resolved as shift
+WARNING: shift/reduce conflict for DCL in state 4 resolved as shift
 WARNING: shift/reduce conflict for ALEATORIO in state 4 resolved as shift
 WARNING: shift/reduce conflict for MOVER in state 4 resolved as shift
 WARNING: shift/reduce conflict for INC in state 4 resolved as shift
 WARNING: shift/reduce conflict for DEC in state 4 resolved as shift
 WARNING: shift/reduce conflict for INI in state 4 resolved as shift
-WARNING: shift/reduce conflict for DCL in state 7 resolved as shift
 WARNING: shift/reduce conflict for ENCASO in state 7 resolved as shift
 WARNING: shift/reduce conflict for REPITA in state 7 resolved as shift
 WARNING: shift/reduce conflict for DESDE in state 7 resolved as shift
 WARNING: shift/reduce conflict for LLAMAR in state 7 resolved as shift
+WARNING: shift/reduce conflict for DCL in state 7 resolved as shift
 WARNING: shift/reduce conflict for ALEATORIO in state 7 resolved as shift
 WARNING: shift/reduce conflict for MOVER in state 7 resolved as shift
 WARNING: shift/reduce conflict for INC in state 7 resolved as shift
 WARNING: shift/reduce conflict for DEC in state 7 resolved as shift
 WARNING: shift/reduce conflict for INI in state 7 resolved as shift
-WARNING: shift/reduce conflict for DCL in state 8 resolved as shift
 WARNING: shift/reduce conflict for ENCASO in state 8 resolved as shift
 WARNING: shift/reduce conflict for REPITA in state 8 resolved as shift
 WARNING: shift/reduce conflict for DESDE in state 8 resolved as shift
 WARNING: shift/reduce conflict for LLAMAR in state 8 resolved as shift
+WARNING: shift/reduce conflict for DCL in state 8 resolved as shift
 WARNING: shift/reduce conflict for ALEATORIO in state 8 resolved as shift
 WARNING: shift/reduce conflict for MOVER in state 8 resolved as shift
 WARNING: shift/reduce conflict for INC in state 8 resolved as shift
 WARNING: shift/reduce conflict for DEC in state 8 resolved as shift
 WARNING: shift/reduce conflict for INI in state 8 resolved as shift
+WARNING: shift/reduce conflict for ENCASO in state 9 resolved as shift
+WARNING: shift/reduce conflict for REPITA in state 9 resolved as shift
+WARNING: shift/reduce conflict for DESDE in state 9 resolved as shift
+WARNING: shift/reduce conflict for LLAMAR in state 9 resolved as shift
+WARNING: shift/reduce conflict for ALEATORIO in state 9 resolved as shift
+WARNING: shift/reduce conflict for MOVER in state 9 resolved as shift
+WARNING: shift/reduce conflict for INC in state 9 resolved as shift
+WARNING: shift/reduce conflict for DEC in state 9 resolved as shift
+WARNING: shift/reduce conflict for INI in state 9 resolved as shift
+WARNING: shift/reduce conflict for ENCASO in state 10 resolved as shift
+WARNING: shift/reduce conflict for REPITA in state 10 resolved as shift
+WARNING: shift/reduce conflict for DESDE in state 10 resolved as shift
+WARNING: shift/reduce conflict for LLAMAR in state 10 resolved as shift
+WARNING: shift/reduce conflict for ALEATORIO in state 10 resolved as shift
+WARNING: shift/reduce conflict for MOVER in state 10 resolved as shift
+WARNING: shift/reduce conflict for INC in state 10 resolved as shift
+WARNING: shift/reduce conflict for DEC in state 10 resolved as shift
+WARNING: shift/reduce conflict for INI in state 10 resolved as shift
 WARNING: shift/reduce conflict for ENCASO in state 11 resolved as shift
 WARNING: shift/reduce conflict for REPITA in state 11 resolved as shift
 WARNING: shift/reduce conflict for DESDE in state 11 resolved as shift
@@ -3411,24 +3429,6 @@ WARNING: shift/reduce conflict for MOVER in state 14 resolved as shift
 WARNING: shift/reduce conflict for INC in state 14 resolved as shift
 WARNING: shift/reduce conflict for DEC in state 14 resolved as shift
 WARNING: shift/reduce conflict for INI in state 14 resolved as shift
-WARNING: shift/reduce conflict for ENCASO in state 15 resolved as shift
-WARNING: shift/reduce conflict for REPITA in state 15 resolved as shift
-WARNING: shift/reduce conflict for DESDE in state 15 resolved as shift
-WARNING: shift/reduce conflict for LLAMAR in state 15 resolved as shift
-WARNING: shift/reduce conflict for ALEATORIO in state 15 resolved as shift
-WARNING: shift/reduce conflict for MOVER in state 15 resolved as shift
-WARNING: shift/reduce conflict for INC in state 15 resolved as shift
-WARNING: shift/reduce conflict for DEC in state 15 resolved as shift
-WARNING: shift/reduce conflict for INI in state 15 resolved as shift
-WARNING: shift/reduce conflict for ENCASO in state 16 resolved as shift
-WARNING: shift/reduce conflict for REPITA in state 16 resolved as shift
-WARNING: shift/reduce conflict for DESDE in state 16 resolved as shift
-WARNING: shift/reduce conflict for LLAMAR in state 16 resolved as shift
-WARNING: shift/reduce conflict for ALEATORIO in state 16 resolved as shift
-WARNING: shift/reduce conflict for MOVER in state 16 resolved as shift
-WARNING: shift/reduce conflict for INC in state 16 resolved as shift
-WARNING: shift/reduce conflict for DEC in state 16 resolved as shift
-WARNING: shift/reduce conflict for INI in state 16 resolved as shift
 WARNING: shift/reduce conflict for ENCASO in state 165 resolved as shift
 WARNING: shift/reduce conflict for REPITA in state 165 resolved as shift
 WARNING: shift/reduce conflict for DESDE in state 165 resolved as shift

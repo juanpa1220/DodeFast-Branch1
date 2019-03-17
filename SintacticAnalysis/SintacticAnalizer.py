@@ -1,3 +1,4 @@
+
 import ply.yacc as yacc
 import os
 import codecs
@@ -13,7 +14,7 @@ def p_Start(p):
     '''
     Start : code
     '''
-    #print(p[1])
+    # print(p[1])
     iniciarEjecucion(p[1])
 
 
@@ -21,7 +22,7 @@ def p_Code(p):
     '''
     code : INICIO DOSPUNTOS cuerpo FIN PUNTOCOMA procedimiento
     '''
-    p[0] = ("INICIO",p[3], p[6])
+    p[0] = ("INICIO" ,p[3], p[6])
 
 def p_cuerpo_empty(p):
     '''
@@ -30,11 +31,22 @@ def p_cuerpo_empty(p):
     p[0] = None
 
 
-def p_cuerpo(p):
+def p_cuerpo_expresion(p):
     '''
-    cuerpo : variable cuerpo
-            | expresion cuerpo
+    cuerpo : expresion cuerpo
     '''
+    if p[2] == None:
+        p[0] = p[1]
+    else:
+        p[0] = p[1] + p[2]
+
+
+
+def p_cuerpo_variable(p):
+    '''
+        cuerpo : variable cuerpo
+
+        '''
     if p[2] == None:
         p[0] = (p[1],)
     else:
@@ -45,7 +57,6 @@ def p_Variable(p):
     '''
     variable : variable1
             | variable2
-
     '''
 
     p[0] = (p[1])
@@ -57,7 +68,7 @@ def p_Variable1(p):
     '''
     p[0] = ("DCL", p[2], p[3])
 
-    #variable1(p[2])
+    # variable1(p[2])
 
 
 def p_Variable2(p):
@@ -66,7 +77,7 @@ def p_Variable2(p):
     '''
     p[0] = (p[1], p[2], p[3], p[4])
 
-    #variable2(p[2], p[4])
+    # variable2(p[2], p[4])
 
 
 def p_expresion_empty(p):
@@ -83,10 +94,9 @@ def p_expresion(p):
             | hacer expresion
             | funcion expresion
             | llamarProc expresion
-
     '''
     if (p[2] != None):
-        p[0] = (p[1], ) + p[2]
+        p[0] = (p[1],) + (p[2],)
     else:
         p[0] = p[1]
 
@@ -95,7 +105,7 @@ def p_condicion1(p):
     '''
     condicion1 : ENCASO cond1Aux1 FINENCASO PUNTOCOMA
     '''
-    p[0] = (p[1],p[2],p[3])
+    p[0] = (p[1],p[2] ,p[3])
 
 
 def p_cond1Aux1(p):
@@ -108,7 +118,7 @@ def p_cond1Aux1(p):
     else:
         p[0] = tuple(p[1])
 
-    #condicion1(p[0], "")
+    # condicion1(p[0], "")
 
 def p_cond1Aux2_empty(p):
     '''
@@ -119,7 +129,6 @@ def p_cond1Aux2_empty(p):
 def p_cond1Aux2(p):
     '''
     cond1Aux2 : CUANDO ID condicion sentencia ENTONS LLAVE_IZQ expresion LLAVE_DER cond1Aux2
-
     '''
     if p[9] != None:
 
@@ -136,7 +145,7 @@ def p_condicion2(p):
     '''
     p[0] = (p[1], p[2], p[3], p[4])
 
-    #condicion2(p[0])
+    # condicion2(p[0])
 
 
 def p_cond2Aux1(p):
@@ -145,7 +154,7 @@ def p_cond2Aux1(p):
                 | empty empty empty empty empty
     '''
     if (p[5] != None):
-        p[0] = ((p[1], p[2],))+ (p[4])
+        p[0] = ((p[1], p[2],) )+ (p[4])
     else:
         p[0] = p[1]
 
@@ -159,7 +168,6 @@ def p_cond2Aux2_empty(p):
 def p_cond2Aux2(p):
     '''
         cond2Aux2 : CUANDO  condicion sentencia ENTONS LLAVE_IZQ expresion LLAVE_DER cond2Aux2
-
         '''
     if p[8] != None:
         p[0] = ((p[1], p[2], p[3], p[4], p[6]),) +  (p[8])
@@ -223,7 +231,7 @@ def p_aleatorio(p):
     '''
     p[0] = p[1]
 
-    #funcionAleatorio()
+    # funcionAleatorio()
 
 
 def p_mover(p):
@@ -232,7 +240,7 @@ def p_mover(p):
     '''
     p[0] = (p[1], p[3])
 
-    #funcionMover(p[0])
+    # funcionMover(p[0])
 
 
 def p_ParamMover(p):
@@ -260,7 +268,7 @@ def p_funcion_Alge(p):
              | INI PARENTESIS_IZQ ID COMA sentencia PARENTESIS_DER PUNTOCOMA expresion
     '''
 
-    p[0] = ((p[1], p[3], p[5] ),)+ (p[8])
+    p[0] = ((p[1], p[3], p[5] ), )+ (p[8])
 
 
 def p_funcion_Alge2(p):
