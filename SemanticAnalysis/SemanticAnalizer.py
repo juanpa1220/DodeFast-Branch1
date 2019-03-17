@@ -4,6 +4,8 @@ variables = {}
 listaMovimientos = []
 procedimientos_dic = {}
 
+procedimientos_param = {}
+
 ########################################## variables ##########################################
 def variable1(var):
 
@@ -193,13 +195,63 @@ def repita(rep):
 
 ########################################## procedimientos ##########################################
 
+def set_Values_to_Params(nombreProc,params):
+
+    parametros_de_procedimiento = procedimientos_param.get(nombreProc)
+    print("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk")
+    print(nombreProc)
+    print(parametros_de_procedimiento)
+
+    i = 0
+
+    while(i != len(params)):
+        print("******************************************************************************************************")
+        print(parametros_de_procedimiento[1])
+        print(params[i])
+        print("******************************************************************************************************")
+        variables.update({parametros_de_procedimiento[i] : params[i]})
+        i = i + 1
+    #print("******************************************************************************************************")
+    #print(variables)
+    #print("******************************************************************************************************")
+
+
+def getValuesOfParams(params):
+    result = []
+    for param in params:
+        if(isinstance(param, str)):
+            if param in variables:
+                result.append(variables.get(param))
+        elif isinstance(param,int):
+            result.append(param)
+        else:
+            print("ERROR:Objeto invalido de parametro")
+
+    return result
+
+
 def llamarProc(nombreProc, parametros):
+
+
     if nombreProc in procedimientos_dic:
-        print("Procedimiento si esta declarado")
+
         if len(parametros) == len(procedimientos_dic.get(nombreProc)[1]):
-            print("El procedimiento si tiene los parametros establecidos")
-            print(procedimientos_dic.get(nombreProc)[3])
+
+
+
+            varibles1 = variables.copy()
+
+            set_Values_to_Params(nombreProc, getValuesOfParams(parametros) )
+
             ejecutar(procedimientos_dic.get(nombreProc)[3])
+
+            variables.clear()
+
+            variables.update(varibles1)
+
+            
+
+
         else:
             print("El procedimiento no tiene los parametros establecidos")
             print("El procedimiento tiene:" + str(len(procedimientos_dic.get(nombreProc)[1])) +
@@ -207,6 +259,33 @@ def llamarProc(nombreProc, parametros):
 
     else:
         print("EL procedimiento no ha sido declarado")
+
+def set_parametros_procedimientos(nombreProc,parametros):
+    params = []
+    for parametro in parametros:
+        params.append(parametro)
+
+    procedimientos_param.update({nombreProc : params})
+    print(procedimientos_param)
+
+
+def set_procedimientos(procedimientos):
+    for procedimiento in procedimientos:
+        if procedimiento[0] == "PROC":
+
+
+
+
+            if (procedimiento[1] in procedimientos_dic):
+                print("ERROR: PROCEDIMIENTO YA ESTA DECLARADO")
+                return
+            else:
+                procedimientos_dic.update({procedimiento[1]:procedimiento[2]})
+                set_parametros_procedimientos(procedimiento[1],procedimiento[2][1])
+
+    print(procedimientos_dic)
+    print("------------------------------------------------------------------------------------")
+
 
 
 ########################################## hacer ##########################################
@@ -279,11 +358,10 @@ def verificaVariable(var):
 
 
 def iniciarEjecucion(arbol):
-    print("El cuerpo es:")
-    print(arbol[1])
+    print("El arbol es:")
+    print(arbol[0])
 
-    print("Los procedimientos son:")
-    print(arbol[3])
+
 
     if(arbol[0] == "INICIO"):
         set_procedimientos(arbol[3])
@@ -291,21 +369,6 @@ def iniciarEjecucion(arbol):
         print(variables)
         print(listaMovimientos)
 
-
-def set_procedimientos(procedimientos):
-    for procedimiento in procedimientos:
-        if procedimiento[0] == "PROC":
-
-            print("------------------------------------------------------------------------------------")
-            print(procedimiento[1])
-            print(procedimiento[2])
-            if (procedimiento[1] in procedimientos_dic):
-                print("ERROR: PROCEDIMIENTO YA ESTA DECLARADO")
-                return
-            else:
-                procedimientos_dic.update({procedimiento[1]:procedimiento[2]})
-    print(procedimientos_dic)
-    print("------------------------------------------------------------------------------------")
 
 
 def ejecutar(expresionCompleta):
@@ -356,8 +419,6 @@ def ejecutar(expresionCompleta):
 
 
 def ejecuta(expresion):
-
-
 
     if (expresion[0] == 'INC'):
         print("antes")

@@ -5,29 +5,21 @@ DCL xcv;
 DCL bv DEFAULT 10;
 DCL mnb DEFAULT 10;
 
-Llamar procedimiento1(bv, xcv);
+Llamar procedimiento1(10, 12);
 
 
-Llamar procedimiento2(c, xcv);
+
 
 
 FIN;
 
 
 
-Proc procedimiento1 (cc, bb)
+Proc procedimiento1 (coca, bba)
 inicio:
 INC(bv,5);
 
 fin;
 
 
-Proc procedimiento2 (cc, bb)
-inicio:
 
-Mover(A);
-INC(bv,10);
-
-INC(bv,20);
-
-fin;

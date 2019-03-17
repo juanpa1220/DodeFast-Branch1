@@ -2,7 +2,7 @@ INICIO:
 
 DCL xcv;
 DCL vf;
-DCL bv DEFAULT 2;
+DCL bv DEFAULT 10;
 DCL mnb DEFAULT 10;
 
 EnCaso
@@ -10,6 +10,7 @@ EnCaso
 		{
             INC(bv, 1);
             INC(bv,10);
+            Mover(A);
             Mover(A);
 		}
 	Cuando bv = 2 EnTons
