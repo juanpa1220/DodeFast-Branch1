@@ -33,3 +33,4 @@ Fin-EnCaso;
 
 FIN;
 
+(('DCL', 'xcv', ';'), ('DCL', 'vf', ';'), ('DCL', 'bv', 'DEFAULT', 10), ('DCL', 'mnb', 'DEFAULT', 10), 'ENCASO', ((('CUANDO', 'bv', '=', 2, 'ENTONS', (('INC', 'bv', 1), ('INC', 'bv', 10))), ('CUANDO', 'bv', '=', 2, 'ENTONS', (('DEC', 'bv', 1),)), ('CUANDO', 'bv', '=', 11, 'ENTONS', ('ENCASO', ((('CUANDO', 'bv', '<', 7, 'ENTONS', (('INC', 'bv', 100), ('INC', 'bv', 100), ('INC', 'bv', 100))), ('CUANDO', 'bv', '<', 5, 'ENTONS', (('INC', 'bv', 50),))), 'SINO', (('INC', 'bv', 1),)), 'FINENCASO'))), 'SINO', ('ENCASO', ((('CUANDO', 'bv', '<', 11, 'ENTONS', (('INC', 'bv', 300), ('INC', 'bv', 100))),), 'SINO', (('INC', 'bv', 150),)), 'FINENCASO')), 'FINENCASO')
