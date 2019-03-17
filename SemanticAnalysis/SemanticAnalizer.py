@@ -150,10 +150,46 @@ def separaCondiciones1(resultado, condicion):
 
 def repita(rep):
     print(rep)
-    sentencia1 = rep[2]
-    Id = rep[4]
-    condicion = rep[5]
-    sentencia = rep[6]
+    sentencia1 = rep[1]
+    ID = rep[3]
+    condicion = rep[4]
+    sentencia2 = rep[5]
+
+
+    print(sentencia1)
+
+    print(ID)
+    print(condicion)
+    print(sentencia2)
+    print(variables.get(ID))
+
+    if condicion == '=':
+        print("es =")
+        while(variables.get(ID) == sentencia2):
+            ejecutar(sentencia1)
+        print(variables.get(ID))
+    elif condicion == '>':
+        print("es >")
+        while (variables.get(ID) > sentencia2):
+            ejecutar(sentencia1)
+    elif condicion == '<':
+        print("es <")
+        while (variables.get(ID) < sentencia2):
+            ejecutar(sentencia1)
+    elif condicion == '>=':
+        print("es >=")
+        while (variables.get(ID) >= sentencia2):
+            ejecutar(sentencia1)
+    elif condicion == '<=':
+        print("es <=")
+        while (variables.get(ID) <= sentencia2):
+            ejecutar(sentencia1)
+    elif condicion == '<>':
+        print("es <>")
+        while (variables.get(ID) != sentencia2):
+            ejecutar(sentencia1)
+
+
 
 
 
@@ -241,7 +277,7 @@ def iniciarEjecucion(arbol):
 
 def ejecutar(expresionCompleta):
 
-    if(len(expresionCompleta) ==1 and  len(expresionCompleta[0]) == 1) :
+    if(len(expresionCompleta) == 1 and  len(expresionCompleta[0]) == 1) :
         ejecutar(expresionCompleta[0])
         return
     print("El 0 de expresion completa es:")
@@ -278,6 +314,8 @@ def ejecutar(expresionCompleta):
             ejecuta(expresion)
         elif expresion[0] == "DESDE":
             hacer(expresion)
+        elif expresion[0] == "REPITA":
+            repita(expresion)
 
 
 

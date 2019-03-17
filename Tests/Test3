@@ -2,14 +2,14 @@ INICIO:
 
 DCL xcv;
 
-DCL bv DEFAULT 5;
+DCL bv DEFAULT 10;
 DCL mnb DEFAULT 10;
 
-Desde bv = 5 Hasta 100 Haga{
-INC (bv,10);
+Repita {
 
-}
-Fin-Desde;
+INC(bv, 10);
+
+} HastaEncontrar bv < 100;
 
 
 

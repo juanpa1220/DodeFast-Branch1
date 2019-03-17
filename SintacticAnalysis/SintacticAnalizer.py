@@ -119,6 +119,16 @@ def p_expresion_condicion2(p):
 
     p[0] = (p[1],)
 
+
+def p_expresion_repita(p):
+    '''
+        expresion : repita
+
+        '''
+
+    p[0] = (p[1],)
+
+
 def p_expresion_hacer(p):
     '''
         expresion : hacer
