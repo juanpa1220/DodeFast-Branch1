@@ -2,7 +2,7 @@ from random import choice
 from LexicalAnalysis.LexicalAnalizer import reservadas
 variables = {}
 listaMovimientos = []
-
+procedimientos_dic = {}
 
 ########################################## variables ##########################################
 def variable1(var):
@@ -191,9 +191,22 @@ def repita(rep):
 
 
 
+########################################## procedimientos ##########################################
 
+def llamarProc(nombreProc, parametros):
+    if nombreProc in procedimientos_dic:
+        print("Procedimiento si esta declarado")
+        if len(parametros) == len(procedimientos_dic.get(nombreProc)[1]):
+            print("El procedimiento si tiene los parametros establecidos")
+            print(procedimientos_dic.get(nombreProc)[3])
+            ejecutar(procedimientos_dic.get(nombreProc)[3])
+        else:
+            print("El procedimiento no tiene los parametros establecidos")
+            print("El procedimiento tiene:" + str(len(procedimientos_dic.get(nombreProc)[1])) +
+                  ", pero fueron dados: " + str(len(parametros)))
 
-
+    else:
+        print("EL procedimiento no ha sido declarado")
 
 
 ########################################## hacer ##########################################
@@ -266,15 +279,32 @@ def verificaVariable(var):
 
 
 def iniciarEjecucion(arbol):
-    print("El arbol es:")
+    print("El cuerpo es:")
     print(arbol[1])
-    if(arbol[0] == "INICIO"):
 
+    print("Los procedimientos son:")
+    print(arbol[3])
+
+    if(arbol[0] == "INICIO"):
+        set_procedimientos(arbol[3])
         ejecutar(arbol[1])
         print(variables)
 
 
+def set_procedimientos(procedimientos):
+    for procedimiento in procedimientos:
+        if procedimiento[0] == "PROC":
 
+            print("------------------------------------------------------------------------------------")
+            print(procedimiento[1])
+            print(procedimiento[2])
+            if (procedimiento[1] in procedimientos_dic):
+                print("ERROR: PROCEDIMIENTO YA ESTA DECLARADO")
+                return
+            else:
+                procedimientos_dic.update({procedimiento[1]:procedimiento[2]})
+    print(procedimientos_dic)
+    print("------------------------------------------------------------------------------------")
 def ejecutar(expresionCompleta):
 
     if(len(expresionCompleta) == 1 and  len(expresionCompleta[0]) == 1) :
@@ -316,6 +346,8 @@ def ejecutar(expresionCompleta):
             hacer(expresion)
         elif expresion[0] == "REPITA":
             repita(expresion)
+        elif expresion[0] == "LLAMAR":
+            llamarProc(expresion[1],expresion[2])
 
 
 

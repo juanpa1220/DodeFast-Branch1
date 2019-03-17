@@ -20,9 +20,32 @@ def p_Start(p):
 
 def p_Code(p):
     '''
-    code : INICIO DOSPUNTOS cuerpo FIN PUNTOCOMA procedimiento
+    code : INICIO DOSPUNTOS cuerpo FIN PUNTOCOMA procedimientos
     '''
-    p[0] = ("INICIO" ,p[3], p[6])
+    p[0] = ("INICIO" ,p[3], "PROCEDIMIENTOS", p[6])
+
+def p_procedimientos_empty(p):
+    '''
+    procedimientos : empty
+    '''
+    p[0] = None
+
+def p_procedimientos(p):
+    '''
+    procedimientos : procedimiento procedimientos
+    '''
+    if p[2] != None:
+        p[0] = (p[1],) + p[2]
+    else:
+        p[0] = (p[1],)
+
+def p_procedimiento(p):
+    '''
+    procedimiento : PROC ID PARENTESIS_IZQ parametro PARENTESIS_DER INICIOPROC DOSPUNTOS expresion FINPROC PUNTOCOMA
+
+    '''
+
+    p[0] = (p[1],p[2]) +(("PARAMETROS", p[4],"INICIOPROC", p[8],"FINPROC"),)
 
 def p_cuerpo_empty(p):
     '''
@@ -101,6 +124,15 @@ def p_expresion(p):
         p[0] = (p[1],) + p[2]
     else:
         p[0] = p[1]
+
+def p_expresion_llamarProc(p):
+    '''
+        expresion : llamarProc
+
+        '''
+
+
+    p[0] = (p[1],)
 
 def p_expresion_condicion1(p):
     '''
@@ -186,6 +218,7 @@ def p_cond1Aux2(p):
     if p[9] != None:
 
         p[0] =  ((p[1], p[2], p[3], p[4], p[5], p[7]),) + p[9]
+
     elif p[9] == None:
 
         p[0] = ((p[1], p[2], p[3], p[4], p[5], p[7]), ) + ()
@@ -316,33 +349,24 @@ def p_funcion_Alge2(p):
     p[0] = ((p[1], p[3], p[5]),)
 
 
-
-def p_procedimiento(p):
-    '''
-        procedimiento : PROC ID PARENTESIS_IZQ parametro PARENTESIS_DER INICIOPROC DOSPUNTOS expresion FINPROC PUNTOCOMA procedimiento
-                     | empty empty empty empty empty empty empty empty empty empty empty
-    '''
-    if p[11] != None:
-        p[0] = (p[1], p[2], p[4], p[6], p[8], p[9], p[11])
-    elif p[11] == None and p[1] != None:
-        p[0] = (p[1], p[2], p[4], p[6], p[8], p[9])
-    else:
-        p[0] = p[1]
-
-
 def p_parametro(p):
     '''
     parametro : ID COMA parametro
-              | ID empty empty
               | NUMERO COMA parametro
-              | NUMERO empty empty
-              | empty empty empty
+
+
     '''
     if p[3] != None and p[2] != None:
-        p[0] = (p[1], p[3])
-    else:
-        p[0] = p[1]
+        p[0] = (p[1],) + (p[3])
 
+def p_parametro_only(p):
+    '''
+        parametro : ID
+                  | NUMERO
+
+        '''
+
+    p[0] = (p[1],)
 
 def p_llamarProc(p):
     '''

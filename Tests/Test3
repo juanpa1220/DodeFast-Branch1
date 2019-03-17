@@ -5,14 +5,27 @@ DCL xcv;
 DCL bv DEFAULT 10;
 DCL mnb DEFAULT 10;
 
-Repita {
+Llamar procedimiento1(bv, xcv);
 
-INC(bv, 10);
 
-} HastaEncontrar bv < 100;
-
+Llamar procedimiento2(c, xcv);
 
 
 FIN;
 
 
+
+Proc procedimiento1 (cc, bb)
+inicio:
+INC(bv,5);
+
+fin;
+
+
+Proc procedimiento2 (cc, bb)
+inicio:
+INC(bv,10);
+
+INC(bv,20);
+
+fin;
