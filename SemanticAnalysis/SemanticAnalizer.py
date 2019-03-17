@@ -289,6 +289,7 @@ def iniciarEjecucion(arbol):
         set_procedimientos(arbol[3])
         ejecutar(arbol[1])
         print(variables)
+        print(listaMovimientos)
 
 
 def set_procedimientos(procedimientos):
@@ -305,6 +306,8 @@ def set_procedimientos(procedimientos):
                 procedimientos_dic.update({procedimiento[1]:procedimiento[2]})
     print(procedimientos_dic)
     print("------------------------------------------------------------------------------------")
+
+
 def ejecutar(expresionCompleta):
 
     if(len(expresionCompleta) == 1 and  len(expresionCompleta[0]) == 1) :
@@ -318,6 +321,7 @@ def ejecutar(expresionCompleta):
         expresiones = separaCondiciones1([],expresionCompleta)
 
     print(expresiones)
+
 
     for expresion in expresiones:
         #print("La expresion es:")

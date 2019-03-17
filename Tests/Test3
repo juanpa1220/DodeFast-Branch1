@@ -24,6 +24,8 @@ fin;
 
 Proc procedimiento2 (cc, bb)
 inicio:
+
+Mover(A);
 INC(bv,10);
 
 INC(bv,20);
