@@ -198,22 +198,15 @@ def repita(rep):
 def set_Values_to_Params(nombreProc,params):
 
     parametros_de_procedimiento = procedimientos_param.get(nombreProc)
-    print("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk")
-    print(nombreProc)
-    print(parametros_de_procedimiento)
+
 
     i = 0
 
     while(i != len(params)):
-        print("******************************************************************************************************")
-        print(parametros_de_procedimiento[1])
-        print(params[i])
-        print("******************************************************************************************************")
+
+
         variables.update({parametros_de_procedimiento[i] : params[i]})
         i = i + 1
-    #print("******************************************************************************************************")
-    #print(variables)
-    #print("******************************************************************************************************")
 
 
 def getValuesOfParams(params):
@@ -229,6 +222,21 @@ def getValuesOfParams(params):
 
     return result
 
+def restablecerVariables(variablesAntes, variablesDesp):
+
+    shared_items = {k: variablesAntes[k] for k in variablesAntes if k in variablesDesp and variablesAntes[k] == variablesDesp[k]}
+    dif_items = {k: variablesDesp[k] for k in variablesDesp if k in variablesAntes and variablesDesp[k] != variablesAntes[k]}
+
+    print("******************************************************************************************************")
+    print(shared_items)
+    print(dif_items)
+    print(dict(shared_items, **dif_items))
+    print("******************************************************************************************************")
+
+    return dict(shared_items, **dif_items)
+def eliminarParamsUsados(params):
+    for param in params:
+        print (param)
 
 def llamarProc(nombreProc, parametros):
 
@@ -239,17 +247,24 @@ def llamarProc(nombreProc, parametros):
 
 
 
-            varibles1 = variables.copy()
+            variables1 = variables.copy()
 
-            set_Values_to_Params(nombreProc, getValuesOfParams(parametros) )
+            set_Values_to_Params(nombreProc, getValuesOfParams(parametros))
 
             ejecutar(procedimientos_dic.get(nombreProc)[3])
 
+            restablecerVariables(variables1, variables)
+
+
+            newVars = restablecerVariables(variables1,variables)
             variables.clear()
+            variables.update(newVars)
 
-            variables.update(varibles1)
+            print("===================================================================================================")
+            print(variables)
+            print("===================================================================================================")
 
-            
+
 
 
         else:
