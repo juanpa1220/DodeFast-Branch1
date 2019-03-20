@@ -166,29 +166,33 @@ def repita(rep):
     print(variables.get(ID))
 
     if condicion == '=':
+
         print("es =")
-        while(variables.get(ID) == sentencia2):
+
+        while(variables.get(ID) != sentencia2):
+            print("Va a ejecutar la sentencia:")
+            print(sentencia1)
             ejecutar(sentencia1)
         print(variables.get(ID))
     elif condicion == '>':
         print("es >")
-        while (variables.get(ID) > sentencia2):
+        while (variables.get(ID) < sentencia2):
             ejecutar(sentencia1)
     elif condicion == '<':
         print("es <")
-        while (variables.get(ID) < sentencia2):
+        while (variables.get(ID) > sentencia2):
             ejecutar(sentencia1)
     elif condicion == '>=':
         print("es >=")
-        while (variables.get(ID) >= sentencia2):
+        while (variables.get(ID) <= sentencia2):
             ejecutar(sentencia1)
     elif condicion == '<=':
         print("es <=")
-        while (variables.get(ID) <= sentencia2):
+        while (variables.get(ID) >= sentencia2):
             ejecutar(sentencia1)
     elif condicion == '<>':
         print("es <>")
-        while (variables.get(ID) != sentencia2):
+        while (variables.get(ID) == sentencia2):
             ejecutar(sentencia1)
 
 

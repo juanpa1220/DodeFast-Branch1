@@ -3,10 +3,10 @@ INICIO:
 DCL xcv;
 DCL vf;
 DCL bv DEFAULT 10;
-DCL mnb DEFAULT 10;
+DCL mnb DEFAULT 90;
 
 EnCaso
-	Cuando bv = 2 EnTons
+	Cuando bv = 1 EnTons
 		{
             INC(bv, 1);
             INC(bv,10);
@@ -17,7 +17,7 @@ EnCaso
 		{
             DEC(bv, 1);
 		}
-	Cuando bv = 11 EnTons
+	Cuando bv = 10 EnTons
 		{
 
 		EnCaso
@@ -31,12 +31,17 @@ EnCaso
 		    {
 		    INC(bv,50);
 		    }
-		    SiNo{
+		    SiNo {
 
 
-		    INC(bv,1);
+		    Repita{
+
+             INC(mnb,10);
 
 		    }
+		    HastaEncontrar mnb != 100;
+		    }
+
 		 Fin-EnCaso;
 
 
