@@ -34,7 +34,11 @@ EnCaso
 		    SiNo {
 
 
-
+		    Desde mnb =  5 Hasta 30
+                Haga {
+                    INC(xcv,10);
+                }
+            Fin-Desde;
 
 		    }
 

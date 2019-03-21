@@ -380,6 +380,13 @@ def p_parametro_only(p):
 
     p[0] = (p[1],)
 
+def p_parametro_empty(p):
+    '''
+    parametro : empty
+    '''
+
+    p[0] = "None"
+
 def p_llamarProc(p):
     '''
     llamarProc : LLAMAR ID PARENTESIS_IZQ parametro PARENTESIS_DER PUNTOCOMA
@@ -431,7 +438,7 @@ def test():
     # archivo = buscarFichero(directorio)
     # test = directorio + archivo
 
-    fp = codecs.open(os.path.dirname(os.getcwd()) + "/Tests/" + "Test6", "r", "utf-8")
+    fp = codecs.open(os.path.dirname(os.getcwd()) + "/Tests/" + "Test3", "r", "utf-8")
     cadena = fp.read()
     fp.close()
 
