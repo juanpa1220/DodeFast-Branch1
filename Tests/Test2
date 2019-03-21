@@ -34,12 +34,8 @@ EnCaso
 		    SiNo {
 
 
-		    Repita{
 
-             INC(mnb,10);
 
-		    }
-		    HastaEncontrar mnb != 100;
 		    }
 
 		 Fin-EnCaso;

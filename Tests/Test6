@@ -1,0 +1,15 @@
+INICIO:
+
+
+DCL mnb DEFAULT 10;
+DCL xcv;
+
+Desde mnb =  5 Hasta 30
+    Haga {
+    INC(xcv,10);
+    }
+Fin-Desde;
+
+
+
+FIN;

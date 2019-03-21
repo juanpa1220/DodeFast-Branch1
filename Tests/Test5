@@ -1,0 +1,15 @@
+INICIO:
+
+
+
+DCL mnb DEFAULT 10;
+
+Repita{
+
+INC(mnb,10);
+
+}
+HastaEncontrar mnb != 100;
+
+
+FIN:

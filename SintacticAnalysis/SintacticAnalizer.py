@@ -27,13 +27,13 @@ def p_procedimientos_empty(p):
     '''
     procedimientos : empty
     '''
-    p[0] = None
+    p[0] = "None"
 
 def p_procedimientos(p):
     '''
     procedimientos : procedimiento procedimientos
     '''
-    if p[2] != None:
+    if p[2] != "None":
         p[0] = (p[1],) + p[2]
     else:
         p[0] = (p[1],)
@@ -49,14 +49,14 @@ def p_cuerpo_empty(p):
     '''
     cuerpo : empty
     '''
-    p[0] = None
+    p[0] = "None"
 
 
 def p_cuerpo_expresion(p):
     '''
     cuerpo : expresion cuerpo
     '''
-    if p[2] == None:
+    if p[2] == "None":
 
         p[0] = p[1]
 
@@ -69,7 +69,7 @@ def p_cuerpo_variable(p):
     '''
         cuerpo : variable cuerpo
         '''
-    if p[2] == None:
+    if p[2] == "None":
         p[0] = (p[1],)
     else:
         p[0] = (p[1],) + p[2]
@@ -106,7 +106,7 @@ def p_expresion_empty(p):
     '''
     expresion : empty
         '''
-    p[0] = None
+    p[0] = "None"
 
 def p_expresion(p):
     '''
@@ -117,7 +117,7 @@ def p_expresion(p):
             | funcion expresion
             | llamarProc expresion
     '''
-    if (p[2] != None):
+    if (p[2] != "None"):
         p[0] = (p[1],) + p[2]
     else:
         p[0] = p[1]
@@ -180,7 +180,7 @@ def p_cond2Aux1(p):
     cond2Aux1 : cond2Aux2 SINO LLAVE_IZQ expresion LLAVE_DER
                 | empty empty empty empty empty
     '''
-    if (p[5] != None):
+    if (p[5] != "None"):
         p[0] = ((p[1], p[2],))+ (p[4])
     else:
         p[0] = p[1]
@@ -190,8 +190,10 @@ def p_cond1Aux1(p):
     cond1Aux1 : cond1Aux2 SINO LLAVE_IZQ expresion LLAVE_DER
             | empty empty empty empty empty
     '''
-    if (p[5] != None):
+    if (p[4] != "None" and p[4]!= "None"):
         p[0] = ((p[1], p[2],)) + (p[4])
+    elif p[4] == "None":
+        p[0] = ((p[1], p[2],)) + (("None",),)
     else:
         p[0] = p[1]
 
@@ -201,17 +203,17 @@ def p_cond1Aux2_empty(p):
     '''
     cond1Aux2 : empty
         '''
-    p[0] = None
+    p[0] = "None"
 
 def p_cond1Aux2(p):
     '''
     cond1Aux2 : CUANDO ID condicion sentencia ENTONS LLAVE_IZQ expresion LLAVE_DER cond1Aux2
     '''
-    if p[9] != None:
+    if p[9] != "None":
 
         p[0] =  ((p[1], p[2], p[3], p[4], p[5], p[7]),) + p[9]
 
-    elif p[9] == None:
+    elif p[9] == "None":
 
         p[0] = ((p[1], p[2], p[3], p[4], p[5], p[7]), ) + ()
 
@@ -220,10 +222,10 @@ def p_cond2Aux2(p):
     '''
         cond2Aux2 : CUANDO  condicion sentencia ENTONS LLAVE_IZQ expresion LLAVE_DER cond2Aux2
         '''
-    if p[8] != None:
+    if p[8] != "None":
         p[0] = ((p[1], p[2], p[3], p[4], p[6]),) +  (p[8])
 
-    elif p[8] == None:
+    elif p[8] == "None":
 
         p[0] = ((p[1], p[2], p[3], p[4], p[6]),) + ()
 
@@ -231,7 +233,7 @@ def p_cond2Aux2_empty(p):
     '''
     cond2Aux2 : empty
         '''
-    p[0] = None
+    p[0] = "None"
 
 
 
@@ -282,7 +284,7 @@ def p_funcion(p):
             | Mover expresion
             | funcionAlge expresion
     '''
-    if(p[2] == None):
+    if(p[2] == "None"):
         p[0] = p[1]
     else:
         p[0] = (p[1],) + p[2]
@@ -367,7 +369,7 @@ def p_parametro(p):
     parametro : ID COMA parametro
               | NUMERO COMA parametro
     '''
-    if p[3] != None and p[2] != None:
+    if p[3] != "None" and p[2] != "None":
         p[0] = (p[1],) + (p[3])
 
 def p_parametro_only(p):
@@ -389,7 +391,7 @@ def p_empty(p):
     '''
     empty :
     '''
-    p[0] = None
+    p[0] = "None"
 
 
 def p_error(p):
@@ -429,7 +431,7 @@ def test():
     # archivo = buscarFichero(directorio)
     # test = directorio + archivo
 
-    fp = codecs.open(os.path.dirname(os.getcwd()) + "/Tests/" + "Test2", "r", "utf-8")
+    fp = codecs.open(os.path.dirname(os.getcwd()) + "/Tests/" + "Test6", "r", "utf-8")
     cadena = fp.read()
     fp.close()
 
