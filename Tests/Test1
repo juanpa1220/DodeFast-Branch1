@@ -7,7 +7,7 @@ INICIO:
 
 DCL xcv;
 DCL vf;
-DCL bv DEFAULT 3;
+DCL bv DEFAULT 2;
 DCL mnb DEFAULT 10;
 
 EnCaso
@@ -23,8 +23,8 @@ EnCaso
 		{
 
          Repita{
-
-        INC(mnb,10);
+            Llamar procedimiento1(99, 12);
+            INC(mnb,10);
 
         }
         HastaEncontrar mnb != 110;
@@ -36,6 +36,7 @@ EnCaso
                 Cuando bv > 10 EnTons
                     {
                         INC(bv, 33);
+
                     }
                 Cuando bv > 15 EnTons
                     {
@@ -60,5 +61,6 @@ FIN;
 Proc procedimiento1 (coca, bba)
 inicio:
 INC(bv,coca);
+MOVER(A);
 
 fin;

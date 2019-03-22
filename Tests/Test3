@@ -20,6 +20,7 @@ FIN;
 Proc procedimiento1 (coca, bba)
 inicio:
 INC(bv,coca);
+Mover();
 
 fin;
 
