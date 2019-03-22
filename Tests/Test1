@@ -7,24 +7,35 @@ INICIO:
 
 DCL xcv;
 DCL vf;
-DCL bv DEFAULT 5;
+DCL bv DEFAULT 3;
 DCL mnb DEFAULT 10;
 
 EnCaso
 	Cuando bv = 1 EnTons
 		{
-            INC(bv, 1);
+         Desde mnb =  5 Hasta 30
+        Haga {
+            INC(xcv,10);
+        }
+        Fin-Desde;
 		}
 	Cuando bv = 2 EnTons
 		{
-            INC(bv, 2);
+
+         Repita{
+
+        INC(mnb,10);
+
+        }
+        HastaEncontrar mnb != 110;
+
 		}
 	Cuando bv > 3 EnTons
 		{
             EnCaso
                 Cuando bv > 10 EnTons
                     {
-                        INC(bv, 1);
+                        INC(bv, 33);
                     }
                 Cuando bv > 15 EnTons
                     {
@@ -39,10 +50,15 @@ EnCaso
 
 	SiNo
 	{
-        INC(bv, 4);
+     Llamar procedimiento1(99, 12);
 	}
 Fin-EnCaso;
 
 
 FIN;
 
+Proc procedimiento1 (coca, bba)
+inicio:
+INC(bv,coca);
+
+fin;
