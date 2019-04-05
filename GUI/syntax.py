@@ -30,7 +30,7 @@ def format(color, style=''):
 
 # Syntax styles that can be shared by all languages
 STYLES = {
-    'keyword': format('blue'),
+    'keyword': format('Light green'),
     'operator': format('red'),
     'brace': format('darkGray'),
     'defclass': format('black', 'bold'),
@@ -38,7 +38,7 @@ STYLES = {
     'string2': format('darkMagenta'),
     'comment': format('darkGreen', 'italic'),
     'self': format('black', 'italic'),
-    'numbers': format('brown'),
+    'numbers': format('#00aaff'),
     'Procedimientos' : format('green'),
     'DCL' : format('orange')
 }

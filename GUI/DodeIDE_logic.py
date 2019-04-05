@@ -14,12 +14,18 @@ class MainWindow(QtWidgets.QMainWindow, Ui_DodeIDE):
         self.SaveButton.clicked.connect(self.SaveFile)
         self.OpenFileButton.clicked.connect(self.OpenFile)
         self.highlight = PythonHighlighter(self.CodeTextArea.document())
+        self.setStyleSheet("background-color: gray;")
 
         self.OutputArea.setStyleSheet(
             """QPlainTextEdit {background-color: #333;
                                color: #00FF00;
                                text-decoration: underline;
                                font-family: Courier;}""")
+
+        self.CodeTextArea.setStyleSheet(
+            """QPlainTextEdit {background-color: #333;
+                                color: #ffffff;
+                               }""")
 
 
 

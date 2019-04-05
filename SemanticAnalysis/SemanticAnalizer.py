@@ -393,9 +393,15 @@ def iniciarEjecucion(arbol, window):
     print("El arbol es:")
     print(arbol[0])
 
+    global  variables
+    global  listaMovimientos
+    global  procedimientos_dic
+    global procedimientos_param
+
     variables = {}
     listaMovimientos = []
     procedimientos_dic = {}
+    procedimientos_param = {}
 
 
 
