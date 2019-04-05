@@ -3,11 +3,10 @@ from GUI.syntax import *
 from LexicalAnalysis.LexicalAnalizer import *
 from SintacticAnalysis.SintacticAnalizer import *
 
+
 class MainWindow(QtWidgets.QMainWindow, Ui_DodeIDE):
 
-
     def __init__(self, *args, **kwargs):
-
         QtWidgets.QMainWindow.__init__(self, *args, **kwargs)
         self.setupUi(self)
         self.CompileButton.clicked.connect(self.startCompile)
@@ -27,29 +26,33 @@ class MainWindow(QtWidgets.QMainWindow, Ui_DodeIDE):
                                 color: #ffffff;
                                }""")
 
-
-
     def startCompile(self):
-
         print("Compile")
         self.OutputArea.clear()
 
         code = self.CodeTextArea.toPlainText()
 
-        lexicalAnalizer(code, self)
-
-        sintacticAnalizer(code, self)
+        if code != "":
+            lexicalAnalizer(code, self)
+            sintacticAnalizer(code, self)
+        else:
+            self.OutputArea.setPlainText(">> ERROR: Debe ingresar un código válido antes de compilar.\n")
 
     def SaveFile(self):
-
-        print("Save file")
+        text = self.CodeTextArea.toPlainText()
+        if text != "":
+            name = QtWidgets.QFileDialog.getSaveFileName(self, "Save file")
+            name = name[0]
+            if name[-4:] != ".txt":
+                name += ".txt"
+            file = open(name, 'w')
+            file.write(text)
 
     def OpenFile(self):
-
-        print("OpenFile")
-
-    def changeOutputText(self):
-        print("hola")
+        name = QtWidgets.QFileDialog.getOpenFileName(self, "Open file")
+        file = open(name[0], 'r')
+        self.CodeTextArea.clear()
+        self.CodeTextArea.insertPlainText(file.read())
 
 
 if __name__ == "__main__":
@@ -57,7 +60,3 @@ if __name__ == "__main__":
     window = MainWindow()
     window.show()
     app.exec_()
-
-
-
-

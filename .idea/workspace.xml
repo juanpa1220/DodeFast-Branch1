@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa822517-5aac-499f-af7a-a2b81c8fa026" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/DodeFast-Branch1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DodeFast-Branch1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GUI/DodeIDE_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/DodeIDE_logic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/syntax.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/syntax.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SemanticAnalysis/SemanticAnalizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/SemanticAnalysis/SemanticAnalizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SintacticAnalysis/SintacticAnalizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/SintacticAnalysis/SintacticAnalizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Test1" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Test1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Test2" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Test2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Test3" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Test3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Test4" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Test4.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Test5" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Test5.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/Test6" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Test6.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,56 +24,15 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/DodeFast_Branch1$GUI_IDE.coverage" NAME="GUI_IDE Coverage Results" MODIFIED="1553972514864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI" />
     <SUITE FILE_PATH="coverage/DodeFast_Branch1$SintacticAnalizer.coverage" NAME="SintacticAnalizer Coverage Results" MODIFIED="1553218170111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SintacticAnalysis" />
+    <SUITE FILE_PATH="coverage/DodeFast_Branch1$DodeIDE_logic.coverage" NAME="DodeIDE_logic Coverage Results" MODIFIED="1554488680889" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GUI/DodeIDE.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-30">
-              <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Tests/Test1">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="62" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GUI/syntax.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SintacticAnalysis/SintacticAnalizer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GUI/DodeIDE_logic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
+            <state relative-caret-position="346">
+              <caret line="41" column="32" lean-forward="true" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="46" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -73,22 +41,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LexicalAnalysis/LexicalAnalizer.py">
+        <entry file="file://$PROJECT_DIR$/GUI/DodeIDE.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1184">
-              <caret line="98" column="19" lean-forward="true" selection-start-line="98" selection-start-column="19" selection-end-line="98" selection-end-column="19" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="526">
+              <caret line="48" column="68" selection-start-line="48" selection-start-column="68" selection-end-line="48" selection-end-column="68" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/SintacticAnalysis/SintacticAnalizer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6855">
+              <caret line="457" selection-end-line="457" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SemanticAnalysis/SemanticAnalizer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="403" column="24" selection-start-line="403" selection-start-column="24" selection-end-line="403" selection-end-column="24" />
+            <state relative-caret-position="675">
+              <caret line="45" column="62" selection-start-line="45" selection-start-column="62" selection-end-line="45" selection-end-column="62" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -121,17 +98,15 @@
         <option value="$PROJECT_DIR$/LexicalAnalysis/LexicalAnalizer.py" />
         <option value="$PROJECT_DIR$/SintacticAnalysis/SintacticAnalizer.py" />
         <option value="$PROJECT_DIR$/Tests/Test1" />
-        <option value="$PROJECT_DIR$/SemanticAnalysis/SemanticAnalizer.py" />
-        <option value="$PROJECT_DIR$/GUI/DodeIDE_logic.py" />
         <option value="$PROJECT_DIR$/GUI/syntax.py" />
+        <option value="$PROJECT_DIR$/GUI/DodeIDE_logic.py" />
+        <option value="$PROJECT_DIR$/SemanticAnalysis/SemanticAnalizer.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="993" />
-    <option name="y" value="25" />
-    <option name="width" value="927" />
-    <option name="height" value="1055" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1680" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -186,7 +161,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -328,22 +303,30 @@
       <workItem from="1554403113532" duration="3306000" />
       <workItem from="1554408124003" duration="6397000" />
       <workItem from="1554415184989" duration="7914000" />
+      <workItem from="1554446794551" duration="867000" />
+      <workItem from="1554447703129" duration="109000" />
+      <workItem from="1554447830748" duration="152000" />
+      <workItem from="1554448005367" duration="257000" />
+      <workItem from="1554448364050" duration="174000" />
+      <workItem from="1554448577100" duration="280000" />
+      <workItem from="1554449139476" duration="3625000" />
+      <workItem from="1554483585806" duration="5349000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123093000" />
+    <option name="totallyTimeSpent" value="133906000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="993" y="25" width="927" height="1055" extended-state="4" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2996595" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17826618" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26241902" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32959184" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2622449" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39956802" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -352,8 +335,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32959184" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32959184" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -394,25 +377,19 @@
     <SUITE FILE_PATH="coverage/DodeFast_Branch1$DodeIDE.coverage" NAME="DodeIDE Coverage Results" MODIFIED="1554414510756" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../untitled/venv/lib/python3.6/site-packages/ply/yacc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="1119" selection-start-line="1119" selection-end-line="1119" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/Test3">
+    <entry file="file://$PROJECT_DIR$/../untitled/venv/lib/python3.6/site-packages/ply/yacc.py" />
+    <entry file="file://$PROJECT_DIR$/Tests/Test3.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/GUI/GUI_IDE.py" />
-    <entry file="file://$PROJECT_DIR$/Tests/Test5">
+    <entry file="file://$PROJECT_DIR$/Tests/Test5.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/Test6">
+    <entry file="file://$PROJECT_DIR$/Tests/Test6.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="7" selection-start-column="7" selection-end-column="7" />
@@ -424,51 +401,65 @@
         <state relative-caret-position="-1021" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/Test4">
+    <entry file="file://$PROJECT_DIR$/Tests/Test4.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="7" selection-start-column="7" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/Test2">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="12" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LexicalAnalysis/LexicalAnalizer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1184">
-          <caret line="98" column="19" lean-forward="true" selection-start-line="98" selection-start-column="19" selection-end-line="98" selection-end-column="19" />
+        <state relative-caret-position="1440">
+          <caret line="98" column="19" selection-start-line="98" selection-start-column="19" selection-end-line="98" selection-end-column="19" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SemanticAnalysis/SemanticAnalizer.py">
+    <entry file="file:///usr/local/lib/python2.7/site-packages/pkg_resources/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="2331" selection-start-line="2331" selection-end-line="2331" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/syntax.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/Test2.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
-          <caret line="403" column="24" selection-start-line="403" selection-start-column="24" selection-end-line="403" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
+          <caret line="22" column="14" selection-end-line="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Tests/Test1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="62" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GUI/DodeIDE.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30">
-          <caret line="13" column="19" lean-forward="true" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        <state relative-caret-position="526">
+          <caret line="48" column="68" selection-start-line="48" selection-start-column="68" selection-end-line="48" selection-end-column="68" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SintacticAnalysis/SintacticAnalizer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+        <state relative-caret-position="6855">
+          <caret line="457" selection-end-line="457" />
           <folding>
             <element signature="e#0#23#0" expanded="true" />
           </folding>
@@ -477,28 +468,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GUI/DodeIDE_logic.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
+        <state relative-caret-position="346">
+          <caret line="41" column="32" lean-forward="true" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="46" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GUI/syntax.py">
+    <entry file="file://$PROJECT_DIR$/SemanticAnalysis/SemanticAnalizer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+        <state relative-caret-position="675">
+          <caret line="45" column="62" selection-start-line="45" selection-start-column="62" selection-end-line="45" selection-end-column="62" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/Test1">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="62" selection-end-column="4" />
         </state>
       </provider>
     </entry>
