@@ -5,7 +5,7 @@ from pip._vendor.distlib.compat import raw_input
 from LexicalAnalysis.LexicalAnalizer import tokens
 from LexicalAnalysis.LexicalAnalizer import lexicalAnalizer
 from SemanticAnalysis.SemanticAnalizer import *
-
+from GUI.DodeIDE_logic import *
 from sys import stdin
 
 
@@ -14,7 +14,7 @@ def p_Start(p):
     Start : code
     '''
     # print(p[1])
-    iniciarEjecucion(p[1])
+    iniciarEjecucion(p[1], IDE)
 
 
 def p_Code(p):
@@ -405,8 +405,15 @@ def p_error(p):
     print("error de sintaxis " + str(p))
     print("error en la linea " + str(p.lineno))
 
+    IDE.OutputArea.setPlainText(IDE.OutputArea.toPlainText() +'\n' + "ERROR: " +str(p) + " en la linea : " + str(p.lineno))
 
-def sintacticAnalizer(cadena):
+
+def sintacticAnalizer(cadena, window):
+
+    global IDE
+
+    IDE = window
+
     parser = yacc.yacc()
     parser.parse(cadena)
 
@@ -445,6 +452,6 @@ def test():
     lexicalAnalizer(cadena)
     sintacticAnalizer(cadena)
 
+#test()
 
 # documentar esta funcion si va a probar codigo en el GUI
-test()

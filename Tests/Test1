@@ -1,16 +1,12 @@
-
-
-
-
-
 INICIO:
 
 DCL xcv;
 DCL vf;
-DCL bv DEFAULT 2;
+DCL bv DEFAULT 3;
 DCL mnb DEFAULT 10;
 
 EnCaso
+
 	Cuando bv = 1 EnTons
 		{
          Desde mnb =  5 Hasta 30
@@ -23,11 +19,12 @@ EnCaso
 		{
 
          Repita{
+
             Llamar procedimiento1(99, 12);
             INC(mnb,10);
 
         }
-        HastaEncontrar mnb != 110;
+        HastaEncontrar mnb >= 110;
 
 		}
 	Cuando bv > 3 EnTons

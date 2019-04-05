@@ -46,9 +46,11 @@ def condicion1(cond,sino, fromwhere):
 
             elif (VerificaCondicionales(i[1],i[2], i[3])) == "Error: identificador no declarado":
                 print("Error: variable de sentencia no declarada")
+                IDE.OutputArea.setPlainText("\n" + ">> ERROR: variable de sentencia no declarada ")
                 break
             elif (VerificaCondicionales(i[1],i[2], i[3])) == "Error: identificador no declarado":
                 print("Error: identificador no declarado")
+                IDE.OutputArea.setPlainText("\n" + ">> ERROR: identificador no declarado" )
                 break
         elif i[0] == "SINO":
 
@@ -105,10 +107,12 @@ def VerificaCondicionales(ID, condicion,sentencia):
                     return True
         else:
             print("error: variable de sentencia no declarada")
+            IDE.OutputArea.setPlainText("\n" + ">> ERROR: variable no declarada: " + ID)
             return "Error: variable de sentencia no declarada"
     else:
-
+        IDE.OutputArea.setPlainText("\n" + ">> ERROR: identificador no declarado: " + ID)
         return "Error: identificador no declarado"
+
 
 def condicion2(cond):
     print("CONDICION 2:")
@@ -223,6 +227,7 @@ def getValuesOfParams(params):
             result.append(param)
         else:
             print("ERROR:Objeto invalido de parametro")
+            IDE.OutputArea.setPlainText("\n"+">> ERROR: parametro  invalido: " + param)
 
     return result
 
@@ -278,6 +283,8 @@ def llamarProc(nombreProc, parametros):
 
     else:
         print("EL procedimiento no ha sido declarado")
+        IDE.OutputArea.setPlainText("\n"+">> ERROR: el procedimiento: " + nombreProc + "  no ha sido declarado")
+
 
 def set_parametros_procedimientos(nombreProc,parametros):
     params = []
@@ -297,6 +304,7 @@ def set_procedimientos(procedimientos):
 
             if (procedimiento[1] in procedimientos_dic):
                 print("ERROR: PROCEDIMIENTO YA ESTA DECLARADO")
+                IDE.OutputArea.setPlainText("\n"+">> ERROR: el procedimiento: " + procedimiento[1] +"  ya ha sido declarado")
                 return
             else:
                 procedimientos_dic.update({procedimiento[1]:procedimiento[2]})
@@ -335,8 +343,11 @@ def hacer(hacer):
 
         else:
             print("error: la sentencia 1 debe ser menor a la sentencia 2")
+            IDE.OutputArea.setPlainText("\n"+">> ERROR: la sentencia: "+ sentencia1+" debe ser menor a la sentencia:" + sentencia2)
     else:
         print("error: sentencia no declarada")
+        IDE.OutputArea.setPlainText("\n"+">> ERROR: alguna de las sentencias: " + sentencia1 + "," + sentencia2 +" no ha sido declarada" )
+
 
 
 def sustituye(expresion, cont, i):
@@ -376,9 +387,15 @@ def verificaVariable(var):
 
 
 
-def iniciarEjecucion(arbol):
+def iniciarEjecucion(arbol, window):
+    global IDE
+    IDE = window
     print("El arbol es:")
     print(arbol[0])
+
+    variables = {}
+    listaMovimientos = []
+    procedimientos_dic = {}
 
 
 
@@ -452,8 +469,10 @@ def ejecuta(expresion):
                 variables[expresion[1]] += int(variables[expresion[2]])
             else:
                 print("error: sentencia no declarada")
+                IDE.OutputArea.setPlainText("\n"+">> ERROR: sentencia no declarada")
         else:
             print("error: variable a operar no declarada")
+            IDE.OutputArea.setPlainText("\n"+">> ERROR: variable a operar :" + expresion[1] + " no ha sido declarada")
 
         print('despues')
         print(variables[expresion[1]])
@@ -470,8 +489,10 @@ def ejecuta(expresion):
                 variables[expresion[1]] -= int(variables[expresion[2]])
             else:
                 print("error: sentencia no declarada")
+                IDE.OutputArea.setPlainText("\n"+">> ERROR: sentencia no declarada")
         else:
             print("error: variable a operar no declarada")
+            IDE.OutputArea.setPlainText("\n"+">> ERROR: variable a operar :" + expresion[1] + " no ha sido declarada")
 
         print('despues')
         print(variables[expresion[1]])
@@ -486,8 +507,10 @@ def ejecuta(expresion):
                 variables[expresion[1]] = int(variables[expresion[2]])
             else:
                 print("error: sentencia no declarada")
+                IDE.OutputArea.setPlainText(">> ERROR: sentencia no declarada")
         else:
             print("error: variable a operar no declarada")
+            IDE.OutputArea.setPlainText("\n"+">> ERROR: variable a operar :" + expresion[1] + " no ha sido declarada")
 
         print('despues')
         print(variables[expresion[1]])

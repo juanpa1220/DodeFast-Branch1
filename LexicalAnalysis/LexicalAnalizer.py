@@ -1,4 +1,8 @@
+import time
+
 import ply.lex as lex
+
+
 
 tokens = [
     'COMA', 'PUNTOCOMA', 'DOSPUNTOS', 'LLAVE_IZQ', 'LLAVE_DER', 'IGUAL', 'PARENTESIS_IZQ', 'PARENTESIS_DER',  # SIMBOLOS
@@ -90,6 +94,8 @@ def t_NUMERO(t):
 
 def t_error(t):
     print("Caracter ilegal '%s'" % t.value[0])
+
+    IDE.OutputArea.setPlainText("ERROR: Caracter ilegal '%s'" % t.value[0] + " en la linea: " + str(t.lexer.lineno) )
     t.lexer.skip(1)
 
 
@@ -99,10 +105,16 @@ def t_COMMENT(t):
     # No return value. Token discarded
 
 
-def lexicalAnalizer(cadena):
+def lexicalAnalizer(cadena, window):
+    global IDE
+
+    IDE = window
+
+
+
+
+
     analizador = lex.lex()
     analizador.input(cadena)
-    # while True:
-    #     tok = analizador.token()
-    #     if not tok: break
-    #     print(tok)
+
+
