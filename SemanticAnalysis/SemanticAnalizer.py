@@ -1,5 +1,6 @@
 from random import choice
 from LexicalAnalysis.LexicalAnalizer import reservadas
+from ArduinoServer.ArduinoSever import ArduinoServer
 
 variables = {}
 listaMovimientos = []
@@ -397,6 +398,8 @@ def iniciarEjecucion(arbol, window):
                     ">>> Se ha compilado correctamente.\n>>> La lista de movimientos que hará el dode será: " +
                     str(listaMovimientos) + ".")
 
+                arduinoServer = ArduinoServer(listaMovimientos)
+
 
 def ejecutar(expresionCompleta):
     if (len(expresionCompleta) == 1 and len(expresionCompleta[0]) == 1):
@@ -456,7 +459,8 @@ def ejecuta(expresion):
                 return
         else:
             print(">>> ERROR:variable a operar no declarada")
-            IDE.OutputArea.setPlainText("\n" + ">>> ERROR: variable a operar: " + expresion[1] + " no ha sido declarada")
+            IDE.OutputArea.setPlainText(
+                "\n" + ">>> ERROR: variable a operar: " + expresion[1] + " no ha sido declarada")
             return
 
         print('despues')
@@ -477,7 +481,8 @@ def ejecuta(expresion):
                 return
         else:
             print(">>> ERROR: variable a operar no declarada")
-            IDE.OutputArea.setPlainText("\n" + ">>> ERROR: variable a operar: " + expresion[1] + " no ha sido declarada")
+            IDE.OutputArea.setPlainText(
+                "\n" + ">>> ERROR: variable a operar: " + expresion[1] + " no ha sido declarada")
             return
         print('despues')
         print(variables[expresion[1]])
@@ -498,7 +503,8 @@ def ejecuta(expresion):
                 return
         else:
             print(">>> ERROR: variable a operar no declarada")
-            IDE.OutputArea.setPlainText("\n" + ">>> ERROR: variable a operar: " + expresion[1] + " no ha sido declarada")
+            IDE.OutputArea.setPlainText(
+                "\n" + ">>> ERROR: variable a operar: " + expresion[1] + " no ha sido declarada")
             return
 
         print('despues')

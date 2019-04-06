@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa822517-5aac-499f-af7a-a2b81c8fa026" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/DodeFast-Branch1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DodeFast-Branch1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Arduino/ArduinoSever.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI/DodeIDE_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI/DodeIDE_logic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SemanticAnalysis/SemanticAnalizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/SemanticAnalysis/SemanticAnalizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SintacticAnalysis/SintacticAnalizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/SintacticAnalysis/SintacticAnalizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Test1" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Test1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Test2" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Test2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Test3" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Test3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Test4" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Test4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Test5" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Test5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/Test6" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/Test6.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,17 +13,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/DodeFast_Branch1$ArduinoSever.coverage" NAME="ArduinoSever Coverage Results" MODIFIED="1554519904381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Arduino" />
     <SUITE FILE_PATH="coverage/DodeFast_Branch1$GUI_IDE.coverage" NAME="GUI_IDE Coverage Results" MODIFIED="1553972514864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI" />
     <SUITE FILE_PATH="coverage/DodeFast_Branch1$SintacticAnalizer.coverage" NAME="SintacticAnalizer Coverage Results" MODIFIED="1553218170111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SintacticAnalysis" />
-    <SUITE FILE_PATH="coverage/DodeFast_Branch1$DodeIDE_logic.coverage" NAME="DodeIDE_logic Coverage Results" MODIFIED="1554488680889" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI" />
+    <SUITE FILE_PATH="coverage/DodeFast_Branch1$DodeIDE_logic.coverage" NAME="DodeIDE_logic Coverage Results" MODIFIED="1554520081659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GUI/DodeIDE_logic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="41" column="32" lean-forward="true" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="46" />
+            <state relative-caret-position="528">
+              <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="46" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -43,7 +35,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GUI/DodeIDE.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="526">
+            <state relative-caret-position="720">
               <caret line="48" column="68" selection-start-line="48" selection-start-column="68" selection-end-line="48" selection-end-column="68" />
             </state>
           </provider>
@@ -52,11 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SintacticAnalysis/SintacticAnalizer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6855">
-              <caret line="457" selection-end-line="457" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
+            <state>
+              <caret column="23" lean-forward="true" selection-start-column="23" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -64,10 +53,31 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SemanticAnalysis/SemanticAnalizer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="45" column="62" selection-start-line="45" selection-start-column="62" selection-end-line="45" selection-end-column="62" />
+            <state relative-caret-position="308">
+              <caret line="400" column="16" selection-start-line="400" selection-start-column="16" selection-end-line="400" selection-end-column="16" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Tests/Test6.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Arduino/ArduinoSever.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -100,6 +110,7 @@
         <option value="$PROJECT_DIR$/Tests/Test1" />
         <option value="$PROJECT_DIR$/GUI/syntax.py" />
         <option value="$PROJECT_DIR$/GUI/DodeIDE_logic.py" />
+        <option value="$PROJECT_DIR$/Arduino/ArduinoSever.py" />
         <option value="$PROJECT_DIR$/SemanticAnalysis/SemanticAnalizer.py" />
       </list>
     </option>
@@ -113,12 +124,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="DodeFast-Branch1" type="b2602c69:ProjectViewProjectNode" />
               <item name="DodeFast-Branch1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DodeFast-Branch1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DodeFast-Branch1" type="462c0819:PsiDirectoryNode" />
+              <item name="Arduino" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DodeFast-Branch1" type="b2602c69:ProjectViewProjectNode" />
@@ -149,7 +166,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -176,6 +192,28 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.DodeIDE_logic">
+    <configuration name="ArduinoSever" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="DodeFast-Branch1" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Arduino" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Arduino/ArduinoSever.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="DodeIDE" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DodeFast-Branch1" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -267,6 +305,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.DodeIDE_logic" />
+        <item itemvalue="Python.ArduinoSever" />
         <item itemvalue="Python.SintacticAnalizer" />
         <item itemvalue="Python.DodeIDE" />
         <item itemvalue="Python.GUI_IDE" />
@@ -310,31 +349,40 @@
       <workItem from="1554448364050" duration="174000" />
       <workItem from="1554448577100" duration="280000" />
       <workItem from="1554449139476" duration="3625000" />
-      <workItem from="1554483585806" duration="5349000" />
+      <workItem from="1554483585806" duration="17490000" />
+      <workItem from="1554513576686" duration="5420000" />
     </task>
+    <task id="LOCAL-00001" summary="Abrir y guardar archivos desde la nueva interfaz. Bugs">
+      <created>1554489802580</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1554489802581</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133906000" />
+    <option name="totallyTimeSpent" value="151467000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17826618" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18009768" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32959184" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2622449" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39956802" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" weight="0.2622449" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3989796" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50061053" side_tool="true" weight="0.2622449" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32959184" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32959184" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -370,6 +418,10 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Abrir y guardar archivos desde la nueva interfaz. Bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Abrir y guardar archivos desde la nueva interfaz. Bugs" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DodeFast_Branch1$SintacticAnalizer.coverage" NAME="SintacticAnalizer Coverage Results" MODIFIED="1554416884156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/SintacticAnalysis" />
     <SUITE FILE_PATH="coverage/DodeFast_Branch1$GUI_IDE.coverage" NAME="GUI_IDE Coverage Results" MODIFIED="1554405262753" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/GUI" />
@@ -389,13 +441,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Tests/Test6.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="7" selection-start-column="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SintacticAnalysis/parsetab.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1021" />
@@ -405,16 +450,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="7" selection-start-column="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LexicalAnalysis/LexicalAnalizer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1440">
-          <caret line="98" column="19" selection-start-line="98" selection-start-column="19" selection-end-line="98" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -442,6 +477,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/LexicalAnalysis/LexicalAnalizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="91" selection-start-line="22" selection-start-column="15" selection-end-line="23" selection-end-column="91" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/DodeIDE.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="68" selection-start-line="48" selection-start-column="68" selection-end-line="48" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/DodeIDE_logic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Arduino/ArduinoSever.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Tests/Test1.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -449,37 +521,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GUI/DodeIDE.py">
+    <entry file="file://$PROJECT_DIR$/Tests/Test6.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="48" column="68" selection-start-line="48" selection-start-column="68" selection-end-line="48" selection-end-column="68" />
+        <state relative-caret-position="105">
+          <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SintacticAnalysis/SintacticAnalizer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6855">
-          <caret line="457" selection-end-line="457" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GUI/DodeIDE_logic.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="41" column="32" lean-forward="true" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="23" lean-forward="true" selection-start-column="23" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SemanticAnalysis/SemanticAnalizer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="62" selection-start-line="45" selection-start-column="62" selection-end-line="45" selection-end-column="62" />
+        <state relative-caret-position="308">
+          <caret line="400" column="16" selection-start-line="400" selection-start-column="16" selection-end-line="400" selection-end-column="16" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
