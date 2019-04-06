@@ -1,3 +1,4 @@
+import threading
 from random import choice
 from LexicalAnalysis.LexicalAnalizer import reservadas
 from ArduinoServer.ArduinoSever import ArduinoServer
@@ -398,7 +399,12 @@ def iniciarEjecucion(arbol, window):
                     ">>> Se ha compilado correctamente.\n>>> La lista de movimientos que hará el dode será: " +
                     str(listaMovimientos) + ".")
 
-                arduinoServer = ArduinoServer(listaMovimientos)
+                t = threading.Thread(target=instanciaArduinoServer)
+                t.start()
+
+
+def instanciaArduinoServer():
+    arduinoServer = ArduinoServer(listaMovimientos)
 
 
 def ejecutar(expresionCompleta):
